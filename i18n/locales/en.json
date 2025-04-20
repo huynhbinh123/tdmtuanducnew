@@ -1,0 +1,48 @@
+{
+    "vnwa": {
+        "vmedia": {
+            "create_folder": "Create Folder",
+            "selected_action": "Selected Action",
+            "preview": "preview",
+            "crop": "crop",
+            "rename": "rename",
+            "move_to_trash": "move to trash",
+            "view": "view",
+            "delete": "delete"
+        },
+        "meta": {
+            "title": {
+                "label": "Meta Title",
+                "description": "Recommended length: 50-60 characters. Include relevant keywords and be descriptive. Should accurately represent the content of the page.",
+                "error_message": "The meta title cannot be empty and must be up to 100 characters"
+            },
+            "desc": {
+                "label": "Meta Description",
+                "description": "Provide a brief description for SEO. Ideally, between 120-160 characters.",
+                "error_message": "Meta description cannot be empty and must be maximum 300 characters"
+            },
+            "image": {
+                "label": "Meta Image",
+                "description": "Recommended image size: 1200x630 pixels. Ensure the image is optimized for SEO with the following tips:\n1. File format: JPEG, PNG, or WebP\n2. File size: Under 100 KB for faster loading\n3. Use high-quality images with clear details\n4.",
+                "error_message": "Meta image cannot be empty"
+            }
+        },
+        "sidebarVMedia": "Vmedia",
+        "project_manager": "Project Manager",
+        "blog_manager": "Blog Manager",
+        "post": "Post",
+        "project": "Project",
+        "category": "category",
+        "dashboard": "dashboard",
+        "contact": "contact",
+        "appearance": "appearance",
+        "web_manager": "web manager",
+        "home_page_manager": "home page manager",
+        "save": "Save",
+        "add_link": "Add Link"
+    },
+    "project": "project",
+    "process": "process",
+    "about": "about",
+    "blog": "blog"
+}

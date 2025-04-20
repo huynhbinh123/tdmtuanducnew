@@ -1,0 +1,48 @@
+{
+  "vnwa": {
+    "vmedia": {
+      "create_folder": "Tạo thư mục",
+      "selected_action": "Hành động đã chọn",
+      "preview": "Xem trước",
+      "crop": "Cắt",
+      "rename": "Đổi tên",
+      "move_to_trash": "Di chuyển vào thùng rác",
+      "view": "Xem",
+      "delete": "Xóa"
+    },
+    "meta": {
+      "title": {
+        "label": "Tiêu đề Meta",
+        "description": "Độ dài khuyến nghị: 50-60 ký tự. Bao gồm từ khóa liên quan và miêu tả rõ ràng. Nên phản ánh chính xác nội dung của trang.",
+        "error_message": "Tiêu đề meta không được để trống và phải có tối đa 100 ký tự"
+      },
+      "desc": {
+        "label": "Mô tả Meta",
+        "description": "Cung cấp một mô tả ngắn cho SEO. Lý tưởng là từ 120-160 ký tự.",
+        "error_message": "Mô tả meta không được để trống và phải có tối đa 300 ký tự"
+      },
+      "image": {
+        "label": "Ảnh Meta",
+        "description": "Kích thước khuyến nghị: 1200x630 pixel. Đảm bảo ảnh được tối ưu hóa cho SEO với các lưu ý sau:\n1. Định dạng tệp: JPEG, PNG hoặc WebP\n2. Kích thước tệp: Dưới 100 KB để tải nhanh\n3. Sử dụng ảnh chất lượng cao với chi tiết rõ ràng\n4.",
+        "error_message": "Ảnh meta không được để trống"
+      }
+    },
+    "sidebarVMedia": "Vmedia",
+    "project_manager": "Quản lý dự án",
+    "blog_manager": "Quản lý bài viết",
+    "post": "Bài viết",
+    "project": "Dự án",
+    "category": "Danh mục",
+    "dashboard": "Bảng điều khiển",
+    "contact": "Liên hệ",
+    "appearance": "Giao diện",
+    "web_manager": "Quản lý web",
+    "home_page_manager": "Quản lý trang chủ",
+    "save": "Lưu",
+    "add_link": "Thêm liên kết"
+  },
+  "project": "dự án",
+  "process": "quá trình",
+  "about": "về chúng tôi",
+  "blog": "blog"
+}

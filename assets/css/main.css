@@ -1,0 +1,68 @@
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+
+
+@layer base {
+    #__nuxt {
+        @apply min-h-screen flex flex-col;
+    }
+
+    button,
+    a,
+    [role="button"] {
+        @apply transition-colors;
+    }
+
+    input[type="checkbox"],
+    input[type="radio"] {
+        @apply transition-all;
+    }
+}
+
+
+@theme static {
+    --font-sans: 'Public Sans', sans-serif;
+    --color-green-50: red;
+
+    --breakpoint-3xl: 1920px;
+
+    --ui-sub-main: rgba(131, 59, 147, 1);
+    /* #833b93 */
+    --ui-main: rgba(84, 179, 214, 1);
+    /* #54b3d6 */
+
+
+
+    --color-vnwa: oklch(48.405% 0.15247 320.01);
+    --color-vnwa-50: oklch(91.271% 0.03778 325.88);
+    --color-vnwa-100: oklch(86.488% 0.05842 325.16);
+    --color-vnwa-200: oklch(76.887% 0.10022 324.19);
+    --color-vnwa-300: oklch(67.273% 0.14123 322.98);
+    --color-vnwa-400: oklch(58.004% 0.17888 321.79);
+    --color-vnwa-500: oklch(48.405% 0.15247 320.01);
+    --color-vnwa-600: oklch(42.141% 0.12976 318.34);
+    --color-vnwa-700: oklch(35.592% 0.10487 316.39);
+    --color-vnwa-800: oklch(28.936% 0.08262 314.62);
+    --color-vnwa-900: oklch(22.164% 0.05575 313.43);
+    --color-vnwa-950: oklch(18.761% 0.0416 314.42);
+
+
+
+
+    --color-primary: oklch(72.322% 0.10246 225.15);
+    --color-primary-50: oklch(96.192% 0.01534 222.68);
+    --color-primary-100: oklch(93.534% 0.02565 221.58);
+    --color-primary-200: oklch(87.992% 0.04664 222.63);
+    --color-primary-300: oklch(82.539% 0.06695 223.47);
+    --color-primary-400: oklch(77.444% 0.08592 223.41);
+    --color-primary-500: oklch(72.322% 0.10246 225.15);
+    --color-primary-600: oklch(64.704% 0.11117 227.62);
+    --color-primary-700: oklch(53.449% 0.09058 227.56);
+    --color-primary-800: oklch(41.566% 0.06867 227.5);
+    --color-primary-900: oklch(28.71% 0.04363 225.52);
+    --color-primary-950: oklch(21.834% 0.03015 226.79);
+
+}
+
+
