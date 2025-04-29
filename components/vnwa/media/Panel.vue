@@ -10,52 +10,29 @@
           </div>
           <div class=" flex items-center gap-5 justify-end">
             <UPopover class="notOutSide">
-              <UButton :disabled="keySelected.length <= 0" color="vnwa" :label="$t('vnwa.vmedia.selected_action')"
+              <UButton :disabled="keySelected.length <= 0" color="vnwa" :label="$t('vmedia.selected_action')"
                 icon="i-fa6-solid:hand-pointer" />
 
               <template #content>
                 <ul class="min-w-40  text-black dark:text-white">
                   <li>
-                    <button
-                      class="flex items-center justify-start gap-2 px-2 py-1 text-xs hover:bg-purple-500 hover:text-white w-full">
-                      <UIcon name="heroicons:eye-16-solid" class="w-4 h-4" />
-                      <span>
-                        {{ $t('vnwa.vmedia.preview') }}
-                      </span>
-                    </button>
+                    <UButton color="neutral" variant="ghost" icon="heroicons:eye-16-solid" class="w-full" :label="$t('vmedia.preview')"/>
                   </li>
                   <li>
-                    <button
-                      class="flex items-center justify-start gap-2 px-2 py-1 text-xs hover:bg-purple-500 hover:text-white w-full">
-                      <UIcon name="material-symbols:crop" class="w-4 h-4" />
-                      <span>
-                        {{ $t('vnwa.vmedia.crop') }}
-                      </span>
-                    </button>
+                    <UButton color="neutral" variant="ghost" icon="material-symbols:crop" class="w-full" :label="$t('vmedia.crop')"/>
                   </li>
                   <li>
-                    <button
-                      class="flex items-center justify-start gap-2 px-2 py-1 text-xs hover:bg-purple-500 hover:text-white w-full">
-                      <UIcon name="heroicons:pencil-square-16-solid" class="w-4 h-4" />
-                      <span>
-                        {{ $t('vnwa.vmedia.rename') }}
-                      </span>
-                    </button>
+                    <UButton color="neutral" variant="ghost" icon="heroicons:pencil-square-16-solid" class="w-full" :label="$t('vmedia.rename')"/>
                   </li>
                   <li>
-                    <button @click="handleRemoveMedia"
-                      class="flex items-center justify-start gap-2 px-2 py-1 text-xs hover:bg-purple-500 hover:text-white w-full">
-                      <UIcon name="heroicons:trash" class="w-4 h-4" />
-                      <span>
-                        {{ $t('vnwa.vmedia.move_to_trash') }}
-                      </span>
-                    </button>
+                    <UButton @click="handleRemoveMedia" color="neutral" variant="ghost" icon="heroicons:trash" class="w-full" :label="$t('vmedia.move_to_trash')"/>
                   </li>
+                 
                 </ul>
               </template>
             </UPopover>
 
-            <UTooltip @click="openCreateFolderModal" :text="$t('vnwa.vmedia.create_folder')" :popper="{ arrow: true }">
+            <UTooltip @click="openCreateFolderModal" :text="$t('vmedia.create_folder')" :popper="{ arrow: true }">
               <UButton icon="i-fa6-solid:folder-plus" color="warning" variant="outline" />
             </UTooltip>
 
@@ -117,19 +94,19 @@
                     </div>
                     <template #view>
                       <UButton @click="view(item)" icon="i-lucide-eye" color="neutral" variant="ghost"  size="sm" class="w-full  ">
-                        {{$t('vnwa.vmedia.view')}}
+                        {{$t('vmedia.view')}}
                       </Ubutton>
                     </template>
                     <template #rename>
                       <UButton @click="handleRenameMedia(item)" icon="i-lucide-pen" color="neutral" size="sm"  variant="ghost"
                         class="w-full ">
-                        {{$t('vnwa.vmedia.rename')}}
+                        {{$t('vmedia.rename')}}
                       </Ubutton>
                     </template>
                     <template #delete>
                       <UButton @click="handleRemoveOneMedia(item)" icon="i-lucide-trash" color="error" size="sm"  variant="subtle"
                         class="w-full ">
-                        {{$t('vnwa.vmedia.delete')}}
+                        {{$t('vmedia.delete')}}
                       </Ubutton>
                     </template>
                   </UContextMenu>

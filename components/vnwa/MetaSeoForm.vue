@@ -6,24 +6,24 @@
         <div class="space-y-4">
             <!-- Meta Image -->
             <div>
-                <UFormField :label="$t('vnwa.meta.image.label')" name="meta_image"
-                    :description="$t('vnwa.meta.image.description')">
+                <UFormField :label="$t('meta.image.label')" name="meta_image"
+                    :description="$t('meta.image.description')">
                     <VnwaInputImage :resize="[1200, 630]" v-model="meta.image" />
                 </UFormField>
             </div>
 
 
             <div>
-                <UFormField :label="$t('vnwa.meta.title.label')" name="meta_title"
-                    :description="$t('vnwa.meta.title.description')">
+                <UFormField :label="$t('meta.title.label')" name="meta_title"
+                    :description="$t('meta.title.description')">
                     <UInput v-model="meta.title" />
                 </UFormField>
             </div>
 
             <!-- Meta Description -->
             <div>
-                <UFormField :label="$t('vnwa.meta.desc.label')" name="meta_desc"
-                    :description="$t('vnwa.meta.desc.description')">
+                <UFormField :label="$t('meta.desc.label')" name="meta_desc"
+                    :description="$t('meta.desc.description')">
                     <UTextarea v-model="meta.desc" />
                 </UFormField>
             </div>
@@ -56,15 +56,15 @@ const validateMetaSeo = (state: MetaSeo): FormError[] => {
     const errors: FormError[] = [];
 
     if (!state.title || state.title.length > 100) {
-        errors.push({ name: 'meta_title', message: t('vnwa.meta.title.error_message') });
+        errors.push({ name: 'meta_title', message: t('error_message.meta.title') });
     }
 
     if (!state.desc || state.desc.length > 300) {
-        errors.push({ name: 'meta_desc', message: t('vnwa.meta.desc.error_message') });
+        errors.push({ name: 'meta_desc', message: t('error_message.meta.desc') });
     }
 
     if (!state.image || state.image.length < 5) {
-        errors.push({ name: 'meta_image', message: t('vnwa.meta.image.error_message') });
+        errors.push({ name: 'meta_image', message: t('error_message.meta.image') });
     }
 
     emit('update:errors', errors);

@@ -1,8 +1,7 @@
 export default defineNuxtRouteMiddleware((to, from) => {
-  const auth =  useAuthStore()
-  const localePath = useLocalePath()
+  const auth = useAuthStore()
 
-  if (to.fullPath != localePath('/vnwa/login')) {
+  if (to.fullPath != '/login') {
 
 
     if (!auth.logged || !auth.hasRole('admin')) {
@@ -14,7 +13,7 @@ export default defineNuxtRouteMiddleware((to, from) => {
         color: "error",
       });
 
-      return navigateTo(localePath('/vnwa/login'));
+      return navigateTo('/login');
 
     }
 

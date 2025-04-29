@@ -1,4 +1,4 @@
-<!-- <script lang="ts" setup>
+<script lang="ts" setup>
 const colorMode = useColorMode();
 const isDark = computed({
   get() {
@@ -22,15 +22,4 @@ const isDark = computed({
       <USkeleton class="w-8 h-8 rounded-md" />
     </template>
   </ClientOnly>
-</template> -->
-<template>
-  <div>
-
-  </div>
 </template>
-
-<script lang="ts" setup>
-
-</script>
-
-<style></style>

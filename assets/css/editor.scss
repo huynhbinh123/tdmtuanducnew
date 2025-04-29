@@ -18,8 +18,7 @@
   }
 
   /* List styles */
-  ul,
-  ol {
+  ul {
     padding: 0 1rem;
     margin: 1.25rem 1rem 1.25rem 0.4rem;
 
@@ -33,7 +32,20 @@
     }
   }
 
- 
+  ol {
+    padding: 0 1rem;
+    margin: 1.25rem 1rem 1.25rem 0.4rem;
+
+    li {
+      list-style: decimal;
+
+      p {
+        margin-top: 0.25em;
+        margin-bottom: 0.25em;
+      }
+    }
+  }
+
 
   /* Heading styles */
   h1,
@@ -114,4 +126,14 @@
     border-top: 1px solid var(--gray-2);
     margin: 2rem 0;
   }
+
+  a {
+    cursor: pointer;
+
+    &:hover {
+      // color: var(--purple-contrast);
+    }
+  }
+
+
 }

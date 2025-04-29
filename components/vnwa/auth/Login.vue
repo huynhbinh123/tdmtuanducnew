@@ -14,8 +14,8 @@ const state = reactive({
   password: "",
   remember: false,
 });
-
-const { refresh: onSubmit, status: loginStatus } = useHttp<any>("login", {
+const route = useRoute();
+const { refresh: onSubmit, status: loginStatus } = useHttp<any>("admin-login", {
   method: "POST",
   body: state,
   immediate: false,
@@ -27,8 +27,12 @@ const { refresh: onSubmit, status: loginStatus } = useHttp<any>("login", {
       nuxtApp.$token.value = response._data.token;
 
       await auth.fetchUser();
-      await router.push("/vnwa");
-
+      const redirect = route.query.redirect 
+      if (redirect) {
+        return router.push(redirect)
+      } else {
+        return router.push('/') // hoặc trang admin dashboard
+      }
     }
   }
 });

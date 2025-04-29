@@ -1,48 +1,83 @@
 {
-  "vnwa": {
-    "vmedia": {
-      "create_folder": "Tạo thư mục",
-      "selected_action": "Hành động đã chọn",
-      "preview": "Xem trước",
-      "crop": "Cắt",
-      "rename": "Đổi tên",
-      "move_to_trash": "Di chuyển vào thùng rác",
-      "view": "Xem",
-      "delete": "Xóa"
+  "vmedia": {
+    "create_folder": "Tạo thư mục",
+    "selected_action": "Hành động đã chọn",
+    "preview": "Xem trước",
+    "crop": "Cắt",
+    "rename": "Đổi tên",
+    "move_to_trash": "Di chuyển vào thùng rác",
+    "view": "Xem",
+    "delete": "Xóa"
+  },
+  "error_message": {
+    "name": {
+      "required": "Trường tên là bắt buộc.",
+      "min": "Tên quá ngắn.",
+      "max": "Tên quá dài."
+    },
+    "slug": {
+      "required": "Trường đường dẫn là bắt buộc.",
+      "invalid": "Đường dẫn chỉ được chứa chữ thường, số và dấu gạch ngang.",
+      "taken": "Đường dẫn này đã được sử dụng."
     },
     "meta": {
-      "title": {
-        "label": "Tiêu đề Meta",
-        "description": "Độ dài khuyến nghị: 50-60 ký tự. Bao gồm từ khóa liên quan và miêu tả rõ ràng. Nên phản ánh chính xác nội dung của trang.",
-        "error_message": "Tiêu đề meta không được để trống và phải có tối đa 100 ký tự"
-      },
-      "desc": {
-        "label": "Mô tả Meta",
-        "description": "Cung cấp một mô tả ngắn cho SEO. Lý tưởng là từ 120-160 ký tự.",
-        "error_message": "Mô tả meta không được để trống và phải có tối đa 300 ký tự"
-      },
-      "image": {
-        "label": "Ảnh Meta",
-        "description": "Kích thước khuyến nghị: 1200x630 pixel. Đảm bảo ảnh được tối ưu hóa cho SEO với các lưu ý sau:\n1. Định dạng tệp: JPEG, PNG hoặc WebP\n2. Kích thước tệp: Dưới 100 KB để tải nhanh\n3. Sử dụng ảnh chất lượng cao với chi tiết rõ ràng\n4.",
-        "error_message": "Ảnh meta không được để trống"
-      }
-    },
-    "sidebarVMedia": "Vmedia",
-    "project_manager": "Quản lý dự án",
-    "blog_manager": "Quản lý bài viết",
-    "post": "Bài viết",
-    "project": "Dự án",
-    "category": "Danh mục",
-    "dashboard": "Bảng điều khiển",
-    "contact": "Liên hệ",
-    "appearance": "Giao diện",
-    "web_manager": "Quản lý web",
-    "home_page_manager": "Quản lý trang chủ",
-    "save": "Lưu",
-    "add_link": "Thêm liên kết"
+      "title": "Tiêu đề meta không được để trống và phải có tối đa 100 ký tự",
+      "desc": "Mô tả meta không được để trống và phải có tối đa 300 ký tự",
+      "image": "Ảnh meta không được để trống"
+    }
   },
-  "project": "dự án",
-  "process": "quá trình",
-  "about": "về chúng tôi",
-  "blog": "blog"
+  "meta": {
+    "title": {
+      "label": "Tiêu đề Meta",
+      "description": "Độ dài khuyến nghị: 50-60 ký tự. Bao gồm từ khóa liên quan và miêu tả rõ ràng. Nên phản ánh chính xác nội dung của trang."
+    },
+    "desc": {
+      "label": "Mô tả Meta",
+      "description": "Cung cấp một mô tả ngắn cho SEO. Lý tưởng là từ 120-160 ký tự."
+    },
+    "image": {
+      "label": "Ảnh Meta",
+      "description": "Kích thước khuyến nghị: 1200x630 pixel. Đảm bảo ảnh được tối ưu hóa cho SEO với các lưu ý sau:\n1. Định dạng tệp: JPEG, PNG hoặc WebP\n2. Kích thước tệp: Dưới 100 KB để tải nhanh\n3. Sử dụng ảnh chất lượng cao với chi tiết rõ ràng\n4."
+    }
+  },
+  "name": "Tên ",
+  "remove_selected": "Xóa chọn",
+  "created_at": "Ngày tạo",
+  "updated_at": "Ngày sửa",
+  "sidebarVMedia": "Vmedia",
+  "tag": "Thẻ",
+  "create_tag": "Khởi tạo thẻ",
+  "edit_tag": "Chỉnh sửa thẻ",
+  "tag_manager": "Quản lí thẻ",
+  "project_manager": "Quản lý dự án",
+  "blog_manager": "Quản lý bài viết",
+  "post": "Bài viết",
+  "project": "Dự án",
+  "confirm_delete_category": "Bạn có chắc chắn muốn xóa danh mục {name}?",
+  "confirm_delete": "Xác nhận xóa",
+  "delete_category": "Xóa danh mục",
+  "blog category": "Danh mục bài viết",
+  "category": "Danh mục",
+  "dashboard": "Bảng điều khiển",
+  "contact": "Liên hệ",
+  "appearance": "Giao diện",
+  "web_manager": "Quản lý web",
+  "home_page_manager": "Quản lý trang chủ",
+  "save": "Lưu",
+  "add_link": "Thêm liên kết",
+  "edit": "Sửa",
+  "remove": "Xóa",
+  "remove_items": "Xoá mục",
+  "confirm_remove_items": "Bạn có chắc chắn muốn xoá {count} mục không?",
+  "remove_child_items": "Xoá mục con",
+  "confirm_remove": "Xác nhận xoá",
+  "move_to_trash": "Chuyển vào thùng rác",
+  "move_to_trash_desc": "Các mục sẽ được đưa vào thùng rác và bạn có thể khôi phục sau này.",
+  "permanent_delete_desc": "Cảnh báo: Các mục sẽ bị xóa vĩnh viễn và không thể khôi phục.",
+  "create_post": "Khởi tạo bài viết",
+  "edit_post": "Chỉnh sửa bài viết",
+  "deleted_at":"Xóa vào lúc",
+  "restore_items": "Khôi phục mục",
+  "confirm_restore_items": "Bạn có chắc chắn muốn khôi phục {count} mục không?",
+  "confirm_restore": "Xác nhận khôi phục"
 }

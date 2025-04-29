@@ -26,18 +26,37 @@ export interface BlogCategory {
   ord: number;
   is_show: boolean;
   is_highlight: boolean;
-  name: string;
-  slug: string;
   icon: string | null;
   image: string | null;
   banner_image: string | null;
-  desc: string | null;
-  content: string | null;
-  meta: MetaSeo;
-
-  created_at?: string; // assuming timestamp is in string format
-  updated_at?: string; // assuming timestamp is in string format
+  created_at?: string;
+  updated_at?: string;
+  translations?: BlogCategoryTranslation[];
+  parent?: BlogCategory | null;
+  children?: BlogCategory[];
 }
+export type BlogCategoryTranslation = {
+  id?: number;
+  blog_category_id?: number;
+  locale: string; // 'vi', 'en', etc.
+  name: string;
+  slug: string;
+  desc?: string | null;
+  content?: string | null;
+  meta_image?: string | null;
+  meta_title?: string | null;
+  meta_desc?: string | null;
+  created_at?: string;
+  updated_at?: string;
+};
+
+
+
+
+
+
+
+
 export interface Post {
   id?: number;
   image: string | null;
@@ -74,4 +93,11 @@ export interface PostReaction {
   reaction: 'like' | 'dislike' | null;
   created_at?: string;
   updated_at?: string;
+}
+
+export interface TreeNode {
+  id: number
+  name: string
+  children: TreeNode[]
+  parent?: TreeNode | null
 }

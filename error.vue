@@ -12,7 +12,7 @@ useSeoMeta({
 
 <template>
   <UContainer class="py-5 flex items-center justify-center">
-    <AppLogo />
+    <VnwaLogo />
   </UContainer>
   <UContainer class="flex-grow flex flex-col items-center justify-center space-y-5">
     <h1 class="text-9xl font-bold">{{ error?.statusCode }}</h1>

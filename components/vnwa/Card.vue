@@ -1,6 +1,6 @@
 <template>
   <div
-    class="relative text-black capitalize dark:text-white bg-white dark:bg-zinc-950  divide-y divide-gray-200 dark:divide-gray-500/50 ring-1 ring-gray-300 dark:ring-2 dark:ring-gray-500/20 rounded shadow">
+    class="relative text-black  dark:text-white bg-white dark:bg-zinc-950  divide-y divide-gray-200 dark:divide-gray-500/50 ring-1 ring-gray-300 dark:ring-2 dark:ring-gray-500/20 rounded shadow">
     <div v-if="isLoading">
       <VnwaLoading />
     </div>

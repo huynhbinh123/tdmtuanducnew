@@ -12,38 +12,44 @@ export type User = {
 }
 
 export const useAuthStore = defineStore('auth', () => {
-  const nuxtApp = useNuxtApp();
   const user = ref(<User>{});
-  const logged = computed(() => !!nuxtApp.$token.value);
 
-  const { refresh: logout } = useHttp<any>('logout', {
+  // Dùng cookie để lưu token, có thể truy cập ở SSR + giữ được sau reload
+  const token = useCookie<string | null>('token', {
+    default: () => null,
+    watch: true
+  });
+
+  const logged = computed(() => !!token.value);
+
+  const { refresh: logout } = useApi<any>('logout', {
     method: 'POST',
     immediate: false,
     onFetchResponse: ({ response }) => {
       if (response.status === 200) {
         reset();
-        navigateTo('/');
+        navigateTo('/login');
       }
     }
   });
 
-  const { refresh: fetchUser } = useHttp<any>('user', {
+  const { refresh: fetchUser } = useApi<any>('user', {
     immediate: false,
     onFetchResponse({ response }) {
       if (response.status === 200) {
-        user.value = response._data.user
+        user.value = response._data.user;
       }
     }
   });
 
   function reset(): void {
-    nuxtApp.$token.value = ''
-    user.value = <User>{}
+    token.value = null;
+    user.value = <User>{};
   }
 
   function hasRole(name: string): boolean {
     return user.value.roles?.includes(name);
   }
 
-  return { user, logged, logout, fetchUser, reset, hasRole }
-})
+  return { user, token, logged, logout, fetchUser, reset, hasRole }
+});

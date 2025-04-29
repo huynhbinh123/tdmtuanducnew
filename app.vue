@@ -2,7 +2,11 @@
 const auth = useAuthStore();
 
 if (auth.logged) {
+try {
   await auth.fetchUser();
+} catch (error) {
+  await auth.logout();
+}
 }
 import * as locales from '@nuxt/ui/locale'
 

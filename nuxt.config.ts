@@ -8,7 +8,7 @@ export default defineNuxtConfig({
     compatibilityVersion: 4,
   },
   telemetry: true,
-  ssr: true,
+  ssr: false,
   devtools: {
     enabled: false,
   },
@@ -16,23 +16,10 @@ export default defineNuxtConfig({
     pageTransition: { name: 'page', mode: 'out-in' },
     head: {
       title: 'Home',
-      titleTemplate: '%s | Vinawebapp.com',
+      titleTemplate: '%s | SEO CMS',
       htmlAttrs: {
         lang: 'en',
       },
-      meta: [
-        { charset: 'utf-8' },
-        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        { property: 'og:title', content: 'Vinawebapp.com | Makeup & More' },
-        { property: 'og:description', content: "Unlock your potential at Vinawebapp.com, Vietnam's premier Makeup Artist School. Elevate your artistry, embrace beauty, and master the craft." },
-        { property: 'og:image', content: FRONTEND_URL + "/meta_image.png" },
-        { name: 'twitter:card', content: 'summary_large_image' },
-        { name: 'twitter:title', content: 'Vinawebapp.com | Makeup & More' },
-        { name: 'twitter:description', content: "Unlock your potential at Vinawebapp.com, Vietnam's premier Makeup Artist School. Elevate your artistry, embrace beauty, and master the craft." },
-        { name: 'twitter:image', content: FRONTEND_URL + "/meta_image.png" },
-      ],
-
-
     },
   },
 
@@ -50,14 +37,7 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     'dayjs-nuxt',
     'nuxt-security',
-    '@nuxtjs/google-fonts',
-    'v-gsap-nuxt',
     'nuxt-tiptap-editor',
-    '@nuxtjs/seo',
-    '@nuxtjs/sitemap',
-    '@nuxtjs/robots',
-
-
   ],
   site: {
     url: FRONTEND_URL,
@@ -69,20 +49,17 @@ export default defineNuxtConfig({
       { code: 'en', name: 'English', file: 'en.json' },
       { code: 'vi', name: 'Tiếng Việt', file: 'vi.json' }
     ],
+    strategy: 'prefix_except_default',
+
     detectBrowserLanguage: {
       useCookie: true,
-      strategy: 'prefix_except_default',
       cookieKey: 'i18n_redirected',
       redirectOn: 'root' ,
       alwaysRedirect: true
     }
   },
-  sitemap: {
-    exclude: ['/vnwa/**', '/account/**', '/auth/**'],
-  },
-  robots: {
-    disallow: ['/vnwa'],
-  },
+ 
+
   tiptap: {
     prefix: 'Tiptap', //prefix for Tiptap imports, composables not included
   },
@@ -134,24 +111,6 @@ export default defineNuxtConfig({
   typescript: {
     strict: false,
   },
-  googleFonts: {
-    families: {
-      Roboto: true,
-      'Josefin+Sans': true,
-      Lato: [100, 300],
-      Raleway: {
-        wght: [100, 400],
-        ital: [100]
-      },
-      'Bodoni Moda': [100],
-      Inter: '200..700',
-      'Crimson Pro': {
-        wght: '200..900',
-        ital: '200..700',
-      }
-    }
-  },
-
   runtimeConfig: {
     apiLocal: BACKEND_URL,
     public: {

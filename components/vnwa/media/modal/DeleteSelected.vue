@@ -55,7 +55,7 @@ const handleSubmit = async () => {
     <template #footer>
       <div class="flex items-center justify-end w-full">
         <UButton :disabled="status === 'pending'" @click="handleSubmit" label="Xác nhận xóa Media"
-          icon="heroicons:trash" color="error" variant="outline" />
+          icon="heroicons:trash" color="error" variant="solid" />
       </div>
 
     </template>

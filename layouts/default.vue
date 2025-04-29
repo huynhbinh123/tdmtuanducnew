@@ -1,47 +1,38 @@
+<!-- layouts/admin.vue -->
 <template>
-  <div class="bg-black min-h-screen">
-    <AppHeader :logo_full="appearanceData.logo_full" :logo_icon="appearanceData.logo_icon" />
-    <slot />
-    <AppFooter :data="appearanceData" />
+  <div id="admin-layout" class="w-full bg-gray-200 dark:bg-[#18181B]  min-h-screen ">
+
+    <Title> {{ route.meta.title || '' }}</Title>
+    <div class="flex  relative">
+      <VnwaSidebar />
+      <div class="w-full">
+        <VnwaHeader />
+
+        <main class="w-full">
+          <div class="min-h-screen py-4">
+
+            <div class="px-5">
+
+              <slot />
+            </div>
+          </div>
+          <div class="w-full ">
+
+            <VnwaFooter />
+          </div>
+        </main>
+      </div>
+    </div>
   </div>
 </template>
-
 <script lang="ts" setup>
-import '@/assets/css/client.css'
-interface AppearanceData {
-  logo_full?: string;
-  logo_icon?: string;
-  favicon?: string;
-  favicon_type?: string;
-  profile: {
-    phone: string;
-    social: {
-      label: string;
-      icon: string;
-      to: string;
-    }[];
-    tag: {
-      label: string;
-      to: string;
-    }[];
-  }
-}
-const { locale } = useI18n();
-const { data } = await useHttp('load-data-layout', {
-  method:'GET',
-  params: {
-    locale: locale
-  }
-});
-const appearanceData = await data.value as AppearanceData;
-useHead({
-  link: [
-    { rel: 'icon', type: `image/${appearanceData.favicon_type}`, href: useNuxtApp().$storage(appearanceData.favicon) }
-  ]
-});
-
+import '~/assets/css/admin.css'
+const route = useRoute()
 
 
 </script>
-
-<style></style>
+<style>
+header {
+  height: 60px;
+}
+</style>
