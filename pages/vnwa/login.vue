@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 
 definePageMeta({
-  middleware: ['guest-admin'],
+  // middleware: ['guest-admin'],
   layout: false,
 });
 

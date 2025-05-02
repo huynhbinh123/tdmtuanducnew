@@ -12,12 +12,12 @@ const userItems = [
   [
     {
       label: "Account",
-      to: "/account/general",
+      to: "/vnwa/account/general",
       icon: "i-heroicons-user",
     },
     {
       label: "Devices",
-      to: "/account/devices",
+      to: "/vnwa/account/devices",
       icon: "i-heroicons-device-phone-mobile",
     },
   ],
@@ -51,7 +51,7 @@ const isSideOpen = ref(false);
     class="h-[60px] bg-slate-950 backdrop-blur -mb-px sticky top-0 z-50 border-b border-dashed border-gray-200/80 dark:border-gray-800/80">
 
     <div class="px-3 flex items-center justify-between gap-3 h-16 py-2">
-     
+
 
       <div class="flex items-center jusitfy-between gap-4 w-full">
         <h1 class="text-white text-xl font-bold">
@@ -78,7 +78,10 @@ const isSideOpen = ref(false);
               </div>
             </template>
           </UDropdownMenu>
-          <UButton v-else label="Log In" to="/login" variant="ghost" color="neutral" />
+          <NuxtLinkLocale v-else to="/vnwa/login">
+            <UButton label="Log In"  variant="ghost" color="neutral" />
+          </NuxtLinkLocale>
+
 
           <UDrawer v-model:open="isSideOpen" direction="right">
             <UButton class="lg:hidden" variant="ghost" color="neutral" icon="i-heroicons-bars-3" />

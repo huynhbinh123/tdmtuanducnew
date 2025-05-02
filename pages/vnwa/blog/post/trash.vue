@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="flex items-center justify-start">
-      <NuxtLinkLocale to="/blog/post/list">
+      <NuxtLinkLocale to="/vnwa/blog/post/list">
 
         <UButton  color="neutral" variant="subtle" label="Back To Post Manager"/>
       </NuxtLinkLocale>

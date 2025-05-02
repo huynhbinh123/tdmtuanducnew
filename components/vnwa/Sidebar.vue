@@ -5,63 +5,63 @@ const items = computed(() => {
   return [
     [
       {
-        label: t('dashboard'),
+        label: t('vnwa.dashboard'),
         icon: 'i-heroicons-solid:home',
-        to: localePath('/dashboard'),  // Dùng localePath
+        to: localePath('/vnwa/dashboard'),  // Dùng localePath
       },
       // {
-      //   label: t('project_manager'),
+      //   label: t('vnwa.project_manager'),
       //   icon: 'i-lucide-box',
       //   children: [
       //     {
-      //       label: t('project'),
-      //       to: localePath('/project-manager/project'),  // Dùng localePath
+      //       label: t('vnwa.project'),
+      //       to: localePath('/vnwa/project-manager/project'),  // Dùng localePath
       //     },
 
       //   ],
       // },
       {
-        label: t('tag_manager'),
+        label: t('vnwa.tag_manager'),
         icon: 'heroicons:tag-20-solid',
-        to: localePath('/tag/list'),  // Dùng localePath
+        to: localePath('/vnwa/tag/list'),  // Dùng localePath
       },
       {
-        label: t('blog_manager'),
+        label: t('vnwa.blog_manager'),
         icon: 'material-symbols:newspaper',
         children: [
           {
-            label: t('category'),
-            to: localePath('/blog/categories'),  // Dùng localePath
+            label: t('vnwa.category'),
+            to: localePath('/vnwa/blog/categories'),  // Dùng localePath
           },
           {
-            label: t('post'),
-            to: localePath('/blog/post/list'),  // Dùng localePath
+            label: t('vnwa.post'),
+            to: localePath('/vnwa/blog/post/list'),  // Dùng localePath
           },
         ],
       },
 
 
       {
-        label: t('sidebarVMedia'),
+        label: t('vnwa.sidebarVMedia'),
         icon: 'material-symbols:folder-managed',
-        to: localePath('/vmedia'),  // Dùng localePath
+        to: localePath('/vnwa/vmedia'),  // Dùng localePath
       },
       {
-        label: t('contact'),
+        label: t('vnwa.contact'),
         icon: 'material-symbols:stacked-email-rounded',
-        to: localePath('/contacts'),  // Dùng localePath
+        to: localePath('/vnwa/contacts'),  // Dùng localePath
       },
       {
-        label: t('appearance'),
+        label: t('vnwa.appearance'),
         icon: 'i-lucide-box',
         children: [
           {
-            label: t('web_manager'),
-            to: localePath('/appearance/web-manager'),  // Dùng localePath
+            label: t('vnwa.web_manager'),
+            to: localePath('/vnwa/appearance/web-manager'),  // Dùng localePath
           },
           {
-            label: t('home_page_manager'),
-            to: localePath('/appearance/home-page'),  // Dùng localePath
+            label: t('vnwa.home_page_manager'),
+            to: localePath('/vnwa/appearance/home-page'),  // Dùng localePath
           },
         ],
       },

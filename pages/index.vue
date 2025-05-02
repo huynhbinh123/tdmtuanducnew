@@ -1,7 +1,11 @@
-<script setup lang="ts">
-definePageMeta({
-  redirect: '/dashboard'
-})
+<template>
+  <div>
+    heee
+  </div>
+</template>
+
+<script lang="ts" setup>
+
 </script>
 
-<template></template>
+<style></style>

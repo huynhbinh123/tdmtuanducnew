@@ -3,6 +3,6 @@ export default defineNuxtRouteMiddleware((to, from) => {
 
   if (auth.logged && auth.hasRole('admin')) {
 
-    return navigateTo('/');
+    return navigateTo('/vnwa/dashboard');
   }
 })

@@ -27,9 +27,9 @@
             <template #item-operation="{ id, name }">
                 <div class="flex items-center justify-center gap-4 py-2">
                     <UButton @click="restoreItem(id, name)" size="sm"
-                        icon="heroicons:arrow-path-rounded-square-20-solid" :label="$t('restore')" color="success"
+                        icon="heroicons:arrow-path-rounded-square-20-solid" :label="$t('vnwa.restore')" color="success"
                         variant="solid" />
-                    <UButton @click="deleteItem(id, name)" size="sm" icon="heroicons:trash" :label="$t('remove')"
+                    <UButton @click="deleteItem(id, name)" size="sm" icon="heroicons:trash" :label="$t('vnwa.remove')"
                         color="error" variant="solid" />
                 </div>
             </template>
@@ -54,9 +54,9 @@ const props = defineProps<{
 }>();
 
 const headers: Header[] = [
-    { text: t('name'), value: "name" },
-    { text: t('deleted_at') || 'Deleted At', value: "deleted_at", sortable: true },
-    { text: t('action') || "Action", value: "operation" },
+    { text: t('vnwa.name'), value: "name" },
+    { text: t('vnwa.deleted_at') || 'Deleted At', value: "deleted_at", sortable: true },
+    { text: t('vnwa.action') || "Action", value: "operation" },
 ];
 
 const items = ref<Item[]>([]);

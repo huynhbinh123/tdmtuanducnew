@@ -1,17 +1,17 @@
 <template>
   <div>
     <div class="max-w-6xl mx-auto">
-      <VnwaCard :is-loading="isLoading">
+      <VnwaCard :is-loading="isLoading || status == 'pending'">
         <UForm ref="formRef" :validate="validate" :state="formData" class="space-y-4 relative"
           @submit.prevent="onSubmit" @error="onError">
           <div
             class="flex items-center justify-between px-3 py-2 border border-gray-200 dark:border-gray-700 sticky top-16 z-10 right-0 bg-white dark:bg-gray-900 w-full ">
             <div>
               <h3 class="text-xl font-semibold text-vnwa dark:text-white">
-                {{ t('create_tag') }}
+                {{ t('vnwa.edit_tag') }}
               </h3>
             </div>
-            <UButton type="submit" :label="$t('save')" :loading="isLoading" icon="mdi:content-save" />
+            <UButton type="submit" :label="$t('vnwa.save')" :loading="isLoading" icon="mdi:content-save" />
           </div>
 
 
@@ -41,8 +41,9 @@ import type { FormError, FormErrorEvent } from '@nuxt/ui';
 import type { BaseFormType } from '~/type';
 
 definePageMeta({
-  title: 'Create Tag'
+  title: 'Update Tag'
 })
+const route = useRoute();
 const { t, locale } = useI18n();
 const toast = useToast();
 const errors = ref<FormError[]>([]);
@@ -59,15 +60,21 @@ const formData = reactive({
   desc: '',
   content: '',
 })
-const reset = () => {
-  formData.base.name = ''
-  formData.base.slug = ''
-  formData.base.meta_title = ''
-  formData.base.meta_image = ''
-  formData.base.meta_desc = ''
-  formData.desc = ''
-  formData.content = ''
-}
+
+
+const { refresh, status } = useHttp('vnwa/tag/detail/' + route.params.id, {
+  onResponse({ response }) {
+    if (response.ok) {
+      formData.base.name = response._data.name
+      formData.base.slug = response._data.slug
+      formData.base.meta_title = response._data.meta_title
+      formData.base.meta_image = response._data.meta_image
+      formData.base.meta_desc = response._data.meta_desc
+      formData.desc = response._data.desc
+      formData.content = response._data.content
+    }
+  }
+});
 
 const handleErrors = (newErrors: FormError[]) => {
   errors.value = newErrors;
@@ -96,22 +103,22 @@ async function onError(event: FormErrorEvent) {
 }
 const validate = (state: any): FormError[] => {
   if (!state.base.name || state.base.name.length > 500) {
-    errors.value.push({ name: 'name', message: t('error_message.name.required') });
+    errors.value.push({ name: 'name', message: t('vnwa.error_message.name.required') });
   }
   if (!state.base.slug || state.base.slug.length > 500) {
-    errors.value.push({ name: 'slug', message: t('error_message.slug.required') });
+    errors.value.push({ name: 'slug', message: t('vnwa.error_message.slug.required') });
   }
 
   // if (!state.base.meta_title || state.base.meta_title.length > 100) {
-  //   errors.value.push({ name: 'meta_title', message: t('error_message.meta.title') });
+  //   errors.value.push({ name: 'meta_title', message: t('vnwa.error_message.meta.title') });
   // }
 
   // if (!state.base.meta_desc || state.base.meta_desc.length > 300) {
-  //   errors.value.push({ name: 'meta_desc', message: t('error_message.meta.desc') });
+  //   errors.value.push({ name: 'meta_desc', message: t('vnwa.error_message.meta.desc') });
   // }
 
   // if (!state.base.meta_image || state.base.meta_image.length < 5) {
-  //   errors.value.push({ name: 'meta_image', message: t('error_message.meta.image') });
+  //   errors.value.push({ name: 'meta_image', message: t('vnwa.error_message.meta.image') });
   // }
 
 
@@ -133,7 +140,7 @@ const onSubmit = async () => {
 
   }
 
-  await useHttp('/vnwa/tag/store', {
+  await useHttp('/vnwa/tag/update/' + route.params.id, {
     method: 'POST',
     query: {
       locale: locale.value
@@ -146,8 +153,13 @@ const onSubmit = async () => {
           title: response._data.message || 'Lưu thành công!',
           color: "success",
         });
-        // Làm mới tree và form
-        reset();
+        formData.base.name = response._data.tag.name
+        formData.base.slug = response._data.tag.slug
+        formData.base.meta_title = response._data.tag.meta_title
+        formData.base.meta_image = response._data.tag.meta_image
+        formData.base.meta_desc = response._data.tag.meta_desc
+        formData.desc = response._data.tag.desc
+        formData.content = response._data.tag.content
 
 
       } else {

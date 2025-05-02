@@ -8,7 +8,7 @@
             class="flex items-center justify-between px-3 py-2 border border-gray-200 dark:border-gray-700 sticky top-16 z-10 right-0 bg-white dark:bg-gray-900 w-full ">
             <div>
               <h3 class="text-xl font-semibold text-vnwa dark:text-white">
-                {{ t('edit_post') }}
+                {{ t('vnwa.edit_post') }}
               </h3>
             </div>
             <div class="flex items-center justify-end gap-6">
@@ -16,7 +16,7 @@
                 <USelect v-model="formData.status" :items="['draft', 'published']" class="w-48 capitalize" />
 
               </UFormField>
-              <UButton type="submit" :label="$t('save')" :loading="isLoading" icon="mdi:content-save" />
+              <UButton type="submit" :label="$t('vnwa.save')" :loading="isLoading" icon="mdi:content-save" />
             </div>
           </div>
 
@@ -54,14 +54,14 @@
             <div class="col-span-4 space-y-8">
               <UCard>
                 <template #header>
-                  <h3 class="text-lg font-semibold">{{ $t('category') }} </h3>
+                  <h3 class="text-lg font-semibold">{{ $t('vnwa.category') }} </h3>
                 </template>
                 <VnwaTreeView :tree-data="treeCategoryData" v-model="checkedCategoryIds" />
 
               </UCard>
               <UCard>
                 <template #header>
-                  <h3 class="text-lg font-semibold">{{ $t('tag') }} </h3>
+                  <h3 class="text-lg font-semibold">{{ $t('vnwa.tag') }} </h3>
                 </template>
                 <USelectMenu v-model="tagIds" value-key="id" label-key="name" multiple :items="tagItems" class="" />
 
@@ -180,28 +180,28 @@ async function onError(event: FormErrorEvent) {
 }
 const validate = (state: any): FormError[] => {
   if (!state.base.name) {
-    errors.value.push({ name: 'name', message: t('error_message.name.required') });
+    errors.value.push({ name: 'name', message: t('vnwa.error_message.name.required') });
   }
 
   if (state.base.name.length > 10 && state.base.name.length < 70) {
-    errors.value.push({ name: 'name', message: t('error_message.name.required') });
+    errors.value.push({ name: 'name', message: t('vnwa.error_message.name.required') });
 
   }
 
   if (!state.base.slug || state.base.slug.length > 500) {
-    errors.value.push({ name: 'slug', message: t('error_message.slug.required') });
+    errors.value.push({ name: 'slug', message: t('vnwa.error_message.slug.required') });
   }
 
   // if (!state.base.meta_title || state.base.meta_title.length > 100) {
-  //   errors.value.push({ name: 'meta_title', message: t('error_message.meta.title') });
+  //   errors.value.push({ name: 'meta_title', message: t('vnwa.error_message.meta.title') });
   // }
 
   // if (!state.base.meta_desc || state.base.meta_desc.length > 300) {
-  //   errors.value.push({ name: 'meta_desc', message: t('error_message.meta.desc') });
+  //   errors.value.push({ name: 'meta_desc', message: t('vnwa.error_message.meta.desc') });
   // }
 
   // if (!state.base.meta_image || state.base.meta_image.length < 5) {
-  //   errors.value.push({ name: 'meta_image', message: t('error_message.meta.image') });
+  //   errors.value.push({ name: 'meta_image', message: t('vnwa.error_message.meta.image') });
   // }
 
 

@@ -1,83 +1,85 @@
 {
-    "vmedia": {
-        "create_folder": "Create Folder",
-        "selected_action": "Selected Action",
-        "preview": "preview",
-        "crop": "crop",
-        "rename": "rename",
-        "move_to_trash": "move to trash",
-        "view": "view",
-        "delete": "delete"
-    },
-    "error_message": {
-        "name": {
-            "required": "The name field is required.",
-            "min": "The name is too short.",
-            "max": "The name is too long."
+    "vnwa": {
+        "vmedia": {
+            "create_folder": "Create Folder",
+            "selected_action": "Selected Action",
+            "preview": "preview",
+            "crop": "crop",
+            "rename": "rename",
+            "move_to_trash": "move to trash",
+            "view": "view",
+            "delete": "delete"
         },
-        "slug": {
-            "required": "The slug field is required.",
-            "invalid": "The slug must only contain lowercase letters, numbers, and dashes.",
-            "taken": "This slug is already taken."
+        "error_message": {
+            "name": {
+                "required": "The name field is required.",
+                "min": "The name is too short.",
+                "max": "The name is too long."
+            },
+            "slug": {
+                "required": "The slug field is required.",
+                "invalid": "The slug must only contain lowercase letters, numbers, and dashes.",
+                "taken": "This slug is already taken."
+            },
+            "meta": {
+                "title": "The meta title cannot be empty and must be up to 100 characters",
+                "desc": "Meta description cannot be empty and must be maximum 300 characters",
+                "image": "Meta image cannot be empty"
+            }
         },
         "meta": {
-            "title": "The meta title cannot be empty and must be up to 100 characters",
-            "desc": "Meta description cannot be empty and must be maximum 300 characters",
-            "image": "Meta image cannot be empty"
-        }
-    },
-    "meta": {
-        "title": {
-            "label": "Meta Title",
-            "description": "Recommended length: 50-60 characters. Include relevant keywords and be descriptive. Should accurately represent the content of the page."
+            "title": {
+                "label": "Meta Title",
+                "description": "Recommended length: 50-60 characters. Include relevant keywords and be descriptive. Should accurately represent the content of the page."
+            },
+            "desc": {
+                "label": "Meta Description",
+                "description": "Provide a brief description for SEO. Ideally, between 120-160 characters."
+            },
+            "image": {
+                "label": "Meta Image",
+                "description": "Recommended image size: 1200x630 pixels. Ensure the image is optimized for SEO with the following tips:\n1. File format: JPEG, PNG, or WebP\n2. File size: Under 100 KB for faster loading\n3. Use high-quality images with clear details\n4."
+            }
         },
-        "desc": {
-            "label": "Meta Description",
-            "description": "Provide a brief description for SEO. Ideally, between 120-160 characters."
-        },
-        "image": {
-            "label": "Meta Image",
-            "description": "Recommended image size: 1200x630 pixels. Ensure the image is optimized for SEO with the following tips:\n1. File format: JPEG, PNG, or WebP\n2. File size: Under 100 KB for faster loading\n3. Use high-quality images with clear details\n4."
-        }
-    },
-    "name": "Name",
-    "remove_selected": "Remove Selected",
-    "created_at": "Created At",
-    "updated_at": "Updated At",
-    "sidebarVMedia": "Vmedia",
-    "tag": "Tag",
-    "create_tag": "Create Tag",
-    "edit_tag": "Edit Tag",
-    "tag_manager": "Tag Manager",
-    "project_manager": "Project Manager",
-    "blog_manager": "Blog Manager",
-    "post": "Post",
-    "project": "Project",
-    "confirm_delete_category": "Are you sure you want to delete the category {name} ?",
-    "confirm_delete": "Confirm Remove",
-    "delete_category": "Delete Category",
-    "blog category": "Blog Category",
-    "category": "Category",
-    "dashboard": "dashboard",
-    "contact": "contact",
-    "appearance": "appearance",
-    "web_manager": "web manager",
-    "home_page_manager": "home page manager",
-    "save": "Save",
-    "add_link": "Add Link",
-    "edit": "Edit",
-    "remove": "Remove",
-    "remove_items": "Remove Items",
-    "confirm_remove_items": "Are you sure you want to remove {count} item(s)?",
-    "remove_child_items": "Remove Child Items",
-    "confirm_remove": "Confirm Remove",
-    "move_to_trash": "Move to Trash",
-    "move_to_trash_desc": "Items will be moved to trash and can be restored later.",
-    "permanent_delete_desc": "Warning: Items will be permanently deleted and cannot be restored.",
-    "create_post": "Create Post",
-    "edit_post": "Edit Post",
-    "deleted_at":"Remove At",
-    "restore_items": "Restore Items",
-    "confirm_restore_items": "Are you sure you want to restore {count} item(s)?",
-    "confirm_restore": "Confirm Restore"
+        "name": "Name",
+        "remove_selected": "Remove Selected",
+        "created_at": "Created At",
+        "updated_at": "Updated At",
+        "sidebarVMedia": "Vmedia",
+        "tag": "Tag",
+        "create_tag": "Create Tag",
+        "edit_tag": "Edit Tag",
+        "tag_manager": "Tag Manager",
+        "project_manager": "Project Manager",
+        "blog_manager": "Blog Manager",
+        "post": "Post",
+        "project": "Project",
+        "confirm_delete_category": "Are you sure you want to delete the category {name} ?",
+        "confirm_delete": "Confirm Remove",
+        "delete_category": "Delete Category",
+        "blog category": "Blog Category",
+        "category": "Category",
+        "dashboard": "dashboard",
+        "contact": "contact",
+        "appearance": "appearance",
+        "web_manager": "web manager",
+        "home_page_manager": "home page manager",
+        "save": "Save",
+        "add_link": "Add Link",
+        "edit": "Edit",
+        "remove": "Remove",
+        "remove_items": "Remove Items",
+        "confirm_remove_items": "Are you sure you want to remove {count} item(s)?",
+        "remove_child_items": "Remove Child Items",
+        "confirm_remove": "Confirm Remove",
+        "move_to_trash": "Move to Trash",
+        "move_to_trash_desc": "Items will be moved to trash and can be restored later.",
+        "permanent_delete_desc": "Warning: Items will be permanently deleted and cannot be restored.",
+        "create_post": "Create Post",
+        "edit_post": "Edit Post",
+        "deleted_at": "Remove At",
+        "restore_items": "Restore Items",
+        "confirm_restore_items": "Are you sure you want to restore {count} item(s)?",
+        "confirm_restore": "Confirm Restore"
+    }
 }

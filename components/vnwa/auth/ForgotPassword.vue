@@ -48,7 +48,7 @@ const { refresh: onSubmit, status: forgotStatus } = useHttp<any>("forgot-passwor
     </UForm>
 
     <div class="text-sm">
-      <NuxtLinkLocale class="text-sm" to="/login">Back to Log In</NuxtLinkLocale>
+      <NuxtLinkLocale class="text-sm" to="/vnwa/login">Back to Log In</NuxtLinkLocale>
     </div>
   </div>
 </template>

@@ -49,11 +49,11 @@ const handleSubmit = async () => {
 </script>
 
 <template>
-    <UModal :title="$t('remove_items')">
+    <UModal :title="$t('vnwa.remove_items')">
         <template #body>
             <div class="space-y-4 text-gray-800 dark:text-gray-200">
                 <p>
-                    {{ $t('confirm_remove_items', { count: props.items.length }) }}
+                    {{ $t('vnwa.confirm_remove_items', { count: props.items.length }) }}
                 </p>
 
                 <!-- Danh sách item -->
@@ -66,12 +66,12 @@ const handleSubmit = async () => {
 
                 <div v-if="isTrashOption">
                     <USwitch v-model="isTrash" checked-icon="i-lucide-trash" color="neutral" unchecked-icon="i-lucide-x"
-                        :label="$t('move_to_trash')" />
+                        :label="$t('vnwa.move_to_trash')" />
                     <p class="text-sm text-gray-500 dark:text-gray-400">
                         {{
                             isTrash
-                                ? $t('move_to_trash_desc')
-                                : $t('permanent_delete_desc')
+                                ? $t('vnwa.move_to_trash_desc')
+                                : $t('vnwa.permanent_delete_desc')
                         }}
                     </p>
                 </div>
@@ -83,7 +83,7 @@ const handleSubmit = async () => {
 
         <template #footer>
             <div class="flex items-center justify-end w-full space-x-2">
-                <UButton :disabled="isLoading" @click="handleSubmit" :label="$t('confirm_remove')"
+                <UButton :disabled="isLoading" @click="handleSubmit" :label="$t('vnwa.confirm_remove')"
                     icon="heroicons:trash" color="error" variant="solid" />
             </div>
         </template>

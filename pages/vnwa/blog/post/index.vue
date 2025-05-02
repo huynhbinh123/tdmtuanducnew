@@ -1,6 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
-  redirect: '/tag/list'
+  redirect: '/vnwa/blog/post/list'
 })
 </script>
 

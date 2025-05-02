@@ -1,8 +1,8 @@
 export default defineNuxtRouteMiddleware((to) => {
   const auth = useAuthStore();
 
-  if (to.path === '/login') return;
-  if (!auth.logged ) {
+  if (to.path === '/vnwa/login') return;
+  if (!auth.logged) {
     const toast = useToast();
 
     if (process.client) {
@@ -12,6 +12,7 @@ export default defineNuxtRouteMiddleware((to) => {
         color: "error",
       });
     }
-    return navigateTo(`/login?redirect=${encodeURIComponent(to.fullPath)}`);
+    return navigateTo(`/vnwa/login`);
+    // return navigateTo(`/vnwa/login?redirect=${encodeURIComponent(to.fullPath)}`);
   }
 });

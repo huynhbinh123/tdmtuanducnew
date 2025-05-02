@@ -10,6 +10,6 @@ export default defineNuxtRouteMiddleware((to, from) => {
       color: "error",
     });
 
-    return navigateTo('/account/general');
+    return navigateTo('/vnwa/account/general');
   }
 })

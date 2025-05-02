@@ -4,7 +4,7 @@
             class="flex items-center justify-between px-3 py-2 border border-gray-200 dark:border-gray-700  bg-white dark:bg-gray-900 w-full mb-4 ">
             <div>
                 <h3 class="text-xl font-semibold text-vnwa dark:text-white capitalize">
-                    {{ $t(subData.name) }}
+                    {{ $t(`vnwa.${subData.name}`) }}
                 </h3>
             </div>
             <div class="flex items-center justify-end gap-2">

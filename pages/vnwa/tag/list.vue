@@ -4,7 +4,7 @@
             <div></div>
             <div class="flex items-center justify-end gap-4">
                 <UPopover>
-                    <UButton :disabled="selectedItems.length <= 0" color="neutral" :label="$t('vmedia.selected_action')"
+                    <UButton :disabled="selectedItems.length <= 0" color="neutral" :label="$t('vnwa.vmedia.selected_action')"
                         icon="i-fa6-solid:hand-pointer" />
 
                     <template #content>
@@ -12,7 +12,7 @@
 
                             <li>
                                 <UButton @click="deleteSelected()" color="neutral" variant="ghost"
-                                    icon="heroicons:trash" class="w-full" :label="$t('vmedia.move_to_trash')" />
+                                    icon="heroicons:trash" class="w-full" :label="$t('vnwa.vmedia.move_to_trash')" />
                             </li>
 
                         </ul>
@@ -20,7 +20,7 @@
                 </UPopover>
                 <UButton :loading="status === 'pending'" @click="refresh()" color="vnwa" label="Refresh"
                     icon="i-fa6-solid:rotate" />
-                <NuxtLinkLocale to="/tag/create">
+                <NuxtLinkLocale to="/vnwa/tag/create">
 
                     <UButton :loading="status === 'pending'" color="info" label="Create" icon="i-fa6-solid:plus" />
                 </NuxtLinkLocale>
@@ -38,11 +38,11 @@
             </template>
             <template #item-operation="{ id, name }">
                 <div class="flex items-center justify-center gap-4 py-2">
-                    <NuxtLinkLocale :to="`/tag/edit-${id}`">
+                    <NuxtLinkLocale :to="`/vnwa/tag/edit-${id}`">
 
-                        <UButton size="sm" icon="heroicons:pencil-square" :label="$t('edit')" color="warning" />
+                        <UButton size="sm" icon="heroicons:pencil-square" :label="$t('vnwa.edit')" color="warning" />
                     </NuxtLinkLocale>
-                    <UButton @click="deleteItem(id, name)" size="sm" icon="heroicons:trash" :label="$t('remove')"
+                    <UButton @click="deleteItem(id, name)" size="sm" icon="heroicons:trash" :label="$t('vnwa.remove')"
                         color="error" variant="solid" />
                 </div>
             </template>
@@ -66,8 +66,8 @@ const overlay = useOverlay()
 const { t } = useI18n();
 
 const headers: Header[] = [
-    { text: t('name'), value: "name", sortable: true },
-    { text: t('created_at'), value: "created_at", sortable: true },
+    { text: t('vnwa.name'), value: "name", sortable: true },
+    { text: t('vnwa.created_at'), value: "created_at", sortable: true },
     { text: "Action", value: "operation" },
 ];
 const items = ref<Item[]>([]);

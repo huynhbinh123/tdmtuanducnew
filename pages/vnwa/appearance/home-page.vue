@@ -83,7 +83,7 @@
         <VnwaMetaSeoForm :meta="appearanceData.meta" @update:errors="handleErrors" />
 
         <UButton type="submit" icon="mdi:content-save" :loading="appearanceUpdateStatus == 'pending'">
-          {{$t('save')}}
+          {{$t('vnwa.save')}}
         </UButton>
       </UForm>
 

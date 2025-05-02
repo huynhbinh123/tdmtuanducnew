@@ -50,11 +50,11 @@ const handleSubmit = async () => {
 </script>
 
 <template>
-    <UModal :title="$t('restore_items')">
+    <UModal :title="$t('vnwa.restore_items')">
         <template #body>
             <div class="space-y-4 text-gray-800 dark:text-gray-200">
                 <p>
-                    {{ $t('confirm_restore_items', { count: props.items.length }) }}
+                    {{ $t('vnwa.confirm_restore_items', { count: props.items.length }) }}
                 </p>
 
                 <!-- Danh sách item -->
@@ -69,7 +69,7 @@ const handleSubmit = async () => {
 
         <template #footer>
             <div class="flex items-center justify-end w-full space-x-2">
-                <UButton :disabled="isLoading" @click="handleSubmit" :label="$t('confirm_restore')"
+                <UButton :disabled="isLoading" @click="handleSubmit" :label="$t('vnwa.confirm_restore')"
                     icon="heroicons:arrow-path" color="primary" variant="solid" />
             </div>
         </template>

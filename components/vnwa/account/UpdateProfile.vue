@@ -103,7 +103,7 @@ const { refresh: onSubmit, status: accountUpdateStatus } = useHttp<any>("account
     />
 
     <div class="pt-2">
-      <UButton type="submit" :label="$t('save')" :loading="accountUpdateStatus === 'pending'" />
+      <UButton type="submit" :label="$t('vnwa.save')" :loading="accountUpdateStatus === 'pending'" />
     </div>
   </UForm>
 </template>

@@ -26,24 +26,24 @@
             <div class="space-y-4">
                 <!-- Meta Image -->
                 <div>
-                    <UFormField :label="$t('meta.image.label')" name="meta_image"
-                        :description="$t('meta.image.description')">
+                    <UFormField :label="$t('vnwa.meta.image.label')" name="meta_image"
+                        :description="$t('vnwa.meta.image.description')">
                         <VnwaInputImage :resize="[1200, 630]" v-model="data.meta_image" />
                     </UFormField>
                 </div>
 
 
                 <div>
-                    <UFormField :label="$t('meta.title.label')" name="meta_title"
-                        :description="$t('meta.title.description')">
+                    <UFormField :label="$t('vnwa.meta.title.label')" name="meta_title"
+                        :description="$t('vnwa.meta.title.description')">
                         <UInput v-model="data.meta_title" />
                     </UFormField>
                 </div>
 
                 <!-- Meta Description -->
                 <div>
-                    <UFormField :label="$t('meta.desc.label')" name="meta_desc"
-                        :description="$t('meta.desc.description')">
+                    <UFormField :label="$t('vnwa.meta.desc.label')" name="meta_desc"
+                        :description="$t('vnwa.meta.desc.description')">
                         <UTextarea v-model="data.meta_desc" />
                     </UFormField>
                 </div>

@@ -44,10 +44,10 @@ const handleSubmit = async () => {
 </script>
 
 <template>
-    <UModal :title="$t('delete_category')">
+    <UModal :title="$t('vnwa.delete_category')">
         <template #body>
             <div class="space-y-4 text-gray-800 dark:text-gray-200">
-                <p>{{ $t('confirm_delete_category', { name: props.name }) }} </p>
+                <p>{{ $t('vnwa.confirm_delete_category', { name: props.name }) }} </p>
 
                 <USwitch unchecked-icon="i-lucide-x" checked-icon="i-lucide-check" v-model="isRemoveChild"
                     label="Remove Child" />
@@ -56,7 +56,7 @@ const handleSubmit = async () => {
 
         <template #footer>
             <div class="flex items-center justify-end  w-full space-x-2">
-                <UButton :disabled="isLoading" @click="handleSubmit" :label="$t('confirm_delete')"
+                <UButton :disabled="isLoading" @click="handleSubmit" :label="$t('vnwa.confirm_delete')"
                     icon="heroicons:trash" color="error" variant="solid" />
             </div>
         </template>

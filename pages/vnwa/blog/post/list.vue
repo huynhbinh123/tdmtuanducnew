@@ -2,7 +2,7 @@
   <div>
     <div class="flex items-center justify-between gap-4 py-3">
       <div class="flex items-center justify-start">
-        <NuxtLinkLocale  to="/blog/post/trash">
+        <NuxtLinkLocale  to="/vnwa/blog/post/trash">
 
           <UButton color="error" variant="outline" :label="`Trash (${totalTrash})`"
           icon="material-symbols:delete-sweep-outline" />
@@ -10,7 +10,7 @@
       </div>
       <div class="flex items-center justify-end gap-4">
         <UPopover>
-          <UButton :disabled="selectedItems.length <= 0" color="neutral" :label="$t('vmedia.selected_action')"
+          <UButton :disabled="selectedItems.length <= 0" color="neutral" :label="$t('vnwa.vmedia.selected_action')"
             icon="i-fa6-solid:hand-pointer" />
 
           <template #content>
@@ -18,7 +18,7 @@
 
               <li>
                 <UButton @click="deleteSelected()" color="neutral" variant="ghost" icon="heroicons:trash" class="w-full"
-                  :label="$t('vmedia.move_to_trash')" />
+                  :label="$t('vnwa.vmedia.move_to_trash')" />
               </li>
 
             </ul>
@@ -26,8 +26,11 @@
         </UPopover>
         <UButton :loading="status === 'pending'" @click="refresh()" color="vnwa" label="Refresh"
           icon="material-symbols:rotate-left" />
-        <UButton :loading="status === 'pending'" to="/blog/post/create" color="info" label="Create"
-          icon="material-symbols:add-2" />
+          <NuxtLinkLocale  to="/vnwa/blog/post/create">
+
+            <UButton :loading="status === 'pending'" color="info" label="Create"
+            icon="material-symbols:add-2" />
+          </NuxtLinkLocale>
 
 
       </div>
@@ -60,12 +63,12 @@
       </template>
       <template #item-operation="{ id, name }">
         <div class="flex items-center justify-center gap-4 py-2">
-          <NuxtLinkLocale :to="`/blog/post/edit-${id}`">
+          <NuxtLinkLocale :to="`/vnwa/blog/post/edit-${id}`">
 
-            <UButton  size="sm" icon="heroicons:pencil-square" :label="$t('edit')"
+            <UButton  size="sm" icon="heroicons:pencil-square" :label="$t('vnwa.edit')"
             color="warning" />
           </NuxtLinkLocale>
-          <UButton @click="deleteItem(id, name)" size="sm" icon="heroicons:trash" :label="$t('remove')" color="error"
+          <UButton @click="deleteItem(id, name)" size="sm" icon="heroicons:trash" :label="$t('vnwa.remove')" color="error"
             variant="solid" />
         </div>
       </template>
@@ -89,12 +92,12 @@ const overlay = useOverlay()
 const { t } = useI18n();
 
 const headers: Header[] = [
-  { text: t('name'), value: "name", sortable: true },
+  { text: t('vnwa.name'), value: "name", sortable: true },
   { text: 'Tags', value: "tags", sortable: true },
   { text: 'Categories', value: "categories", sortable: true },
   { text: 'View', value: "views", sortable: true },
   { text: 'Status', value: "status" },
-  { text: t('created_at'), value: "created_at", sortable: true },
+  { text: t('vnwa.created_at'), value: "created_at", sortable: true },
   { text: "Action", value: "operation" },
 ];
 const items = ref<Item[]>([]);

@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 definePageMeta({
-  redirect: "/account/general",
+  redirect: "/vnwa/account/general",
 });
 </script>
 <template></template>

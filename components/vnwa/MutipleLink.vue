@@ -64,7 +64,7 @@ const copyItem = (index: number) => {
   <div class="space-y-4 border border-gray-300 dark:border-gray-300/50 p-4 rounded-md">
 
     <div class="flex items-center justify-end">
-      <UButton @click="addItem" :label="$t('add_link')" color="info" icon="heroicons:plus" />
+      <UButton @click="addItem" :label="$t('vnwa.add_link')" color="info" icon="heroicons:plus" />
     </div>
     <draggableComponent v-model="value" handle=".handle" item-key="index" class="space-y-3">
       <template #item="{ element, index }">
