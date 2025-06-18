@@ -46,9 +46,12 @@
     "@tiptap/extension-text-align": "^2.11.7",
     "@tiptap/extension-underline": "^2.11.7",
     "@tiptap/extension-youtube": "^2.11.7",
+    "@yeger/vue-masonry-wall": "^5.0.18",
     "nuxt-tiptap-editor": "^2.1.4",
     "sass": "^1.86.0",
+    "three": "^0.177.0",
     "tiptap-extension-resize-image": "^1.2.1",
+    "vanta": "^0.5.24",
     "vue3-easy-data-table": "^1.5.47",
     "vuedraggable": "^4.1.0"
   }

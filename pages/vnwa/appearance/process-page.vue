@@ -3,7 +3,7 @@
     <VnwaCard :is-loading="loadDataStatus == 'pending'">
       <template #header>
         <div class="">
-          <div class="text-lg font-semibold mb-2">Home Page Manger </div>
+          <div class="text-lg font-semibold mb-2">Process Page Manger </div>
         </div>
         <div class="flex items-center justify-end gap-4">
           <UButton
@@ -110,7 +110,7 @@
 import { UTextarea } from '#components';
 import type { FormError, FormSubmitEvent } from '@nuxt/ui'
 definePageMeta({
-  title: 'Home Page Manager'
+  title: 'Process Page Manager'
 })
 
 interface AppearanceData {
@@ -170,7 +170,7 @@ const params = computed(() => ({
 }));
 
 
-const { refresh, status: loadDataStatus } = await useHttp<any>("vnwa/appearance/home_page/load-data", {
+const { refresh, status: loadDataStatus } = await useHttp<any>("vnwa/appearance/process_page/load-data", {
   method: "GET",
   params: params,
   watch: [params],
@@ -201,7 +201,7 @@ const { refresh, status: loadDataStatus } = await useHttp<any>("vnwa/appearance/
   },
 });
 
-const { refresh: formSubmit, status: appearanceUpdateStatus } = useHttp<any>("vnwa/appearance/home_page/update", {
+const { refresh: formSubmit, status: appearanceUpdateStatus } = useHttp<any>("vnwa/appearance/process_page/update", {
   method: "POST",
   body: appearanceData,
   params: params,

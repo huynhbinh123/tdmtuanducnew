@@ -1,14 +1,29 @@
 <template>
   <VnwaCard :is-loading="status == 'pending'">
     <template #header>
-
-      <div class="col-span-12 lg:col-span-4">
+      <div class="">
         <div class="text-lg font-semibold mb-2">Profile </div>
         <div class="text-sm opacity-80">
           Update email, phone, address, working time,..
         </div>
 
-      </div>
+        </div>
+        <div class="flex items-center justify-end gap-4">
+          <UButton
+            icon="flag:vn-4x3"
+            :class="locale != 'vi' ? 'bg-white text-black border border-gray-400' : ''"
+            @click="locale = 'vi'"
+          >{{$t('vnwa.vietnamese')}}</UButton>
+
+
+          <UButton
+            icon="flag:gb-eng-4x3"
+            :class="locale != 'en' ? 'bg-white text-black border border-gray-400' : ''"
+            @click="locale = 'en'"
+          >{{$t('vnwa.english')}}</UButton>
+        
+        </div>
+     
     </template>
     <UForm :validate="validate" :state="appearanceData" class="space-y-4" @submit="onSubmit">
       <UCard>
@@ -91,7 +106,19 @@ const appearanceData = reactive<Partial<AppearanceData>>({
   tag: [],
 
 });
+
+const locale = ref<string>('vi');
+
+const params = computed(() => ({
+  locale: locale.value
+}));
+
+
 const { refresh, status } = useHttp<any>("vnwa/appearance/profile/load-data", {
+    method: "GET",
+  params: params,
+  watch: [params],
+  immediate: true,
   async onResponse({ response }) {
     const data = response._data?.data;
     appearanceData.phone = data.phone;
@@ -105,6 +132,7 @@ const { refresh, status } = useHttp<any>("vnwa/appearance/profile/load-data", {
 const { refresh: formSubmit, status: appearanceUpdateStatus } = useHttp<any>("vnwa/appearance/profile/update", {
   method: "POST",
   body: appearanceData,
+  params: params,
   immediate: false,
   watch: false,
   async onFetchResponse({ response }) {

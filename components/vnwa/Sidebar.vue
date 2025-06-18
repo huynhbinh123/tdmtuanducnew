@@ -63,6 +63,26 @@ const items = computed(() => {
             label: t('vnwa.home_page_manager'),
             to: localePath('/vnwa/appearance/home-page'),  // Dùng localePath
           },
+          {
+            label: t('vnwa.process_page_manager'),
+            to: localePath('/vnwa/appearance/process-page'),  // Dùng localePath
+          },
+          {
+            label: t('vnwa.about_page_manager'),
+            to: localePath('/vnwa/appearance/about-page'),  // Dùng localePath
+          },
+          {
+            label: t('vnwa.blog_page_manager'),
+            to: localePath('/vnwa/appearance/blog-page'),  // Dùng localePath
+          },
+          {
+            label: t('vnwa.project_page_manager'),
+            to: localePath('/vnwa/appearance/project-page'),  // Dùng localePath
+          },
+          {
+            label: t('vnwa.contact_page_manager'),
+            to: localePath('/vnwa/appearance/contact-page'),  // Dùng localePath
+          },
         ],
       },
     ]

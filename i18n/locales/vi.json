@@ -1,5 +1,7 @@
 {
   "vnwa": {
+    "vietnamese": "Tiếng Việt",
+    "english": "Tiếng Anh",
     "vmedia": {
       "create_folder": "Tạo thư mục",
       "selected_action": "Hành động đã chọn",
@@ -64,6 +66,11 @@
     "appearance": "Giao diện",
     "web_manager": "Quản lý web",
     "home_page_manager": "Quản lý trang chủ",
+    "about_page_manager": "Quản lý trang giới thiệu",
+    "contact_page_manager": "Quản lý trang liên hệ",
+    "blog_page_manager": "Quản lý trang bài viết",
+    "project_page_manager": "Quản lý trang dự án",
+    "process_page_manager": "Quản lý trang quy trình",
     "save": "Lưu",
     "add_link": "Thêm liên kết",
     "edit": "Sửa",

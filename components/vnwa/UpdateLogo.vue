@@ -2,13 +2,28 @@
   <VnwaCard :is-loading="status == 'pending'">
     <template #header>
 
-      <div class="col-span-12 lg:col-span-4">
+      <div class="">
         <div class="text-lg font-semibold mb-2">Logo </div>
         <div class="text-sm opacity-80">
           Update logo and favicon
         </div>
 
       </div>
+      <div class="flex items-center justify-end gap-4">
+          <UButton
+            icon="flag:vn-4x3"
+            :class="locale != 'vi' ? 'bg-white text-black border border-gray-400' : ''"
+            @click="locale = 'vi'"
+          >{{$t('vnwa.vietnamese')}}</UButton>
+
+
+          <UButton
+            icon="flag:gb-eng-4x3"
+            :class="locale != 'en' ? 'bg-white text-black border border-gray-400' : ''"
+            @click="locale = 'en'"
+          >{{$t('vnwa.english')}}</UButton>
+        
+        </div>
     </template>
 
     <div class="col-span-12 lg:col-span-8">
@@ -59,7 +74,21 @@ const appearanceData = reactive({
   logo_icon: '',
   favicon: '',
 });
+
+
+
+const locale = ref<string>('vi');
+
+const params = computed(() => ({
+  locale: locale.value
+}));
+
+
 const { refresh, status } = useHttp<any>("vnwa/appearance/logo/load-data", {
+    method: "GET",
+  params: params,
+  watch: [params],
+  immediate: true,
   async onResponse({ response }) {
     const data = response._data?.data;
     appearanceData.logo_full = response._data?.data.logo_full;
@@ -73,6 +102,7 @@ const { refresh, status } = useHttp<any>("vnwa/appearance/logo/load-data", {
 const { refresh: onSubmit, status: appearanceUpdateStatus } = useHttp<any>("vnwa/appearance/logo/update", {
   method: "POST",
   body: appearanceData,
+  params: params,
   immediate: false,
   watch: false,
   async onFetchResponse({ response }) {

@@ -1,5 +1,7 @@
 {
     "vnwa": {
+        "vietnamese": "Vietnamese",
+        "english": "English",
         "vmedia": {
             "create_folder": "Create Folder",
             "selected_action": "Selected Action",
@@ -64,6 +66,11 @@
         "appearance": "appearance",
         "web_manager": "web manager",
         "home_page_manager": "home page manager",
+        "about_page_manager": "about page manager",
+        "contact_page_manager": "contact page manager",
+        "blog_page_manager": "blog page manager",
+        "project_page_manager": "project page manager",
+        "process_page_manager": "process page manager",
         "save": "Save",
         "add_link": "Add Link",
         "edit": "Edit",

@@ -49,7 +49,7 @@ export default defineNuxtConfig({
       { code: 'en', name: 'English', file: 'en.json' },
       { code: 'vi', name: 'Tiếng Việt', file: 'vi.json' }
     ],
-    strategy: 'prefix_except_default',
+    strategy: 'prefix_and_default',
 
     detectBrowserLanguage: {
       useCookie: true,
