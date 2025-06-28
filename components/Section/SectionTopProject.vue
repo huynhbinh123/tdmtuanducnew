@@ -14,7 +14,7 @@ const dataTopProject = []
     <div class="grid grid-cols-12 gap-4 w-full  md:py-20 py-10">
       <div class="xl:col-span-4 col-span-12 xl:text-start  flex xl:justify-start justify-center  items-top  pt-5">
         <div>
-          <h3 class="section-text ">Featured Projects
+          <h3 class=" ">Featured Projects
           </h3>
           <NuxtLinkLocale :to="'/'">
           <h5 class="text-white/50 section-sub-text  inline-block md:mt-6 mt-3  add-transition hover:text-white ">

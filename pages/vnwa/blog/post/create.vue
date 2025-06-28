@@ -56,18 +56,17 @@
                 <template #header>
                   <h3 class="text-lg font-semibold">{{ $t('vnwa.category') }} </h3>
                 </template>
-                <VnwaTreeView :tree-data="treeCategoryData" v-model="checkedCategoryIds" />
-
+                <VnwaBlogCategoryOptions v-model="checkedCategoryIds" />
               </UCard>
               <UCard>
                 <template #header>
                   <h3 class="text-lg font-semibold">{{ $t('vnwa.tag') }} </h3>
                 </template>
-                <USelectMenu v-model="tagIds" value-key="id" label-key="name" multiple :items="tagItems" class="" />
+                <VnwaTagOptions v-model="tagIds" />
 
               </UCard>
             </div>
-          </div> 
+          </div>
 
 
         </UForm>
@@ -106,19 +105,9 @@ const formData = reactive({
   is_highlight: false,
 
 })
-const tagItems = ref();
-const tagIds = ref();
-const checkedCategoryIds = ref([1, 2])  // Khởi tạo giá trị checkedIds mặc định
-const treeCategoryData = ref([]);
-const { refresh, status } = useHttp('vnwa/blog/post/load-data-tree-categories-and-tags', {
-  onResponse({ response }) {
-    if (response.ok) {
-      treeCategoryData.value = response._data.categories
-      tagItems.value = response._data.tags
-    }
-  }
-})
 
+const checkedCategoryIds = ref<number[]>([]);
+const tagIds = ref<number[]>([]);
 
 const reset = () => {
   formData.base.name = ''
@@ -253,9 +242,6 @@ const onSubmit = async () => {
 
 
 
-const handleChecked = (ids: number[]) => {
-  console.log('Checked IDs:', ids)
-}
 </script>
 
 <style></style>

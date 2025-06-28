@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="max-w-8xl mx-auto">
+    <div class="max-w-8xl mx-auto" v-if="status == 'success'">
       <VnwaCard :is-loading="isLoading">
         <UForm ref="formRef" :validate="validate" :state="formData" class="space-y-4 relative"
           @submit.prevent="onSubmit" @error="onError">
@@ -12,6 +12,7 @@
               </h3>
             </div>
             <div class="flex items-center justify-end gap-6">
+              <VnwaGroupLang :locale="locale" @update:locale="changeLocale($event)" />
               <UFormField name="status">
                 <USelect v-model="formData.status" :items="['draft', 'published']" class="w-48 capitalize" />
 
@@ -56,14 +57,13 @@
                 <template #header>
                   <h3 class="text-lg font-semibold">{{ $t('vnwa.category') }} </h3>
                 </template>
-                <VnwaTreeView :tree-data="treeCategoryData" v-model="checkedCategoryIds" />
-
+                <VnwaBlogCategoryOptions v-model="formData.categoryIds" />
               </UCard>
               <UCard>
                 <template #header>
                   <h3 class="text-lg font-semibold">{{ $t('vnwa.tag') }} </h3>
                 </template>
-                <USelectMenu v-model="tagIds" value-key="id" label-key="name" multiple :items="tagItems" class="" />
+                <VnwaTagOptions v-model="formData.tagIds" />
 
               </UCard>
             </div>
@@ -80,17 +80,28 @@
 <script lang="ts" setup>
 import type { FormError, FormErrorEvent } from '@nuxt/ui';
 import type { BaseFormType } from '~/type';
-
+interface T {
+  base: BaseFormType,
+  status: string,
+  image: string,
+  banner_image: string,
+  desc: string,
+  content: string,
+  is_show: boolean,
+  is_highlight: boolean,
+  tagIds: number[],
+  categoryIds: number[]
+}
 definePageMeta({
   title: 'Update Post'
 })
-const { t, locale } = useI18n();
+const { t, locale: localeBase } = useI18n();
 const toast = useToast();
 const errors = ref<FormError[]>([]);
 const formRef = ref()
 const isLoading = ref(false)
-const formData = reactive({
-  base: <BaseFormType>{
+const formData = ref<T>({
+  base: {
     name: '',
     slug: '',
     meta_title: '',
@@ -104,54 +115,38 @@ const formData = reactive({
   content: '',
   is_show: true,
   is_highlight: false,
-
-})
+  tagIds: [],
+  categoryIds: []
+});
+const locale = ref<string>(localeBase.value)
 const route = useRoute();
-const tagItems = ref();
-const tagIds = ref();
-const checkedCategoryIds = ref([])  // Khởi tạo giá trị checkedIds mặc định
-const treeCategoryData = ref([]);
-const { refresh: parentRefresh, status: parentStatus } = useHttp('vnwa/blog/post/load-data-tree-categories-and-tags', {
-  onResponse({ response }) {
-    if (response.ok) {
-      treeCategoryData.value = response._data.categories
-      tagItems.value = response._data.tags
-    }
-  }
-})
-const { refresh, status } = useHttp('vnwa/blog/post/detail/' + route.params.id, {
-  query: {
+const { data, status, refresh } = await useHttp<T>('vnwa/blog/post/detail/' + route.params.id, {
+  query: computed(() => ({
     locale: locale.value
-  },
+  })),
+  watch: [locale],
   onResponse({ response }) {
-    if (response.ok) {
-      formData.status = response._data.post.status;
-      formData.is_show = response._data.post.is_show ==1;
-      formData.is_highlight = response._data.post.is_highlight ==1;
-      formData.base.name = response._data.translation.name;
-      formData.base.slug = response._data.translation.slug;
-      formData.base.meta_title = response._data.translation.meta_title;
-      formData.base.meta_image = response._data.translation.meta_image;
-      formData.base.meta_desc = response._data.translation.meta_desc;
-      formData.image = response._data.translation.image;
-      formData.banner_image = response._data.translation.banner_image;
-      formData.desc = response._data.translation.desc;
-      formData.content = response._data.translation.content;
-      tagIds.value = response._data.tagIds;
-      checkedCategoryIds.value = response._data.categoryIds;
+    formData.value = response._data;
 
-    }
   }
 })
+formData.value = data.value;
+
+
+const changeLocale = ($event: string) => {
+  locale.value = $event;
+}
+
+
 
 const reset = () => {
-  formData.base.name = ''
-  formData.base.slug = ''
-  formData.base.meta_title = ''
-  formData.base.meta_image = ''
-  formData.base.meta_desc = ''
-  formData.desc = ''
-  formData.content = ''
+  formData.value.base.name = ''
+  formData.value.base.slug = ''
+  formData.value.base.meta_title = ''
+  formData.value.base.meta_image = ''
+  formData.value.base.meta_desc = ''
+  formData.value.desc = ''
+  formData.value.content = ''
 }
 
 const handleErrors = (newErrors: FormError[]) => {
@@ -179,18 +174,7 @@ async function onError(event: FormErrorEvent) {
   }
 }
 const validate = (state: any): FormError[] => {
-  if (!state.base.name) {
-    errors.value.push({ name: 'name', message: t('vnwa.error_message.name.required') });
-  }
 
-  if (state.base.name.length > 10 && state.base.name.length < 70) {
-    errors.value.push({ name: 'name', message: t('vnwa.error_message.name.required') });
-
-  }
-
-  if (!state.base.slug || state.base.slug.length > 500) {
-    errors.value.push({ name: 'slug', message: t('vnwa.error_message.slug.required') });
-  }
 
   // if (!state.base.meta_title || state.base.meta_title.length > 100) {
   //   errors.value.push({ name: 'meta_title', message: t('vnwa.error_message.meta.title') });
@@ -211,27 +195,27 @@ const validate = (state: any): FormError[] => {
 const onSubmit = async () => {
   clearError();
   isLoading.value = true;
+
   const payload = {
-    name: formData.base.name,
-    slug: formData.base.slug,
-    meta_title: formData.base.meta_title,
-    meta_image: formData.base.meta_image,
-    meta_desc: formData.base.meta_desc,
-    status: formData.status,
-    desc: formData.desc,
-    content: formData.content,
-    image: formData.image,
-    banner_image: formData.banner_image,
-    is_show: formData.is_show,
-    is_highlight: formData.is_highlight,
-    tagIds: tagIds.value,
-    categoryIds: checkedCategoryIds.value,
+    name: formData.value.base.name,
+    slug: formData.value.base.slug,
+    meta_title: formData.value.base.meta_title,
+    meta_image: formData.value.base.meta_image,
+    meta_desc: formData.value.base.meta_desc,
+    status: formData.value.status,
+    desc: formData.value.desc,
+    content: formData.value.content,
+    image: formData.value.image,
+    banner_image: formData.value.banner_image,
+    is_show: formData.value.is_show,
+    is_highlight: formData.value.is_highlight,
+    tagIds: formData.value.tagIds,
+    categoryIds: formData.value.categoryIds,
 
   }
 
 
-
-  await useHttp('/vnwa/blog/post/update/'+ route.params.id, {
+  await useHttp('/vnwa/blog/post/update/' + route.params.id, {
     method: 'POST',
     query: {
       locale: locale.value
@@ -275,9 +259,6 @@ const onSubmit = async () => {
 
 
 
-const handleChecked = (ids: number[]) => {
-  console.log('Checked IDs:', ids)
-}
 </script>
 
 <style></style>

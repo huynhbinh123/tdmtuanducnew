@@ -73,6 +73,7 @@
     "process_page_manager": "Quản lý trang quy trình",
     "save": "Lưu",
     "add_link": "Thêm liên kết",
+    "add": "Thêm ",
     "edit": "Sửa",
     "remove": "Xóa",
     "remove_items": "Xoá mục",
@@ -87,6 +88,27 @@
     "deleted_at": "Xóa vào lúc",
     "restore_items": "Khôi phục mục",
     "confirm_restore_items": "Bạn có chắc chắn muốn khôi phục {count} mục không?",
-    "confirm_restore": "Xác nhận khôi phục"
-  }
+    "confirm_restore": "Xác nhận khôi phục",
+    "label": "Tiêu đề",
+    "primary_label": "Tiêu đề chính",
+    "link": "Liên kết",
+    "description": "Mô tả",
+    "image": "Hình ảnh",
+    "name_link": "Tên liên kết",
+    "content": "Nội dung",
+    "background_color": "Màu nền",
+    "text_color": "Màu chữ",
+    "create_project": "Khởi tạo dự án",
+    "edit_project": "Chỉnh sửa dự án"
+  },
+
+  "category": "Danh Mục",
+  "tag": "Thẻ",
+
+  "blogs": "Danh sách bài viết",
+  "blog": "Bài Viết",
+  "about": "Giới thiệu",
+  "contact": "Liên hệ",
+  "process": "Quy trình",
+  "project": "Dự án"
 }

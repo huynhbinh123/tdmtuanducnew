@@ -23,7 +23,7 @@
                     }">
                     <!-- Tên danh mục -->
                     <div class="flex w-full items-center gap-2" @click="focusItem(node.id)">
-                        <span class="truncate">{{ node.name }}</span>
+                        <span class="truncate text-black/80 dark:text-white/80 ">{{ node.name }}</span>
                         <span class="text-xs text-gray-500 dark:text-gray-400">({{ node.children.length }})</span>
                     </div>
 
@@ -48,7 +48,7 @@ import '@he-tree/vue/style/default.css'
 import { ref, watch } from 'vue'
 
 const props = defineProps({
-    modelValue: {
+    treeData: {
         type: Array,
         default: () => []
     },
@@ -79,10 +79,10 @@ const overlay = useOverlay()
 
 const toast = useToast();
 
-const emit = defineEmits(['update:modelValue', 'focusItem', 'reload', 'showCreate'])
-const tree = ref([...props.modelValue])
+const emit = defineEmits([ 'focusItem', 'reload', 'showCreate'])
+const tree = ref([...props.treeData])
 watch(
-    () => props.modelValue,
+    () => props.treeData,
     (val) => {
         tree.value = [...val]
     }

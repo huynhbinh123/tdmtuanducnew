@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-black min-h-screen">
+  <div class="bg-black min-h-screen vnwa_client">
     <AppHeader :logo_full="data.logo_full" :logo_icon="data.logo_icon" />
     <main class="min-h-screen relative">
       <slot />
@@ -9,7 +9,7 @@
 </template>
 
 <script lang="ts" setup>
-import '@/assets/css/client.css'
+import '@/assets/css/vinawebapp.com.scss'
 interface AppearanceData {
   logo_full?: string;
   logo_icon?: string;
@@ -37,7 +37,7 @@ const { data } = await useHttp<AppearanceData>('load-data-layout', {
 if (data.value.favicon) {
   useHead({
     link: [
-      { rel: 'icon', href: data.value.favicon }
+    { rel: 'icon', href: useRuntimeConfig().public.storageBase + data.value.favicon }
     ]
   })
 }

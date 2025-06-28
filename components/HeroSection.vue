@@ -10,7 +10,7 @@
               <h6 class=" text-blue-900 uppercase mb-5">Vinawebapp.Com</h6>
             </div>
             <div>
-              <h1 class=" font-mono font-bold md:mb-5 mb-3 text-white ">
+              <h1 class=" font-bold italic md:mb-5 mb-3 text-white ">
                 {{data.title}}
               </h1>
             </div>
@@ -20,18 +20,18 @@
 
               </h5>
             </div>
-            <div class="flex lg:justify-start items-center justify-center gap-4 font-medium">
+            <div class="flex lg:justify-start items-center justify-center gap-4  font-medium">
               <NuxtLinkLocale :to="'/'">
                 <button
-                  class=" text-white flex items-center  text-base w-full  mr-3 p-3 md:bg-red-500 bg-red-700  md:hover:bg-red-600 active:bg-red-600 uppercase md:hover:-translate-y-1">
-                  <span> Start Project </span>
+                  class=" lg:text-lg text-sm text-white flex items-center  w-full lg:p-3 px-2 py-3 md:bg-red-500 bg-red-700  md:hover:bg-red-600 active:bg-red-600 uppercase md:hover:-translate-y-1">
+                  <span class="font-bold"> Start Project </span>
                   <UIcon name="mdi-light:arrow-right" color="white" class="ml-2  size-5 " />
                 </button>
               </NuxtLinkLocale>
               <NuxtLinkLocale :to="'/'" class="button-array__button--secondary md:hover:-translate-y-1">
                 <button
-                  class=" flex  text-base items-center  text-white w-full  p-3 bg-gray-700 md:hover:bg-blue-600 active:bg-blue-600 uppercase ">
-                  <span> See our Work </span>
+                  class=" lg:text-lg text-sm flex  items-center  text-white w-full   lg:p-3 px-2 py-1 bg-gray-700 md:hover:bg-blue-600 active:bg-blue-600 uppercase ">
+                  <span class="font-bold"> See our Work </span>
                   <UIcon name="mdi-light:arrow-right" color="white" class="ml-2 size-8" />
                 </button>
               </NuxtLinkLocale>

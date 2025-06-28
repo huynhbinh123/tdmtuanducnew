@@ -73,6 +73,7 @@
         "process_page_manager": "process page manager",
         "save": "Save",
         "add_link": "Add Link",
+        "add": "Add",
         "edit": "Edit",
         "remove": "Remove",
         "remove_items": "Remove Items",
@@ -87,6 +88,29 @@
         "deleted_at": "Remove At",
         "restore_items": "Restore Items",
         "confirm_restore_items": "Are you sure you want to restore {count} item(s)?",
-        "confirm_restore": "Confirm Restore"
-    }
+        "confirm_restore": "Confirm Restore",
+        "label": "Label",
+        "link": "Link",
+        "description": "Description",
+        "image": "Image",
+        "primary_label": "Primary Label",
+        "name_link": "Name Link",
+        "content": "Content",
+        "background_color": "Background Color",
+        "text_color": "Text Color",
+        "create_project": "Create Project",
+        "edit_project": "Edit Project"
+
+    },
+    
+    "category": "Category",
+    "tag": "Tag",
+
+    "blog":"Blog",
+    "blogs":"Blogs",
+    "project":"Project",
+    "about": "About",
+    "contact": "Contact",
+    "process": "Process"
+
 }

@@ -9,21 +9,8 @@
         </div>
 
       </div>
-      <div class="flex items-center justify-end gap-4">
-          <UButton
-            icon="flag:vn-4x3"
-            :class="locale != 'vi' ? 'bg-white text-black border border-gray-400' : ''"
-            @click="locale = 'vi'"
-          >{{$t('vnwa.vietnamese')}}</UButton>
+      <VnwaGroupLang  :locale="locale" @update:locale="locale = $event" />
 
-
-          <UButton
-            icon="flag:gb-eng-4x3"
-            :class="locale != 'en' ? 'bg-white text-black border border-gray-400' : ''"
-            @click="locale = 'en'"
-          >{{$t('vnwa.english')}}</UButton>
-        
-        </div>
     </template>
 
     <div class="col-span-12 lg:col-span-8">
@@ -38,7 +25,7 @@
         <div>
           <UFormField label="Logo Icon" name="logo_icon" class="flex items-center justify-center gap-4">
             <div class="p-2">
-              <VnwaInputImage v-model="appearanceData.logo_icon" :resize="[80,80]" width="300" height="300" />
+              <VnwaInputImage v-model="appearanceData.logo_icon" :resize="[195,70]" width="195" height="70" />
             </div>
           </UFormField>
         </div>
@@ -77,7 +64,7 @@ const appearanceData = reactive({
 
 
 
-const locale = ref<string>('vi');
+const locale = ref<string>(useRuntimeConfig().public.appLang);
 
 const params = computed(() => ({
   locale: locale.value

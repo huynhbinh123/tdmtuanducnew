@@ -5,7 +5,7 @@
    <div v-else class="bg" style="background-image:url('/bg_banner.jpg');"></div>
    <div class=" w-full page-padding  py-3 pt-10">
     <div class="section-sub-text color-blue text-center  md:mb-5 mb-3">{{ page_name }}</div>
-    <h1 class="  text-center section-text ">{{ title }}</h1>
+    <h1 class="  text-center  ">{{ title }}</h1>
     <h3 class="md:text-xl  text-base text-gray-100/60 text-center   md:mb-5 mb-3  lg:pr-20 p-2  ">{{ desc }} </h3>
    </div>
   </div>

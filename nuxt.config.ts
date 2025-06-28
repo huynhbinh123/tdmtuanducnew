@@ -1,29 +1,32 @@
-const FRONTEND_URL = "http://localhost:3000";
-const BACKEND_URL = "http://127.0.0.1:8000";
-
 export default defineNuxtConfig({
   compatibilityDate: '2025-03-13',
-
   future: {
     compatibilityVersion: 4,
   },
   telemetry: true,
-  ssr: false,
+  server: {
+    port: process.env.NUXT_PORT || 3000,
+  },
+
+  ssr: true,
   devtools: {
     enabled: false,
   },
   app: {
     pageTransition: { name: 'page', mode: 'out-in' },
     head: {
-      title: 'Home',
-      titleTemplate: '%s | SEO CMS',
+      title: process.env.NUXT_APP_DESCRIPTION,
+      titleTemplate: '%s | ' + process.env.NUXT_APP_NAME,
       htmlAttrs: {
-        lang: 'en',
+        lang: process.env.NUXT_APP_LANG || 'en',
       },
     },
   },
 
   routeRules: {
+    '/vnwa/**': { ssr: false, swr: true },
+    '/vnwa/**/**': { ssr: false, swr: true },
+    '/vnwa/**/**/***': { ssr: false, swr: true },
     'auth/verify': { ssr: false }
   },
 
@@ -40,11 +43,11 @@ export default defineNuxtConfig({
     'nuxt-tiptap-editor',
   ],
   site: {
-    url: FRONTEND_URL,
+    url: process.env.NUXT_FRONTEND_URL,
     name: 'Vinawebapp.com'
   },
   i18n: {
-    defaultLocale: 'en',
+    defaultLocale: process.env.NUXT_APP_LANG || 'en',
     locales: [
       { code: 'en', name: 'English', file: 'en.json' },
       { code: 'vi', name: 'Tiếng Việt', file: 'vi.json' }
@@ -54,11 +57,51 @@ export default defineNuxtConfig({
     detectBrowserLanguage: {
       useCookie: true,
       cookieKey: 'i18n_redirected',
-      redirectOn: 'root' ,
+      redirectOn: 'root',
       alwaysRedirect: true
+    },
+    customRoutes: 'config',
+    pages: {
+      about: {
+        en: '/about',
+        vi: '/gioi-thieu'
+      },
+      process: {
+        en: '/process',
+        vi: '/quy-trinh'
+      },
+      contact: {
+        en: '/contact',
+        vi: '/lien-he'
+      },
+      project: {
+        en: '/project',
+        vi: '/du-an'
+      },
+      'project-slug': {
+        en: '/project/[slug]',
+        vi: '/du-an/[slug]'
+      },
+      blog: {
+        en: '/blog',
+        vi: '/bai-viet'
+      },
+      'blog-slug': {
+        en: '/blog/[slug]',
+        vi: '/bai-viet/[slug]'
+      },
+      'blog-category-slug': {
+        en: '/blog/category/[slug]',
+        vi: '/bai-viet/danh-muc/[slug]'
+      },
+      'blog-tag-slug': {
+        en: '/blog/tag/[slug]',
+        vi: '/bai-viet/the/[slug]'
+      }
+
     }
   },
- 
+
 
   tiptap: {
     prefix: 'Tiptap', //prefix for Tiptap imports, composables not included
@@ -70,14 +113,14 @@ export default defineNuxtConfig({
     }
   },
   image: {
-    domains: ['vnwa.thuonglee.vinawebapp.com'], // Thêm domain của bạn vào đây
+    domains: ['vnwa.vinawebapp.com'], // Thêm domain của bạn vào đây
     format: ['webp', 'jpeg', 'png'],
     providers: {
       storage: {
         name: 'storage', // optional value to overrider provider name
         provider: '~/providers/storage-provider.ts', // Path to custom provider
         options: {
-          baseURL: BACKEND_URL + '/vnwa-image/'
+          baseURL: process.env.NUXT_BACKEND_URL + '/storage/'
         }
       }
     },
@@ -96,7 +139,7 @@ export default defineNuxtConfig({
       crossOriginEmbedderPolicy: 'unsafe-none',
       crossOriginOpenerPolicy: 'same-origin-allow-popups',
       contentSecurityPolicy: {
-        "img-src": ["'self'", "data:", "https://*", BACKEND_URL],
+        "img-src": ["'self'", "data:", "https://*", process.env.NUXT_BACKEND_URL],
       },
     },
   },
@@ -112,13 +155,14 @@ export default defineNuxtConfig({
     strict: false,
   },
   runtimeConfig: {
-    apiLocal: BACKEND_URL,
+    apiLocal: process.env.NUXT_BACKEND_URL,
     public: {
-      appUrl: FRONTEND_URL,
-      apiUrl: BACKEND_URL + '/api/v1',
-      apiBase: BACKEND_URL,
+      appLang: process.env.NUXT_FRONTEND_LANG || 'en',
+      appUrl: process.env.NUXT_FRONTEND_URL,
+      apiUrl: process.env.NUXT_BACKEND_URL + '/api/v1',
+      apiBase: process.env.NUXT_BACKEND_URL,
       apiPrefix: '/api/v1',
-      storageBase: BACKEND_URL + '/vnwa-image/',
+      storageBase: process.env.NUXT_BACKEND_URL + '/storage/',
       providers: {
         google: {
           name: "Google",

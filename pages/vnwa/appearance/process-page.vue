@@ -5,21 +5,8 @@
         <div class="">
           <div class="text-lg font-semibold mb-2">Process Page Manger </div>
         </div>
-        <div class="flex items-center justify-end gap-4">
-          <UButton
-            icon="flag:vn-4x3"
-            :class="locale != 'vi' ? 'bg-white text-black border border-gray-400' : ''"
-            @click="locale = 'vi'"
-          >{{$t('vnwa.vietnamese')}}</UButton>
+        <VnwaGroupLang :locale="locale" @update:locale="locale = $event" />
 
-
-          <UButton
-            icon="flag:gb-eng-4x3"
-            :class="locale != 'en' ? 'bg-white text-black border border-gray-400' : ''"
-            @click="locale = 'en'"
-          >{{$t('vnwa.english')}}</UButton>
-        
-        </div>
       </template>
       <UForm :validate="validate" :state="appearanceData" class="space-y-4" @submit="onSubmit">
 
@@ -30,7 +17,7 @@
           <div class="space-y-4">
             <div class="grid grid-cols-1 gap-4">
               <UFormField label="Title" name="hero_section.title">
-                <UInput v-model="appearanceData.hero_section.title" />
+                <UTextarea v-model="appearanceData.hero_section.title" />
               </UFormField>
               <UFormField label="Slogan" name="hero_section.slogan">
                 <UTextarea v-model="appearanceData.hero_section.slogan" />
@@ -39,66 +26,30 @@
           </div>
         </UCard>
 
+
+
         <UCard>
           <template #header>
-            <h3>Brands Section</h3>
+            <h3>Process</h3>
           </template>
           <div class="space-y-4">
             <div class="grid grid-cols-1 gap-4">
-              <UFormField label="" name="brand_section">
-                <VnwaMutipleLink v-model="appearanceData.brand_section" :is-to="true" :is-image="true" />
+              <UFormField label="" name="process">
+                <VnwaMutipleLink v-model="appearanceData.process" label-input-desc="Time Line" :is-icon="true" :is-primary-label="true" :is-text-color="true" :is-bg-color="true"
+                  :is-desc="true" :is-content="true" />
               </UFormField>
             </div>
           </div>
         </UCard>
 
-        <UCard>
-          <template #header>
-            <h3>Feedback Section</h3>
-          </template>
-          <div class="space-y-4">
-            <div class="grid grid-cols-1 gap-4">
-              <UFormField label="" name="feedback_section">
-                <VnwaMutipleLink v-model="appearanceData.feedback_section" :is-image="true" :is-content="true" />
-              </UFormField>
-            </div>
-          </div>
-        </UCard>
 
-        <UCard>
-          <template #header>
-            <h3>Why Me Section</h3>
-          </template>
-          <div class="space-y-4">
-            <div class="grid grid-cols-1 gap-4">
-              <UFormField label="" name="why_me_section">
-                <VnwaMutipleLink v-model="appearanceData.why_me_section" :is-icon="true"
-                  iconsLink="https://icones.js.org/collection/emojione" />
-              </UFormField>
-            </div>
-          </div>
-        </UCard>
 
-        <UCard>
-          <template #header>
-            <h3>Short About Section</h3>
-          </template>
-          <div class="space-y-4">
-            <div class="grid grid-cols-1 gap-4">
-              <UFormField label="Title" name="short_about_section.title">
-                <UInput v-model="appearanceData.short_about_section.label" />
-              </UFormField>
-              <UFormField label="Content" name="short_about_section.content">
-                <VnwaEditor v-model="appearanceData.short_about_section.content" />
-              </UFormField>
-            </div>
-          </div>
-        </UCard>
+
 
         <VnwaMetaSeoForm :meta="appearanceData.meta" @update:errors="handleErrors" />
 
         <UButton type="submit" icon="mdi:content-save" :loading="appearanceUpdateStatus == 'pending'">
-          {{$t('vnwa.save')}}
+          {{ $t('vnwa.save') }}
         </UButton>
       </UForm>
 
@@ -107,7 +58,6 @@
 </template>
 
 <script lang="ts" setup>
-import { UTextarea } from '#components';
 import type { FormError, FormSubmitEvent } from '@nuxt/ui'
 definePageMeta({
   title: 'Process Page Manager'
@@ -118,25 +68,16 @@ interface AppearanceData {
     title: string;
     slogan: string;
   };
-  brand_section: {
+  process: {
     label: string;
-    image_url: string;
-    to: string;
-  }[];
-  feedback_section: {
-    label: string;
-    image: string;
     content: string;
-  }[];
-  why_me_section: {
     icon: string;
-    label: string;
-    content: string;
+    primary_label: string;
+    bg_color: string;
+    text_color: string;
+    desc: string;
   }[];
-  short_about_section: {
-    label: string;
-    content: string;
-  };
+
   meta: {
     title: string;
     desc: string;
@@ -149,13 +90,7 @@ const appearanceData = reactive<Partial<AppearanceData>>({
     title: '',
     slogan: '',
   },
-  brand_section: [],
-  feedback_section: [],
-  why_me_section: [],
-  short_about_section: {
-    label: '',
-    content: '',
-  },
+  process: [],
   meta: {
     title: '',
     desc: '',
@@ -163,7 +98,8 @@ const appearanceData = reactive<Partial<AppearanceData>>({
   },
 });
 
-const locale = ref<string>('vi');
+const locale = ref<string>(useRuntimeConfig().public.appLang);
+
 
 const params = computed(() => ({
   locale: locale.value
@@ -183,13 +119,7 @@ const { refresh, status: loadDataStatus } = await useHttp<any>("vnwa/appearance/
         title: data.hero_section?.title ?? '',
         slogan: data.hero_section?.slogan ?? '',
       };
-      appearanceData.brand_section = data.brand_section ?? [];
-      appearanceData.feedback_section = data.feedback_section ?? [];
-      appearanceData.why_me_section = data.why_me_section ?? [];
-      appearanceData.short_about_section = {
-        label: data.short_about_section?.label ?? '',
-        content: data.short_about_section?.content ?? '',
-      };
+      appearanceData.process = data.process ?? [];
       appearanceData.meta = {
         title: data.meta?.title ?? '',
         desc: data.meta?.desc ?? '',

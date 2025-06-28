@@ -2,7 +2,6 @@
 @import "@nuxt/ui";
 
 
-
 @layer base {
     #__nuxt {
         @apply min-h-screen flex flex-col;
@@ -49,20 +48,17 @@
 
 
 
-
-    --color-primary: oklch(72.322% 0.10246 225.15);
-    --color-primary-50: oklch(96.192% 0.01534 222.68);
-    --color-primary-100: oklch(93.534% 0.02565 221.58);
-    --color-primary-200: oklch(87.992% 0.04664 222.63);
-    --color-primary-300: oklch(82.539% 0.06695 223.47);
-    --color-primary-400: oklch(77.444% 0.08592 223.41);
-    --color-primary-500: oklch(72.322% 0.10246 225.15);
-    --color-primary-600: oklch(64.704% 0.11117 227.62);
-    --color-primary-700: oklch(53.449% 0.09058 227.56);
-    --color-primary-800: oklch(41.566% 0.06867 227.5);
-    --color-primary-900: oklch(28.71% 0.04363 225.52);
-    --color-primary-950: oklch(21.834% 0.03015 226.79);
+    --ui-color-primary: oklch(72.322% 0.10246 225.15);
+    --ui-color-primary-50: oklch(96.192% 0.01534 222.68);
+    --ui-color-primary-100: oklch(93.534% 0.02565 221.58);
+    --ui-color-primary-200: oklch(87.992% 0.04664 222.63);
+    --ui-color-primary-300: oklch(82.539% 0.06695 223.47);
+    --ui-color-primary-400: oklch(77.444% 0.08592 223.41);
+    --ui-color-primary-500: oklch(72.322% 0.10246 225.15);
+    --ui-color-primary-600: oklch(64.704% 0.11117 227.62);
+    --ui-color-primary-700: oklch(53.449% 0.09058 227.56);
+    --ui-color-primary-800: oklch(41.566% 0.06867 227.5);
+    --ui-color-primary-900: oklch(28.71% 0.04363 225.52);
+    --ui-color-primary-950: oklch(21.834% 0.03015 226.79);
 
 }
-
-

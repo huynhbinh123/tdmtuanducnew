@@ -16,7 +16,7 @@ const editorContent = defineModel('modelValue');
 
 const editor = useEditor({
   content: editorContent.value,
-  extensions: [TiptapStarterKit, VueComponent, Image],
+  extensions: [TiptapStarterKit, VueComponent, Image, ImageResize],
   editable: false,
 
   onUpdate({ editor }) {

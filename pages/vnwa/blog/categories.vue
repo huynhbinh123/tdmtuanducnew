@@ -1,16 +1,16 @@
 <template>
     <div class="grid grid-cols-12 gap-4">
-        <div class="col-span-4">
+        <div class="col-span-4 text-black">
+            <div v-if="!isLoading">
 
-
-
-            <VnwaTreeCategoryDraggable type="blog_category" v-model="treeData" :active-id="id_active" @focusItem="showFormEdit"
-                 @reload="reload" @show-create="showFormCreate" />
+                <VnwaTreeCategoryDraggable type="blog_category" :treeData="treeData" :active-id="id_active"
+                    @focusItem="showFormEdit" @reload="reload" @show-create="showFormCreate" />
+            </div>
         </div>
 
 
         <div class="col-span-8">
-            <VnwaCard :is-loading="isLoading" >
+            <VnwaCard :is-loading="isLoading">
                 <UForm ref="formRef" :validate="validate" :state="formData" class="space-y-4 relative"
                     @submit.prevent="onSubmit" @error="onError">
                     <div
@@ -20,29 +20,28 @@
                                 {{ formData.id ? 'Form Update' : 'Form Create' }}
                             </h3>
                         </div>
-                        <UButton type="submit" :label="$t('vnwa.save')" :loading="isLoading" icon="mdi:content-save" />
+                        <div class="flex items-center justify-end  gap-4">
+
+                            <VnwaGroupLang v-if="formData.id" :locale="locale" @update:locale="changeLocale($event)" />
+                            <UButton type="submit" :label="$t('vnwa.save')" :loading="isLoading"
+                                icon="mdi:content-save" />
+                        </div>
                     </div>
-
-
                     <VnwaBaseForm :data="formData.base" @update:errors="handleErrors" type="blog_category">
                         <UCard>
                             <div class="space-y-8">
-
                                 <UFormField label="Image" name="image">
                                     <VnwaInputImage v-model="formData.image" />
                                 </UFormField>
                                 <UFormField label="Banner Image" name="banner_image">
                                     <VnwaInputImage v-model="formData.banner_image" />
                                 </UFormField>
-
                                 <UFormField label="Is Show" name="is_show">
                                     <USwitch v-model="formData.is_show" />
                                 </UFormField>
                                 <UFormField label="Highlight" name="is_show">
                                     <USwitch v-model="formData.is_highlight" />
                                 </UFormField>
-
-
                                 <UFormField label="Description" name="desc">
                                     <UTextarea v-model="formData.desc" />
                                 </UFormField>
@@ -77,7 +76,9 @@ const isLoading = ref(false)
 const id_active = ref(null);
 const errors = ref<FormError[]>([]);
 const form_type = ref('create');
-const { t, locale } = useI18n();
+const { t, locale: i18nLocale } = useI18n();
+const locale = ref<string>(useRuntimeConfig().public.appLang);
+
 
 const formData = reactive({
     id: null,
@@ -97,26 +98,32 @@ const formData = reactive({
     is_highlight: false,
 
 })
-
-const { refresh } = useHttp('/vnwa/blog/category/load-tree-data',
-    {
-        query: {
-            locale: locale.value
-        },
-        onResponse({ response }) {
-            if (response.ok) {
-                treeData.value = response._data
+const loadTreeData = () => {
+    isLoading.value = true
+    useHttp('/vnwa/blog/category/load-tree-data',
+        {
+            query: {
+                locale: locale.value
+            },
+            onResponse({ response }) {
+                if (response.ok) {
+                    treeData.value = response._data
+                    isLoading.value = false
+                }
             }
         }
-    }
-)
+    )
 
-const reload = ()=>{
-    refresh();
-    showFormCreate();
 }
 
 
+
+const reload = async () => {
+    await loadTreeData();
+    showFormCreate();
+}
+
+reload();
 const showFormCreate = () => {
     clearError();
     isLoading.value = true
@@ -158,8 +165,8 @@ const showFormEdit = async (id: number) => {
                 formData.parent_id = response._data.category.parent_id
                 formData.image = response._data.category.image
                 formData.banner_image = response._data.category.banner_image
-                formData.is_highlight = response._data.category.is_highlight
-                formData.is_show = response._data.category.is_show
+                formData.is_highlight = response._data.category.is_highlight == 1 ? true : false;
+                formData.is_show = response._data.category.is_show == 1 ? true : false;
                 formData.base.name = response._data.translation.name
                 formData.base.slug = response._data.translation.slug
                 formData.desc = response._data.translation.desc
@@ -176,7 +183,11 @@ const showFormEdit = async (id: number) => {
 
 
 };
-
+const changeLocale = ($event: string) => {
+    locale.value = $event;
+    showFormEdit(id_active.value);
+    loadTreeData();
+}
 
 
 const handleErrors = (newErrors: FormError[]) => {
@@ -264,11 +275,11 @@ const onSubmit = async () => {
                     color: "success",
                 });
                 // Làm mới tree và form
-                refresh();
-                if(form_type.value === 'edit'){
+                loadTreeData();
+                if (form_type.value === 'edit') {
                     id_active.value = response._data.category.id;
 
-                }else{
+                } else {
                     showFormCreate();
 
                 }
@@ -299,6 +310,8 @@ const onSubmit = async () => {
         }
     });
 };
+
+
 
 </script>
 

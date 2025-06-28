@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-const props = defineProps({
-    basePath: String
-})
+const props = defineProps<{
+    basePath?: String
+}>()
 
 
 const emit = defineEmits(['success'])
@@ -36,7 +36,7 @@ const onSelect = async (e: any) => {
         method: "POST",
         body: formData,
         params: {
-            basePath: props.basePath,
+            basePath: props.basePath || '/',
         },
         ignoreResponseError: true,
         onResponse({ response }) {

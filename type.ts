@@ -59,15 +59,16 @@ export type BlogCategoryTranslation = {
 
 export interface Post {
   id?: number;
-  image: string | null;
-  banner_image: string | null;
+  image?: string;
+  banner_image: string;
   is_show: boolean;
   is_highlight: boolean;
   name: string;
   slug: string;
-  desc: string | null;
+  desc: string;
   content: string | null;
-  author_id: number | null;
+  author_id?: number;
+  author?: Object;
   views: number;
   meta: MetaSeo;
 
@@ -100,4 +101,30 @@ export interface TreeNode {
   name: string
   children: TreeNode[]
   parent?: TreeNode | null
+}
+
+
+export interface Project {
+  id?: number;
+  name: string;
+  slug: string;
+  domain: string;
+  image: string;
+  banner_image: string;
+  logo: string;
+  before_image: string;
+  after_image: string;
+  is_show: boolean;
+  is_highlight: boolean;
+  desc: string;
+  content: string;
+  objective: string;
+  approach: string;
+  impact: string;
+  results: string;
+  galery: string[];
+  tags?: string[];
+  meta: MetaSeo;
+  created_at?: string;
+  updated_at?: string;
 }

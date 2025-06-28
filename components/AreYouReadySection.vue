@@ -8,7 +8,7 @@
 
     </div>
     <div class=" w-full page-padding  py-3 pt-20">
-      <div class="  text-center section-text uppercase">ARE YOU READY TO START YOUR JOURNEY ?</div>
+      <div class="  text-center  uppercase">ARE YOU READY TO START YOUR JOURNEY ?</div>
       <div class="section-sub-text text-blue-500 text-center  md:mb-5 mb-3">LET'S CREATE AN EXPLOSION TOGETHER</div>
 
       <div class="w-full">

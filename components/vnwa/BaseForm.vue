@@ -66,6 +66,7 @@ const props = defineProps({
     data: {
         type: Object as PropType<BaseFormType>,
         required: true,
+      
     },
     type: String,
     id: {
@@ -80,11 +81,21 @@ const parentURL = ref();
 const slugRequestUrl = ref();
 const isSlugLoading = ref(false);
 
+onMounted(() => {
 
+
+  if (!props.data.meta_desc) {
+    props.data.meta_desc = 'A Website Design Company Light Years Ahead of Its Time'
+  }
+
+  if (!props.data.meta_image) {
+    props.data.meta_image = 'vnwa_setup/vnwa_logo_icon.png'
+  }
+})
 
 switch (props.type) {
     case 'blog_category':
-        parentURL.value = '/bc';
+        parentURL.value = '/blog/category';
         slugRequestUrl.value = '/vnwa/blog/category/load-slug';
         break;
     case 'tag':
@@ -92,8 +103,12 @@ switch (props.type) {
         slugRequestUrl.value = '/vnwa/tag/load-slug';
         break;
     case 'post':
-        parentURL.value = '/b';
+        parentURL.value = '/blog';
         slugRequestUrl.value = '/vnwa/blog/post/load-slug';
+        break;
+        case 'project':
+        parentURL.value = '/project';
+        slugRequestUrl.value = '/vnwa/project/load-slug';
         break;
     default:
         break;

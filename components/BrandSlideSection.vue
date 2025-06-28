@@ -26,7 +26,7 @@ defineProps<{
 
             </div>
             <div>
-               <UCarousel v-slot="{ item }" loop auto-scroll :items="data" :ui="{ item: 'basis-1/6' }">
+               <UCarousel v-slot="{ item }" loop auto-scroll :items="data" :ui="{ item: 'lg:basis-1/6 basis-1/3' }">
                   <div class="flex items-center justify-center ">
                     <NuxtLinkLocale :to="item.to" aria-label="Brand" class="filter grayscale hover:grayscale-0 cursor-pointer">
                      <NuxtImg quality="80" format="webp" loading="lazy" width="100" height="100" :src="item.image"

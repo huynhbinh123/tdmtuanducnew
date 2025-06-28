@@ -5,21 +5,8 @@
         <div class="">
           <div class="text-lg font-semibold mb-2">Home Page Manger </div>
         </div>
-        <div class="flex items-center justify-end gap-4">
-          <UButton
-            icon="flag:vn-4x3"
-            :class="locale != 'vi' ? 'bg-white text-black border border-gray-400' : ''"
-            @click="locale = 'vi'"
-          >{{$t('vnwa.vietnamese')}}</UButton>
+        <VnwaGroupLang :locale="locale" @update:locale="locale = $event" />
 
-
-          <UButton
-            icon="flag:gb-eng-4x3"
-            :class="locale != 'en' ? 'bg-white text-black border border-gray-400' : ''"
-            @click="locale = 'en'"
-          >{{$t('vnwa.english')}}</UButton>
-        
-        </div>
       </template>
       <UForm :validate="validate" :state="appearanceData" class="space-y-4" @submit="onSubmit">
 
@@ -98,7 +85,7 @@
         <VnwaMetaSeoForm :meta="appearanceData.meta" @update:errors="handleErrors" />
 
         <UButton type="submit" icon="mdi:content-save" :loading="appearanceUpdateStatus == 'pending'">
-          {{$t('vnwa.save')}}
+          {{ $t('vnwa.save') }}
         </UButton>
       </UForm>
 
@@ -163,7 +150,8 @@ const appearanceData = reactive<Partial<AppearanceData>>({
   },
 });
 
-const locale = ref<string>('vi');
+const locale = ref<string>(useRuntimeConfig().public.appLang);
+
 
 const params = computed(() => ({
   locale: locale.value

@@ -9,17 +9,11 @@ const items = computed(() => {
         icon: 'i-heroicons-solid:home',
         to: localePath('/vnwa/dashboard'),  // Dùng localePath
       },
-      // {
-      //   label: t('vnwa.project_manager'),
-      //   icon: 'i-lucide-box',
-      //   children: [
-      //     {
-      //       label: t('vnwa.project'),
-      //       to: localePath('/vnwa/project-manager/project'),  // Dùng localePath
-      //     },
-
-      //   ],
-      // },
+      {
+        label: t('vnwa.project_manager'),
+        to: localePath('/vnwa/project/list'),  // Dùng localePath
+        icon: 'i-lucide-box',
+      },
       {
         label: t('vnwa.tag_manager'),
         icon: 'heroicons:tag-20-solid',

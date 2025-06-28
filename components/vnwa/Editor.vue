@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="border-2 border-sky-700 dark:border-sky-500 rounded-md divide-y">
+    <div class="border-2 border-sky-700 dark:border-sky-900 rounded-md divide-y">
       <UModal title="Add Image From URL" v-model:open="isModalInsertImage">
         <template #body>
           <div class="grid max-w-lg w-full gap-8 b b-gray/30 rounded-2 px-2 py-5 sm:p-6">
@@ -137,10 +137,10 @@
               :value="editor.getAttributes('textStyle').color">
           </div>
 
-          <UButton v-for="(item, index) in colors" :key="index" variant="solid" size="xs"
-            :color="editor.isActive('textStyle', { color: item.value }) ? 'vnwa' : 'neutral'"
+          <UButton v-for="(item, index) in colors" :key="index" variant="solid"  size="xs"
+            :color="editor.isActive('textStyle', { color: item.value }) ? 'vnwa' : 'secondary'"
             @click="editor.chain().focus().setColor(item.value).run()">
-            <div class="w-3 h-3 rounded" :style="{ backgroundColor: item.value }" />
+            <div class="w-3 h-3 rounded " :style="{ backgroundColor: item.value }" />
           </UButton>
 
 
@@ -174,12 +174,12 @@
         <div class="flex items-center justify-center gap-2 px-2 py-1 ">
 
           <UTooltip text="Add Image From URL">
-            <UButton @click="() => isModalInsertImage = !isModalInsertImage" color="neutral"
+            <UButton @click="() => isModalInsertImage = !isModalInsertImage" color="vnwa"
               icon="fluent:image-add-20-regular" size="xs" />
           </UTooltip>
 
           <UTooltip text="Add Image From VMedia Manager">
-            <UButton @click="addImages(editor)" color="neutral" icon="material-symbols:folder-managed" label="VMedia"
+            <UButton @click="addImages(editor)" color="vnwa" icon="material-symbols:folder-managed" label="VMedia"
               size="xs" />
           </UTooltip>
         </div>
@@ -188,7 +188,7 @@
 
       </div>
       <div class="px-3 py-4">
-        <TiptapEditorContent :editor="editor" />
+        <TiptapEditorContent  class="editor"  :editor="editor" />
 
       </div>
       <div>
@@ -231,23 +231,18 @@ const editor = useEditor({
       class: 'max-w-full',
     },
   }),
-    Link,
     Link.configure({
       HTMLAttributes: {
         rel: 'noopener noreferrer',
         title: 'Vnwa Link',
       },
     }),
-    BulletList,
-    OrderedList,
-    ListItem,
-    ImageResize,
     TextAlign.configure({
       types: ['heading', 'paragraph'],
     }),
     Color,
     TextStyle,
-
+    ImageResize
   ],
   // editable: false,
 
@@ -256,9 +251,9 @@ const editor = useEditor({
   },
 });
 watch(() => editorContent.value, (newContent) => {
-  if (!!unref(editor)) {
-    unref(editor).commands.setContent(newContent);
-  }
+  // if (!!unref(editor)) {
+  //   unref(editor).commands.setContent(newContent);
+  // }
 
 
 
