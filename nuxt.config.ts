@@ -3,6 +3,11 @@ export default defineNuxtConfig({
   future: {
     compatibilityVersion: 4,
   },
+  nitro: {
+    externals: {
+      inline: ['unhead'], // ép unhead vào bundle thay vì để external
+    }
+  },
   telemetry: true,
   server: {
     port: process.env.NUXT_PORT || 3000,
