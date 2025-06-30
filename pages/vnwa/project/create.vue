@@ -27,7 +27,7 @@
                     <UFormField label="Company Logo" name="logo" required>
                       <VnwaInputImage v-model="formData.logo" />
                     </UFormField>
-                    <UFormField label="Company Domain" name="domain" >
+                    <UFormField label="Company Domain" name="domain">
                       <UInput v-model="formData.domain" />
                     </UFormField>
                   </div>
@@ -89,6 +89,12 @@
 
 
                   </div>
+
+                </UCard>
+                <UCard>
+                  <UFormField label="Gallery">
+                    <VnwaInputImages v-model="formData.galery" />
+                  </UFormField>
 
                 </UCard>
               </VnwaBaseForm>

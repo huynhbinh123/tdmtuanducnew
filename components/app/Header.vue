@@ -31,9 +31,10 @@
               <AppLocale />
             </li>
             <li class="ps-3">
-              <button
+              <button @click="openContactModal()"
                 class=" text-xl rounded-xl  border border-primary-500 text-white  px-3 py-2  flex items-center justify-center gap-1 cursor-pointer  font-bold">
-                <span>Contact</span>
+                <span>
+                  {{$t('get_in_touch')}} </span>
                 <UIcon name="material-symbols:keyboard-double-arrow-right-rounded" class="size-8" />
               </button>
             </li>
@@ -46,25 +47,7 @@
               <AppLocale />
             </li>
             <li>
-              <UModal title="Menu">
-                <UButton icon="material-symbols:menu" variant="ghost" color="info" size="xl" />
-
-
-                <template #body>
-                  <ul class="header-menu  space-y-3 ">
-                    <li class="" v-for="(item, index) in menu" :key="index">
-                      <NuxtLinkLocale :to="item.to" aria-label="menu link">
-                        <button
-                          class="flex items-center justify-start gap-2 relative text-base px-3 py-2 cursor-pointer uppercase">
-                          <UIcon :name="item.icon" color="white" class="size-6" /> {{ $t(item.label) }}
-                        </button>
-                      </NuxtLinkLocale>
-                    </li>
-
-                  </ul>
-
-                </template>
-              </UModal>
+              <UButton @click="openMenu()" icon="material-symbols:menu" variant="ghost" color="info" size="xl" />
             </li>
           </ul>
         </div>
@@ -77,6 +60,8 @@
 </template>
 
 <script lang="ts" setup>
+import {  ModalMenu } from '#components';
+
 defineProps({
   logo_full: {
     type: String,
@@ -103,7 +88,7 @@ const menu = [
   {
     icon: 'mynaui:users-group',
     label: 'about',
-    to: '/'
+    to: '/about'
   },
   {
     icon: 'tabler:brand-blogger',
@@ -111,6 +96,23 @@ const menu = [
     to: '/blog'
   }
 ]
+const overlay = useOverlay()
+const openMenu = () => {
+  const modal = overlay.create(ModalMenu);
+  modal.open({
+    menu: menu,
+    onSuccess() {
+      modal.close();
+    }
+  });
+
+}
+const emit = defineEmits(['openContactModal']);
+const openContactModal = () => {
+    emit('openContactModal');
+};
+
+
 </script>
 
 <style scoped></style>

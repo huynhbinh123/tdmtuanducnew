@@ -5,7 +5,7 @@
 
     <UContainer>
       <div class="grid grid-cols-12 gap-4 ">
-        <div class="col-span-4">
+        <div class="lg:col-span-4 col-span-12 lg:order-1 order-2">
           <Card class="space-y-10">
 
             <div>
@@ -24,7 +24,7 @@
             </div>
           </Card>
         </div>
-        <div class="col-span-8">
+        <div class="lg:col-span-8 col-span-12 lg:order-2 order-1">
           <Card>
             <div v-html="data.content"></div>
           </Card>

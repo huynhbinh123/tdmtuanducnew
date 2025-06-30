@@ -8,8 +8,8 @@
 
     </div>
     <div class=" w-full page-padding  py-3 pt-20">
-      <div class="  text-center  uppercase">ARE YOU READY TO START YOUR JOURNEY ?</div>
-      <div class="section-sub-text text-blue-500 text-center  md:mb-5 mb-3">LET'S CREATE AN EXPLOSION TOGETHER</div>
+      <h2 class=" font-bold text-center  uppercase">{{ $t('are_you_ready_to_start') }}</h2>
+      <h4 class="section-sub-text text-blue-500 text-center  md:mb-5 mb-3">{{ $t('let_create') }}</h4>
 
       <div class="w-full">
         <div class="flex justify-center items-center ">
@@ -18,16 +18,26 @@
       </div>
       <div class="mb-10 ">
         <div class="wrap">
-          <NuxtLinkLocale :to="'/'">
-            <button class="button">Start Project</button>
-          </NuxtLinkLocale>
+        
+            <button @click="openContactModal()" class="button">{{ $t('start_project') }}</button>
+         
         </div>
       </div>
     </div>
   </div>
 </template>
-<script setup>
+<script lang="ts" setup>
+import { ModalContact } from '#components';
+const overlay = useOverlay();
+const openContactModal = () => {
+  const modal = overlay.create(ModalContact);
+  modal.open({
+    onSuccess() {
+      modal.close();
+    }
+  });
 
+}
 </script>
 <style scoped>
 .sectionFooterTop .process-auto-col {
@@ -80,7 +90,7 @@
   font-weight: 700;
   color: #fff;
   border: solid var(--ui-sub-main) 2px;
-  
+
   border-radius: 1000px;
   box-shadow: 12px 12px 24px rgba(79, 209, 197, .64);
   transition: all 0.3s ease-in-out 0s;

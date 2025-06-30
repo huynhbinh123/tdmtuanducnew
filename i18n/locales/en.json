@@ -100,17 +100,86 @@
         "text_color": "Text Color",
         "create_project": "Create Project",
         "edit_project": "Edit Project"
-
     },
-    
     "category": "Category",
     "tag": "Tag",
-
-    "blog":"Blog",
-    "blogs":"Blogs",
-    "project":"Project",
+    "blog": "Blog",
+    "blogs": "Blogs",
+    "project": "Project",
     "about": "About",
     "contact": "Contact",
-    "process": "Process"
-
+    "process": "Process",
+    "no_data": "No Data",
+    "view_website": "View Website",
+    "introduction": "Introduction",
+    "journey": "Journey",
+    "gallery": "Gallery",
+    "objective": "Objective",
+    "approach": "Approach",
+    "impact": "Impact",
+    "results": "Results",
+    "first_name": "First Name *",
+    "last_name": "Last Name *",
+    "email": "Email *",
+    "phone": "Phone",
+    "company": "Company",
+    "other": "Other",
+    "social_media": "Social Media",
+    "form_contact": {
+        "title": "READY TO GROW REVENUE?",
+        "subtitle": "Digital Experiences That's Driven Growth Vinawebapp.com",
+        "from_hear": "How did you hear about us?",
+        "help_my_business": "Help My Business",
+        "help_business": {
+            "generate_leads": "Generate Leads",
+            "optimize_website": "Optimize Website",
+            "improve_loyalty": "Improve Brand Loyalty",
+            "increase_revenue": "Increase Revenue",
+            "rank_google": "Rank in Google",
+            "market_share": "Increase Market Share"
+        },
+        "note": "Project Details *",
+        "newsletter": {
+            "line1": "Sign me up for Vinawebapp.com",
+            "line2": "Get monthly marketing, web, mobile tips and insight."
+        },
+        "submit": "SUBMIT",
+        "from_hear_placeholder": "How did you hear about us?",
+        "success_title": "Thank you for contacting us!",
+        "success_message": "We have received your message and will get back to you shortly.",
+        "success_button": "Go to Home Page"
+    },
+    "start_project": "Start Project",
+    "see_our_work": "See Our Work",
+    "trusted_by": "Trusted By",
+    "featured_projects": "Featured Projects",
+    "see_all_projects": "See All Projects",
+    "what_customers_say": "What Customers Say",
+    "what_customers_say_slogan": "We are proud to have worked with many clients who have shared their experiences with us. Here are some of their testimonials.",
+    "why_me_section": {
+        "title": "Why Vinawebapp.com?",
+        "slogan": "We are different because",
+        "points": {
+            "point1": "We have a team with more than 10+ years of experience and we pride ourselves on our sophisticated, innovative processes and continuous innovation.",
+            "point2": "Vinawebapp.com always updates and innovates technologies according to new era trends. We are proud to always create major breakthroughs in customer projects in terms of benefits and profits.",
+            "point3": "We make highly strategic content and design decisions based on the data you provide to ensure that your website will deliver high returns for your project.",
+            "point4": "We value straightforward, no-nonsense communication and will always accept and adapt to our customers' helpful comments.",
+            "point5": "We build high quality websites. Our websites are always SEO optimized, load fast and deliver great user experiences - All the things Google loves.",
+            "point6": "Our team of programmers always has experience in designing highly secure websites, preventing DDOS, and hacking websites. In addition, we also handle website harassment cases for you 24/7."
+        }
+    },
+    "about_short": {
+        "title": "Our Team",
+        "slogan": "We are the leading professional website design company in Vietnam. We are always ready to solve the difficulties in your project.",
+        "years_experience":"years experience",
+        "clients":"clients",
+        "staff":"staff"
+    },
+    "are_you_ready_to_start":"ARE YOU READY TO START YOUR JOURNEY ?",
+    "let_create":"LET'S CREATE AN EXPLOSION TOGETHER",
+    "live_chat":"Live Chat",
+    "get_in_touch":"Get In Touch",
+    "what_sets_us_apart": "What sets us apart",
+    "a_few_words_about_us": "A few words about us"
+    
 }

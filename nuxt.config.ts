@@ -27,7 +27,7 @@ export default defineNuxtConfig({
     '/vnwa/**': { ssr: false, swr: true },
     '/vnwa/**/**': { ssr: false, swr: true },
     '/vnwa/**/**/***': { ssr: false, swr: true },
-    'auth/verify': { ssr: false }
+    'auth/verify': { ssr: false, swr: true }
   },
 
   css: ['~/assets/css/main.css'],
@@ -41,10 +41,21 @@ export default defineNuxtConfig({
     'dayjs-nuxt',
     'nuxt-security',
     'nuxt-tiptap-editor',
+    '@nuxtjs/seo',
+    'nuxt-og-image',
+    '@nuxtjs/sitemap',
   ],
   site: {
     url: process.env.NUXT_FRONTEND_URL,
-    name: 'Vinawebapp.com'
+    name: process.env.NUXT_APP_NAME
+  },
+  sitemap: {
+    cacheMaxAgeSeconds: 3600,
+    exclude: [
+      '/auth/**',       
+      '/vnwa/**',       
+    ],
+    sources: ['/api/__sitemap__/urls'],
   },
   i18n: {
     defaultLocale: process.env.NUXT_APP_LANG || 'en',

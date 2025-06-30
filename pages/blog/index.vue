@@ -1,12 +1,11 @@
 <template>
     <div class="bg-page-blog">
 
-        <PageHeroSection :title="data.hero_section.title"
-            :slogan="data.hero_section.slogan" />
+        <PageHeroSection :title="data.hero_section.title" :slogan="data.hero_section.slogan" />
 
         <UContainer>
             <div class="grid grid-cols-12 gap-4 ">
-                <div class="col-span-4">
+                <div class="lg:col-span-4 col-span-12 lg:order-1 order-2">
                     <Card class="space-y-10">
 
                         <div>
@@ -25,7 +24,7 @@
                         </div>
                     </Card>
                 </div>
-                <div class="col-span-8">
+                <div class="lg:col-span-8 col-span-12 lg:order-2 order-1">
                     <Card>
                         <PostList />
                     </Card>
@@ -39,6 +38,8 @@
 </template>
 
 <script lang="ts" setup>
+import type { MetaSeo } from '~/type';
+
 interface AppearanceData {
     hero_section: {
         title: string;
@@ -46,11 +47,8 @@ interface AppearanceData {
     };
 
 
-    meta: {
-        title: string;
-        desc: string;
-        image: string;
-    };
+    meta:MetaSeo
+
 }
 
 const { locale } = useI18n();

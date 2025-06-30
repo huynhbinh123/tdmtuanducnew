@@ -119,7 +119,86 @@ const { refresh, status: loadDataStatus } = await useHttp<any>("vnwa/appearance/
         title: data.hero_section?.title ?? '',
         slogan: data.hero_section?.slogan ?? '',
       };
-      appearanceData.process = data.process ?? [];
+      appearanceData.process = data.process ?? [
+  {
+    "image": null,
+    "label": "Initial Consultation & Strategy",
+    "to": "/",
+    "content": "We listen to your business goals and needs. Analyze the market, target audience, and propose a design direction that aligns with your vision.",
+    "icon": "ph:handshake-light",
+    "primary_label": "Start",
+    "desc": "Today",
+    "bg_color": "#6494D3",
+    "text_color": "#D8D5F6"
+  },
+  {
+    "image": null,
+    "label": "Planning & Quotation",
+    "to": "/",
+    "content": "We build a sitemap, establish a clear timeline, and provide a transparent quote. A clear contract is signed to officially kick off the project.",
+    "icon": "carbon:task",
+    "primary_label": "Planning",
+    "desc": "Today",
+    "bg_color": "#EAE95D",
+    "text_color": "#180101"
+  },
+  {
+    "image": null,
+    "label": "UI/UX Design",
+    "to": "/",
+    "content": "We create smooth user experiences (UX) paired with elegant, modern user interfaces (UI) that reflect your brand identity.",
+    "icon": "material-symbols:design-services-outline",
+    "primary_label": "Design",
+    "desc": "Day 2,3,4",
+    "bg_color": "#5CAFBC",
+    "text_color": "#0D0C0C"
+  },
+  {
+    "image": null,
+    "label": "Website Development",
+    "to": "/",
+    "content": "We develop the site based on the finalized design, ensuring both functionality and performance across all platforms.",
+    "icon": "mdi:code-tags",
+    "primary_label": "Development",
+    "desc": "Day 5–11",
+    "bg_color": "#6D5991",
+    "text_color": "#FFFFFF"
+  },
+  {
+    "image": null,
+    "label": "Testing & Refinement",
+    "to": "/",
+    "content": "We run comprehensive tests for speed, security, browser/device compatibility, and make final adjustments based on feedback.",
+    "primary_label": "Testing",
+    "icon": "fluent:accessibility-checkmark-20-regular",
+    "desc": "Day 12",
+    "bg_color": "#D97617",
+    "text_color": "#FFFFFF"
+  },
+  {
+    "image": null,
+    "label": "Handover & User Training",
+    "to": "/",
+    "content": "We deliver the source code, admin accounts, and provide detailed documentation and training on how to use the system.",
+    "primary_label": "Delivery",
+    "icon": "mdi:clipboard-check-outline",
+    "desc": "Day 13",
+    "bg_color": "#83C039",
+    "text_color": "#FFFFFF"
+  },
+  {
+    "image": null,
+    "label": "Maintenance & Long-Term Support",
+    "to": "/",
+    "content": "We provide free technical support, routine maintenance, and upgrades to meet your business growth.",
+    "primary_label": "Support",
+    "icon": "mdi:lifebuoy",
+    "desc": "Lifelong",
+    "bg_color": "#B655D8",
+    "text_color": "#FFFFFF"
+  }
+]
+;
       appearanceData.meta = {
         title: data.meta?.title ?? '',
         desc: data.meta?.desc ?? '',

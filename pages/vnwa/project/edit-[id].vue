@@ -92,6 +92,12 @@
                   </div>
 
                 </UCard>
+                <UCard>
+                  <UFormField label="Gallery">
+                    <VnwaInputImages v-model="formData.galery" />
+                  </UFormField>
+
+                </UCard>
               </VnwaBaseForm>
             </div>
             <div class="col-span-4 space-y-8">

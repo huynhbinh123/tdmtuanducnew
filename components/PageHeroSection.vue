@@ -1,7 +1,7 @@
 <template>
     <div>
         <UContainer>
-            <div class=" w-full mx-auto max-w-4xl text-center py-10">
+            <div class=" w-full mx-auto max-w-4xl text-center lg:py-10 py-3">
                 <div class="text-center ">
 
 

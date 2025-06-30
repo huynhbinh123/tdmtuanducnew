@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import type { MetaSeo } from '~/type';
+
 interface AppearanceData {
   hero_section: {
     title: string;
@@ -13,12 +15,8 @@ interface AppearanceData {
     text_color: string;
     desc: string;
   }[];
+  meta: MetaSeo
 
-  meta: {
-    title: string;
-    desc: string;
-    image: string;
-  };
 }
 const { locale } = useI18n();
 const { data, status } = await useHttp<AppearanceData>('load-data-process-page', {

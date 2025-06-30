@@ -1,6 +1,6 @@
 <template>
     <div>
-        <ul class="grid grid-cols-2 gap-4">
+        <ul class="grid lg:grid-cols-2 grid-cols-1 gap-4">
             <li v-for="(item, index) in data.projects" :key="index">
                 <ProjectItem :item="item" />
             </li>

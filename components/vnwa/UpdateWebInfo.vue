@@ -7,15 +7,20 @@
           Update email, phone, address, working time,..
         </div>
 
-        </div>
-                                    <VnwaGroupLang  :locale="locale" @update:locale="locale = $event" />
+      </div>
+      <VnwaGroupLang :locale="locale" @update:locale="locale = $event" />
 
-     
+
     </template>
     <UForm :validate="validate" :state="appearanceData" class="space-y-4" @submit="onSubmit">
       <UCard>
         <UFormField label="Phone" name="phone">
           <UInput v-model="appearanceData.phone" />
+        </UFormField>
+      </UCard>
+      <UCard>
+        <UFormField label="Live Chat Url" name="live_chat_url">
+          <UInput v-model="appearanceData.live_chat_url" />
         </UFormField>
       </UCard>
 
@@ -76,6 +81,7 @@ import type { FormError, FormSubmitEvent } from '@nuxt/ui';
 
 interface AppearanceData {
   phone: string;
+  live_chat_url:string;
   social: {
     label: string;
     icon: string;
@@ -103,13 +109,15 @@ const params = computed(() => ({
 
 
 const { refresh, status } = useHttp<any>("vnwa/appearance/profile/load-data", {
-    method: "GET",
+  method: "GET",
   params: params,
   watch: [params],
   immediate: true,
   async onResponse({ response }) {
     const data = response._data?.data;
     appearanceData.phone = data.phone;
+    appearanceData.live_chat_url = data.live_chat_url;
+    
     appearanceData.social = data.social;
     appearanceData.tag = data.tag;
   }
@@ -144,7 +152,7 @@ const { refresh: formSubmit, status: appearanceUpdateStatus } = useHttp<any>("vn
 const validate = (state: any): FormError[] => {
   const errors: FormError[] = [];
 
- 
+
 
   return errors;
 };

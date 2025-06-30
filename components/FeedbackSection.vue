@@ -20,10 +20,9 @@ defineProps<{
     <UContainer>
 
       <div class="w-full py-3 pt-10 mb-10 text-center">
-        <PrimaryHeding>WHAT CUSTOMERS SAY</PrimaryHeding>
+        <PrimaryHeding>{{ $t('what_customers_say') }}</PrimaryHeding>
         <SubHeding>
-          We are proud to have worked with many clients who have shared their experiences with us. Here are some of
-          their testimonials.
+          {{ $t('what_customers_say_slogan') }}
         </SubHeding>
       </div>
 
@@ -35,9 +34,11 @@ defineProps<{
               <NuxtImg :src="`${config.public.appUrl}/images/stars.svg`" width="128" height="22" alt="5-star rating"
                 class="inline-block" />
             </div>
-            <div class="text-blue-500 uppercase "><h6>
-              {{ item.label }}
-            </h6></div>
+            <div class="text-blue-500 uppercase ">
+              <h6>
+                {{ item.label }}
+              </h6>
+            </div>
           </div>
         </UCarousel>
       </div>

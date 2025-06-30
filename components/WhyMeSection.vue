@@ -3,8 +3,8 @@
 
     <UContainer >
       <div class=" w-full   py-3 pt-10 mb-10">
-        <PrimaryHeding class="text-center">{{ title }}</PrimaryHeding> 
-        <SubHeding class="text-center">{{ subTitle }}</SubHeding>
+        <PrimaryHeding class="text-center">{{ t('why_me_section.title') }}</PrimaryHeding> 
+        <SubHeding class="text-center">{{ t('why_me_section.slogan') }}</SubHeding>
       </div>
       <div class="grid grid-cols-12 gap-4 py-20">
 
@@ -26,40 +26,38 @@
 
 </template>
 <script setup>
-
-const title = ref('WHY VINAWEBAPP.COM?');
-const subTitle = ref("We are different because");
+const {t} = useI18n();
 const items =
   [
     {
       icon: 'emojione:military-medal',
       name: 'Many years of experience',
-      desc: 'We have a team with more than 10+ years of experience and we pride ourselves on our sophisticated, innovative processes and continuous innovation.',
+      desc: t('why_me_section.points.point1'),
     },
     {
       icon: 'emojione:globe-with-meridians',
       name: 'High technology',
-      desc: 'Vinawebapp.com always updates and innovates technologies according to new era trends. We are proud to always create major breakthroughs in customer projects in terms of benefits and profits.',
+      desc: t('why_me_section.points.point2')
     },
     {
       icon: 'emojione:airplane-departure',
       name: 'Strategic direction',
-      desc: 'We make highly strategic content and design decisions based on the data you provide to ensure that your website will deliver high returns for your project.',
+      desc: t('why_me_section.points.point3')
     },
     {
       icon: 'emojione:clinking-beer-mugs',
       name: 'Receive the ideas',
-      desc: "We value straightforward, no-nonsense communication and will always accept and adapt to our customers' helpful comments.",
+      desc: t('why_me_section.points.point4')
     },
     {
       icon: 'devicon:google',
       name: 'SEO-minded ',
-      desc: "We build high quality websites. Our websites are always SEO optimized, load fast and deliver great user experiences - All the things Google loves. ",
+      desc: t('why_me_section.points.point5'),
     },
     {
       icon: 'emojione:construction-worker-dark-skin-tone',
       name: 'High security ',
-      desc: "Our team of programmers always has experience in designing highly secure websites, preventing DDOS, and hacking websites. In addition, we also handle website harassment cases for you 24/7. ",
+      desc: t('why_me_section.points.point6'),
     },
   ]
 

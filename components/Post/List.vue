@@ -1,16 +1,23 @@
 <template>
     <div>
-        <ul class="grid grid-cols-2 gap-4">
-            <li v-for="(item, index) in data.posts" :key="index">
-                <PostItem :item="item" />
-            </li>
-        </ul>
-        <div class="flex items-center justify-center">
+        <div v-if="data.posts.length > 0">
 
-            <UPagination color="vnwa" variant="solid" v-model:page="page" :show-controls="false" :items-per-page="data.per_page"
-                :total="data.total" show-edges />
+            <ul class="grid lg:grid-cols-2 grid-cols-1 gap-4">
+                <li v-for="(item, index) in data.posts" :key="index">
+                    <PostItem :item="item" />
+                </li>
+            </ul>
+            <div class="flex items-center justify-center" v-if="data.last_page">
+                <UPagination color="vnwa" variant="solid" v-model:page="page" :show-controls="false"
+                    :items-per-page="data.per_page" :total="data.total" show-edges />
+            </div>
         </div>
-    </div>
+        <div v-else>
+            <h4 class="text-center font-bold">
+                {{ $t('no_data') }}
+            </h4>
+        </div>
+        </div>
 </template>
 
 <script lang="ts" setup>

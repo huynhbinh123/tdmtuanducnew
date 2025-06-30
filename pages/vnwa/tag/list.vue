@@ -9,12 +9,10 @@
 
                     <template #content>
                         <ul class="min-w-40  text-black dark:text-white">
-
                             <li>
                                 <UButton @click="deleteSelected()" color="neutral" variant="ghost"
                                     icon="heroicons:trash" class="w-full" :label="$t('vnwa.vmedia.move_to_trash')" />
                             </li>
-
                         </ul>
                     </template>
                 </UPopover>

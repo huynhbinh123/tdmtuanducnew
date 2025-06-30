@@ -1,106 +1,135 @@
+<script lang="ts" setup>
+import type { MetaSeo } from '~/type';
+
+interface AppearanceData {
+  hero_section: {
+    title: string;
+    slogan: string;
+  };
+  services: {
+    label: string;
+    icon: string;
+    bg_color: string;
+    desc: string;
+  }[];
+  short_about: string;
+
+  meta:MetaSeo
+}
+const { locale } = useI18n();
+const { data, status } = await useHttp<AppearanceData>('load-data-about-page', {
+  method: 'GET',
+  params: {
+    locale: locale
+  }
+});
+useSeoMeta({
+  title: data.value.meta.title,
+  description: data.value.meta.desc,
+  ogTitle: data.value.meta.title,
+  ogDescription: data.value.meta.desc,
+  ogImage: useNuxtApp().$storage(data.value.meta.image),
+  twitterTitle: data.value.meta.title,
+  twitterDescription: data.value.meta.desc,
+  twitterImage: useNuxtApp().$storage(data.value.meta.image),
+});
+const isActive = (index) => (index + 1) % 3 === 2;
+
+</script>
 <template>
-  <div class="">
-    <div class="h-full bg-banner  min-h-[calc(100vh-80px)]">
-      <div class=" lg:flex gap-4 items-start justify-between ">
-        <NuxtImg width="700" class="w-[700px] h-auto order-2" :src="$storage(appearanceData.image)"
-          alt="vinawebapp.com" />
+  <div class="process">
+    <img src="~/assets/images/bgAbout.jpeg" class="w-full h-screen opacity-25 fixed  " alt="Vinawebapp.com" />
 
-          <div class="h-full lg:p-10 p-5 space-y-20 order-1">
-            <div>
-              <h4 class="text-2xl text-white">
-                {{ appearanceData.subTitle }}
-              </h4>
-              <div v-gsap.scroll.animateText.once.slow="appearanceData.title" class="title"></div>
-            </div>
-            <div class="text-white text-xl">
-              <div class="text-white mb-5" v-html="appearanceData.content"></div>
 
-              <h2 class="text-4xl" style="font-family: caveat,cursive;">Thuong Lee</h2>
+    <div class="relative    py-10 text-center">
+      <PageHeroSection :title="data.hero_section.title" :slogan="data.hero_section.slogan" />
+      <div class="flex items-center justify-center">
+        <img loading="lazy" width="570" height="auto" src="/images/badges.png" class="md:my-10 my-6"
+          alt="vinawebapp.com">
+
+      </div>
+    </div>
+
+    <div class="relative  py-10">
+      <div class="w-full py-3 pt-10">
+        <h2 class="text-center text-white font-bold">
+        {{$t('what_sets_us_apart')}}
+        </h2>
+      </div>
+      <div class="grid grid-cols-12 gap-4 py-20">
+
+
+
+
+        <div class="lg:col-span-4 sm:col-span-6 col-span-12 " :class="{ 'lg:-translate-y-16': isActive(index) }"
+          v-for="(item, index) in data.services" :key="index">
+
+          <FeatureCardItem :data="item" />
+
+
+        </div>
+
+
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="w-full py-3 pt-10">
+      <div class="relative page-padding py-10">
+
+        <div class="w-full grid grid-cols-12 gap-4 bg-short-about rounded-lg border-white/10 border-2">
+          <div class="lg:col-span-6 col-span-12 lg:order-2">
+            <div class="p-5">
+              <img loading="lazy" src="/images/bgAbout.png" width="1000" height="1500" class="h-auto w-full"
+                alt="Vinawebapp.com">
             </div>
           </div>
 
-      </div>
-    </div>
-    <div class="lg:p-10 p-5 bg-gray-100">
-      <h3 class="text-2xl">Meet our Team</h3>
+          <div class="lg:col-span-6 col-span-12 lg:order-1 text-white">
+            <div class="w-full flex items-center justify-start">
+              <div class="lg:p-20 p-5">
+                <h3 class="section-sub-text color-blue md:mb-5 mb-3 font-bold">{{$t('a_few_words_about_us')}}</h3>
 
-      <div class="lg:p-10 lg:mt-0 mt-10">
-        <ul class="grid lg:grid-cols-3 grid-cols-1 gap-4">
-          <li v-for="(item, index) in appearanceData.teams" :key="index">
-            <div class="lg:p-10 p-5 lg:border-0 border border-gray-200">
+             <div v-html="data.short_about"> </div>
 
-              <div class="flex items-center justify-between gap-4 text-black/80 ">
-                <div class="whitespace-pre-line">
-                  {{ item.label }}
-                </div>
-                <div>
-                  <NuxtLinkLocale :to="item.to" target="_blank">
-                    <div class="uppercase flex items-center justify-start gap-2 text-báe ">
-                      Instagram
-                      <UIcon name="material-symbols:arrow-outward" class="size-5 text-gray-600" />
+                <div class="grid grid-cols-12 gap-4 py-10">
+                  <div class="col-span-4 relative">
+                    <div class="lg:text-4xl text-2xl font-bold">
+                      <div class="animate-glow absolute bg-red-500 top-2 w-16 h-12"> </div>
+                      <span>10</span>
+                      <icon name="mi:add" />
                     </div>
-                  </NuxtLinkLocale>
+                    <div class="md:text-lg text-sm text-white/80">years of experience</div>
+                  </div>
+                  <div class="col-span-4 relative">
+                    <div class="lg:text-4xl text-2xl font-bold">
+                      <div class="animate-glow absolute bg-green-500 top-2 w-16 h-12"> </div>
+                      <span>200</span>
+                      <icon name="mi:add" />
+                    </div>
+                    <div class="md:text-lg text-sm text-white/80">trusted partners</div>
+                  </div>
+                  <div class="col-span-4 relative">
+                    <div class="lg:text-4xl text-2xl font-bold">
+                      <div class="animate-glow absolute bg-purple-500 top-2 w-16 h-12"> </div>
+                      <span>20</span>
+                      <icon name="mi:add" />
+                    </div>
+                    <div class="md:text-lg text-sm text-white/80">24/7 support staff</div>
+                  </div>
                 </div>
-              </div>
-              <div class="mt-1">
-                <NuxtImg loading="lazy" decoding="auto" :src="$storage(item.image)" width="500" height="800"
-                  class="w-full h-full" />
+
               </div>
             </div>
-          </li>
-        </ul>
+          </div>
+
+        </div>
+
       </div>
     </div>
+
+    <div class="divider"></div>
+
   </div>
 </template>
 
-<script lang="ts" setup>
-type AppearanceData = {
-  image: string;
-  title: string;
-  subTitle: string;
-  content: string;
-  teams: {
-    label: string;
-    to: string;
-    image: string;
-  }[];
-  meta: {
-    title: string;
-    desc: string;
-    image: string;
-  };
-};
-
-const config = useRuntimeConfig();
-const { data, refresh } = await useFetch(`${config.public.apiUrl}/load-data-about-page`);
-const appearanceData = data.value as AppearanceData;
-
-useSeoMeta({
-  title: appearanceData.meta.title,
-  description: appearanceData.meta.desc,
-  ogTitle: appearanceData.meta.title,
-  ogDescription: appearanceData.meta.desc,
-  ogImage: useNuxtApp().$storage(appearanceData.meta.image),
-  twitterTitle: appearanceData.meta.title,
-  twitterDescription: appearanceData.meta.desc,
-  twitterImage: useNuxtApp().$storage(appearanceData.meta.image),
-});
-
-
-</script>
-
-
-<style scoped>
-title {
-  font-size: 3vw;
-  background-color: transparent;
-  font-family: "Bodoni Moda", serif;
-  text-align: left;
-  color: #fff;
-}
-
-.bg-banner {
-  background-color: rgb(16 8 33);
-}
-</style>
+<style></style>

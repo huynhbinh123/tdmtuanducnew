@@ -38,4 +38,7 @@
   </div>
 </template>
 <script>
+definePageMeta({
+  title: 'SEO CMS - Trang chủ',
+  })
 </script>

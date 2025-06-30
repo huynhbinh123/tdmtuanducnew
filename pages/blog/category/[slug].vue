@@ -5,7 +5,7 @@
 
     <UContainer>
       <div class="grid grid-cols-12 gap-4 ">
-        <div class="col-span-4">
+        <div class="lg:col-span-4 col-span-12 lg:order-1 order-2">
           <Card class="space-y-10">
 
             <div>
@@ -24,7 +24,7 @@
             </div>
           </Card>
         </div>
-        <div class="col-span-8">
+        <div class="lg:col-span-8 col-span-12 lg:order-2 order-1">
           <Card>
             <PostList type="category" :value="route.params.slug"   />
           </Card>
@@ -38,35 +38,36 @@
 </template>
 
 <script lang="ts" setup>
+import type { MetaSeo } from '~/type';
+
 interface AppearanceData {
   title: string;
   slogan: string;
-  meta: {
-    title: string;
-    desc: string;
-    image: string;
-  };
+  meta:MetaSeo
+
 }
 
 const { locale } = useI18n();
 const route = useRoute();
-console.log(route)
 const { data, status } = await useHttp<AppearanceData>(`load-data-blog-category/${route.params.slug}`, {
   method: 'GET',
   params: {
     locale: locale
   }
 });
-useSeoMeta({
-  title: data.value.meta.title,
-  description: data.value.meta.desc,
-  ogTitle: data.value.meta.title,
-  ogDescription: data.value.meta.desc,
-  ogImage: useNuxtApp().$storage(data.value.meta.image),
-  twitterTitle: data.value.meta.title,
-  twitterDescription: data.value.meta.desc,
-  twitterImage: useNuxtApp().$storage(data.value.meta.image),
-});
+
+if (data.value?.meta) {
+  useSeoMeta({
+    title: data.value.meta.title,
+    description: data.value.meta.desc,
+    ogTitle: data.value.meta.title,
+    ogDescription: data.value.meta.desc,
+    ogImage:  useNuxtApp().$storage(data.value.meta.image),
+    twitterTitle: data.value.meta.title,
+    twitterDescription: data.value.meta.desc,
+    twitterImage:  useNuxtApp().$storage(data.value.meta.image),
+  });
+}
 
 </script>
 

@@ -2,7 +2,7 @@
 
 </script>
 <template lang="">
- <div>
+ <div >
   <div class="vnwa_loading">
    
    
@@ -21,7 +21,7 @@
 	<line class="pl__ball" stroke="url(#pl-grad2)" x1="100" y1="18" x2="100.01" y2="182" stroke-width="36" stroke-dasharray="1 165" stroke-linecap="round" />
 </svg>
  </div>
- <div class="bg-black/90 w-full h-full absolute top-0 start-0">
+ <div class="bg-black/80 z-40 w-full h-full absolute top-0 start-0">
    </div>
  </div>
 </template>

@@ -22,7 +22,7 @@ defineProps<{
          <div class="divide flex items-center  gap-6 justify-between">
 
             <div>
-               <h4 class="text-white/80 uppercase font-semibold tracking-widest min-w-[120px]  sm:pb-3 sal-animate">Trusted By </h4>
+               <h4 class="text-white/80 uppercase font-semibold tracking-widest min-w-[120px]  sm:pb-3 sal-animate">{{ $t('trusted_by') }}</h4>
 
             </div>
             <div>

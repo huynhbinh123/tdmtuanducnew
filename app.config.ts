@@ -1014,10 +1014,10 @@ export default defineAppConfig({
     selectMenu: {
       slots: {
         base: [
-          'relative group w-full rounded-md inline-flex items-center focus:outline-none disabled:cursor-not-allowed disabled:opacity-75',
-          'transition-colors'
+          'relative group w-full rounded-md inline-flex items-center bg-black z-10 focus:outline-none disabled:cursor-not-allowed disabled:opacity-75',
+          'transition-colors z-10'
         ],
-        leading: 'absolute inset-y-0 start-0 flex items-center',
+        leading: 'absolute inset-y-0 start-0 flex items-center z-10',
         leadingIcon: 'shrink-0 text-dimmed',
         leadingAvatar: 'shrink-0',
         leadingAvatarSize: '',
@@ -1027,8 +1027,8 @@ export default defineAppConfig({
         placeholder: 'truncate text-dimmed',
         arrow: 'fill-default',
         content: [
-          'max-h-60 w-(--reka-select-trigger-width) bg-default shadow-lg rounded-md ring ring-default overflow-hidden data-[state=open]:animate-[scale-in_100ms_ease-out] data-[state=closed]:animate-[scale-out_100ms_ease-in] origin-(--reka-select-content-transform-origin) pointer-events-auto',
-          'origin-(--reka-combobox-content-transform-origin) w-(--reka-combobox-trigger-width)'
+          'max-h-60 z-10 bg-black w-(--reka-select-trigger-width)  shadow-lg rounded-md  overflow-hidden data-[state=open]:animate-[scale-in_100ms_ease-out] data-[state=closed]:animate-[scale-out_100ms_ease-in] origin-(--reka-select-content-transform-origin) pointer-events-auto',
+          'origin-(--reka-combobox-content-transform-origin)  z-10 bg-black w-(--reka-combobox-trigger-width)'
         ],
         viewport: 'divide-y divide-default scroll-py-1',
         group: 'p-1 isolate',

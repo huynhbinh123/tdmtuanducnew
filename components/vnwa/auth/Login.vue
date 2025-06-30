@@ -27,11 +27,11 @@ const { refresh: onSubmit, status: loginStatus } = useHttp<any>("admin-login", {
       nuxtApp.$token.value = response._data.token;
 
       await auth.fetchUser();
-      const redirect = route.query.redirect 
+      let redirect = route.query.redirect 
       if (redirect) {
-        return router.push(redirect)
+        return router.push(<string>redirect)
       } else {
-        return router.push('/') // hoặc trang admin dashboard
+        return router.push('/vnwa/dashboard') // hoặc trang admin dashboard
       }
     }
   }

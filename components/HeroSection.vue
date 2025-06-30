@@ -21,17 +21,17 @@
               </h5>
             </div>
             <div class="flex lg:justify-start items-center justify-center gap-4  font-medium">
-              <NuxtLinkLocale :to="'/'">
-                <button
+              <div>
+                <button @click="openContactModal()"
                   class=" lg:text-lg text-sm text-white flex items-center  w-full lg:p-3 px-2 py-3 md:bg-red-500 bg-red-700  md:hover:bg-red-600 active:bg-red-600 uppercase md:hover:-translate-y-1">
-                  <span class="font-bold"> Start Project </span>
+                  <span class="font-bold"> {{ $t('start_project') }} </span>
                   <UIcon name="mdi-light:arrow-right" color="white" class="ml-2  size-5 " />
                 </button>
-              </NuxtLinkLocale>
-              <NuxtLinkLocale :to="'/'" class="button-array__button--secondary md:hover:-translate-y-1">
+              </div>
+              <NuxtLinkLocale :to="'/project'" class="button-array__button--secondary md:hover:-translate-y-1">
                 <button
                   class=" lg:text-lg text-sm flex  items-center  text-white w-full   lg:p-3 px-2 py-1 bg-gray-700 md:hover:bg-blue-600 active:bg-blue-600 uppercase ">
-                  <span class="font-bold"> See our Work </span>
+                  <span class="font-bold"> {{ $t('see_our_work') }} </span>
                   <UIcon name="mdi-light:arrow-right" color="white" class="ml-2 size-8" />
                 </button>
               </NuxtLinkLocale>
@@ -83,6 +83,8 @@
   </div>
 </template>
 <script setup lang="ts">
+import { ModalContact } from '#components';
+
 interface HeroSection {
   title: string;
   slogan: string;
@@ -121,7 +123,16 @@ onUnmounted(() => {
 
 
 
+const overlay = useOverlay()
+const openContactModal = () => {
+  const modal = overlay.create(ModalContact);
+  modal.open({
+    onSuccess() {
+      modal.close();
+    }
+  });
 
+}
 
 
 

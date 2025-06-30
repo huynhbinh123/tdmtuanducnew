@@ -3,9 +3,9 @@
     <VnwaCard :is-loading="loadDataStatus == 'pending'">
       <template #header>
         <div class="">
-          <div class="text-lg font-semibold mb-2">Process Page Manger </div>
+          <div class="text-lg font-semibold mb-2">About Page Manger </div>
         </div>
-                                    <VnwaGroupLang  :locale="locale" @update:locale="locale = $event" />
+        <VnwaGroupLang :locale="locale" @update:locale="locale = $event" />
 
       </template>
       <UForm :validate="validate" :state="appearanceData" class="space-y-4" @submit="onSubmit">
@@ -17,7 +17,7 @@
           <div class="space-y-4">
             <div class="grid grid-cols-1 gap-4">
               <UFormField label="Title" name="hero_section.title">
-                <UInput v-model="appearanceData.hero_section.title" />
+                <UTextarea v-model="appearanceData.hero_section.title" />
               </UFormField>
               <UFormField label="Slogan" name="hero_section.slogan">
                 <UTextarea v-model="appearanceData.hero_section.slogan" />
@@ -26,66 +26,34 @@
           </div>
         </UCard>
 
-        <UCard>
-          <template #header>
-            <h3>Brands Section</h3>
-          </template>
-          <div class="space-y-4">
-            <div class="grid grid-cols-1 gap-4">
-              <UFormField label="" name="brand_section">
-                <VnwaMutipleLink v-model="appearanceData.brand_section" :is-to="true" :is-image="true" />
-              </UFormField>
-            </div>
-          </div>
-        </UCard>
+
 
         <UCard>
           <template #header>
-            <h3>Feedback Section</h3>
+            <h3>Services</h3>
           </template>
           <div class="space-y-4">
             <div class="grid grid-cols-1 gap-4">
-              <UFormField label="" name="feedback_section">
-                <VnwaMutipleLink v-model="appearanceData.feedback_section" :is-image="true" :is-content="true" />
+              <UFormField label="" name="services">
+                <VnwaMutipleLink v-model="appearanceData.services" :is-icon="true" :is-bg-color="true"
+                  :is-desc="true" />
               </UFormField>
             </div>
           </div>
+        </UCard>
+        <UCard>
+          <UFormField label="Short About" name="short_about">
+            <VnwaEditor v-model="appearanceData.short_about" />
+          </UFormField>
         </UCard>
 
-        <UCard>
-          <template #header>
-            <h3>Why Me Section</h3>
-          </template>
-          <div class="space-y-4">
-            <div class="grid grid-cols-1 gap-4">
-              <UFormField label="" name="why_me_section">
-                <VnwaMutipleLink v-model="appearanceData.why_me_section" :is-icon="true"
-                  iconsLink="https://icones.js.org/collection/emojione" />
-              </UFormField>
-            </div>
-          </div>
-        </UCard>
 
-        <UCard>
-          <template #header>
-            <h3>Short About Section</h3>
-          </template>
-          <div class="space-y-4">
-            <div class="grid grid-cols-1 gap-4">
-              <UFormField label="Title" name="short_about_section.title">
-                <UInput v-model="appearanceData.short_about_section.label" />
-              </UFormField>
-              <UFormField label="Content" name="short_about_section.content">
-                <VnwaEditor v-model="appearanceData.short_about_section.content" />
-              </UFormField>
-            </div>
-          </div>
-        </UCard>
+
 
         <VnwaMetaSeoForm :meta="appearanceData.meta" @update:errors="handleErrors" />
 
         <UButton type="submit" icon="mdi:content-save" :loading="appearanceUpdateStatus == 'pending'">
-          {{$t('vnwa.save')}}
+          {{ $t('vnwa.save') }}
         </UButton>
       </UForm>
 
@@ -94,10 +62,9 @@
 </template>
 
 <script lang="ts" setup>
-import { UTextarea } from '#components';
 import type { FormError, FormSubmitEvent } from '@nuxt/ui'
 definePageMeta({
-  title: 'Home Page Manager'
+  title: 'About Page Manager'
 })
 
 interface AppearanceData {
@@ -105,25 +72,14 @@ interface AppearanceData {
     title: string;
     slogan: string;
   };
-  brand_section: {
+  services: {
     label: string;
-    image_url: string;
-    to: string;
-  }[];
-  feedback_section: {
-    label: string;
-    image: string;
-    content: string;
-  }[];
-  why_me_section: {
     icon: string;
-    label: string;
-    content: string;
+    bg_color: string;
+    desc: string;
   }[];
-  short_about_section: {
-    label: string;
-    content: string;
-  };
+  short_about: string;
+
   meta: {
     title: string;
     desc: string;
@@ -136,13 +92,8 @@ const appearanceData = reactive<Partial<AppearanceData>>({
     title: '',
     slogan: '',
   },
-  brand_section: [],
-  feedback_section: [],
-  why_me_section: [],
-  short_about_section: {
-    label: '',
-    content: '',
-  },
+  services: [],
+  short_about: '',
   meta: {
     title: '',
     desc: '',
@@ -158,7 +109,7 @@ const params = computed(() => ({
 }));
 
 
-const { refresh, status: loadDataStatus } = await useHttp<any>("vnwa/appearance/home_page/load-data", {
+const { refresh, status: loadDataStatus } = await useHttp<any>("vnwa/appearance/about_page/load-data", {
   method: "GET",
   params: params,
   watch: [params],
@@ -171,13 +122,69 @@ const { refresh, status: loadDataStatus } = await useHttp<any>("vnwa/appearance/
         title: data.hero_section?.title ?? '',
         slogan: data.hero_section?.slogan ?? '',
       };
-      appearanceData.brand_section = data.brand_section ?? [];
-      appearanceData.feedback_section = data.feedback_section ?? [];
-      appearanceData.why_me_section = data.why_me_section ?? [];
-      appearanceData.short_about_section = {
-        label: data.short_about_section?.label ?? '',
-        content: data.short_about_section?.content ?? '',
-      };
+      appearanceData.services = data.services ?? [
+        {
+          label: "No Hidden Costs",
+          icon: "icon-park-outline:electronic-locks-close",
+          bg_color: "#facc15",
+          desc: "When we quote a price for your website, we stick to it. No surprises, no additional costs."
+        },
+        {
+          label: "Cutting-edge Technology",
+          icon: "jam:microchip",
+          bg_color: "#a855f7",
+          desc: "We hand-code to create fast, secure, reliable, and accessible websites."
+        },
+        {
+          label: "Your Website",
+          icon: "gg:website",
+          bg_color: "#ec4899",
+          desc: "Our designs are always customized to your brand, no templates, exclusively for you."
+        },
+        {
+          label: "Long-term Partnership",
+          icon: "fluent-emoji:briefcase",
+          bg_color: "#3f1d38",
+          desc: "We invest in your success, offering lifetime warranties and upgrades."
+        },
+        {
+          label: "Extensive Experience",
+          icon: "emojione:military-medal",
+          bg_color: "#facc15",
+          desc: "We have a team of highly experienced and carefully selected personnel."
+        },
+        {
+          label: "Practical Approach",
+          icon: "twemoji:thumbs-up-dark-skin-tone",
+          bg_color: "#fbbf24",
+          desc: "Vinawebapp.com's working style is straightforward, honest, and to the point."
+        },
+        {
+          label: "Strategic",
+          icon: "fluent-emoji:chart-increasing-with-yen",
+          bg_color: "#84cc16",
+          desc: "Our web design is based on data-driven strategy."
+        },
+        {
+          label: "Prompt Communication",
+          icon: "icon-park-outline:message-success",
+          bg_color: "#22c55e",
+          desc: "Maintaining close contact throughout the web design project. We're always available for daily calls and meetings."
+        },
+        {
+          label: "Timely Delivery",
+          icon: "fluent-emoji:dna",
+          bg_color: "#ef4444",
+          desc: "Project implementation and completion times are clearly defined."
+        },
+        {
+          label: "Extensive Experience",
+          icon: "material-symbols:screen-search-desktop-sharp",
+          bg_color: "#14b8a6",
+          desc: "We have a team of highly experienced and carefully selected personnel."
+        }
+      ];;
+      appearanceData.short_about = data.short_about ?? '';
       appearanceData.meta = {
         title: data.meta?.title ?? '',
         desc: data.meta?.desc ?? '',
@@ -189,7 +196,7 @@ const { refresh, status: loadDataStatus } = await useHttp<any>("vnwa/appearance/
   },
 });
 
-const { refresh: formSubmit, status: appearanceUpdateStatus } = useHttp<any>("vnwa/appearance/home_page/update", {
+const { refresh: formSubmit, status: appearanceUpdateStatus } = useHttp<any>("vnwa/appearance/about_page/update", {
   method: "POST",
   body: appearanceData,
   params: params,

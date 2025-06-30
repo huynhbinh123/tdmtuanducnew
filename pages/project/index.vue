@@ -15,6 +15,8 @@
 </template>
 
 <script lang="ts" setup>
+import type { MetaSeo } from '~/type';
+
 interface AppearanceData {
     hero_section: {
         title: string;
@@ -22,11 +24,8 @@ interface AppearanceData {
     };
 
 
-    meta: {
-        title: string;
-        desc: string;
-        image: string;
-    };
+    meta:MetaSeo
+
 }
 
 const { locale } = useI18n();
