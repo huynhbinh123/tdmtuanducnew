@@ -210,7 +210,7 @@ const mediaDetail = ref<MediaDetail>({});
 const keySelected = ref([]);
 const basePath = useCookie('mediaBasePath');
 
-basePath.value = String(basePath.value) ? String(basePath.value) : "";
+basePath.value = String(basePath.value) ? String(basePath.value) : "/";
 
 
 const { data, refresh, status } = useHttp<any>("vnwa/media/load-data", {

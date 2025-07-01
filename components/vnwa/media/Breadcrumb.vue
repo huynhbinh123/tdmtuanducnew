@@ -36,12 +36,12 @@ const props = defineProps({
 });
 const emit = defineEmits(['navigateTo'])
 const breadcrumbs = computed(() => {
-    if (!props.path) return [];
+    if (!props.path || typeof props.path !== 'string') return [];
 
     let sanitizedPath = String(props.path); // Ép kiểu thành chuỗi
     sanitizedPath = sanitizedPath.replace(/\/$/, ''); // Xóa dấu `/` cuối nếu có
 
-    const segments = sanitizedPath.split('/');
+    const segments = sanitizedPath.split('/').filter(Boolean); // Ensure no empty segments
     return segments.map((label, index) => ({
         label,
         path: segments.slice(0, index + 1).join('/')

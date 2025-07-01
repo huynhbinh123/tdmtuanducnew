@@ -217,12 +217,12 @@ async function onError(event: FormErrorEvent) {
     }
 }
 const validate = (state: any): FormError[] => {
-    if (!state.base.name || state.base.name.length > 500) {
-        errors.value.push({ name: 'name', message: t('vnwa.error_message.name.required') });
-    }
-    if (!state.base.slug || state.base.slug.length > 500) {
-        errors.value.push({ name: 'slug', message: t('vnwa.error_message.slug.required') });
-    }
+    // if (!state.base.name || state.base.name.length > 500) {
+    //     errors.value.push({ name: 'name', message: t('vnwa.error_message.name.required') });
+    // }
+    // if (!state.base.slug || state.base.slug.length > 500) {
+    //     errors.value.push({ name: 'slug', message: t('vnwa.error_message.slug.required') });
+    // }
 
     // if (!state.base.meta_title || state.base.meta_title.length > 100) {
     //     errors.value.push({ name: 'meta_title', message: t('vnwa.error_message.meta.title') });
