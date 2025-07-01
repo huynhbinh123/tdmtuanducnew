@@ -150,23 +150,16 @@
     "success_button": "Trở về trang chủ"
   },
   "start_project": "Bắt đầu dự án",
-  "see_our_work": "Xem dự án của chúng tôi",
-  "trusted_by": "Thương hiệu",
+  "see_our_work": "Xem thêm",
+  "trusted_by": "Đối tác",
   "featured_projects": "Dự án tiêu biểu",
   "see_all_projects": "Xem tất cả dự án",
   "what_customers_say": "Khách hàng nói gì",
   "what_customers_say_slogan": "Chúng tôi tự hào đã hợp tác với nhiều khách hàng và nhận được những phản hồi quý giá từ họ. Dưới đây là một số đánh giá.",
   "why_me_section": {
     "title": "Tại sao chọn Vinawebapp.com?",
-    "slogan": "Chúng tôi khác biệt bởi vì",
-    "points": {
-      "point1": "Chúng tôi có đội ngũ với hơn 10 năm kinh nghiệm và luôn tự hào về quy trình chuyên nghiệp, sáng tạo và đổi mới liên tục.",
-      "point2": "Vinawebapp.com luôn cập nhật và đổi mới công nghệ theo xu hướng thời đại. Chúng tôi tự hào luôn tạo ra những đột phá lớn trong các dự án của khách hàng về mặt lợi ích và doanh thu.",
-      "point3": "Chúng tôi đưa ra các quyết định chiến lược về nội dung và thiết kế dựa trên dữ liệu bạn cung cấp để đảm bảo website mang lại hiệu quả cao cho dự án của bạn.",
-      "point4": "Chúng tôi đề cao sự giao tiếp thẳng thắn, rõ ràng và luôn lắng nghe, tiếp thu ý kiến đóng góp từ khách hàng.",
-      "point5": "Chúng tôi xây dựng các website chất lượng cao. Website của chúng tôi luôn được tối ưu SEO, tải nhanh và mang lại trải nghiệm người dùng tuyệt vời - Tất cả những điều mà Google yêu thích.",
-      "point6": "Đội ngũ lập trình viên của chúng tôi có kinh nghiệm trong việc thiết kế website bảo mật cao, chống DDOS và hack. Ngoài ra, chúng tôi còn hỗ trợ xử lý các trường hợp quấy rối website 24/7 cho bạn."
-    }
+    "slogan": "Chúng tôi khác biệt bởi vì"
+    
   },
   "about_short": {
     "title": "Đội ngũ của chúng tôi",

@@ -69,7 +69,7 @@ const updateOrder = (event: any) => {
             <img :src="$storage(item)" class="h-auto w-auto max-h-full max-w-full" alt="Uploaded image">
           </div>
           <UTooltip text="Delete" class="absolute top-0 right-0 -m-2">
-            <UButton type="button" color="error" icon="i-heroicons-x-mark-20-solid" size="xs" variant="solid"
+            <UButton  aria-label="Vinawebapp Button"  type="button" color="error" icon="i-heroicons-x-mark-20-solid" size="xs" variant="solid"
               class="rounded-full" @click="removeImage(index)" />
           </UTooltip>
         </div>

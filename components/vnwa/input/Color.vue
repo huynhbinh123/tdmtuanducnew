@@ -19,7 +19,7 @@ const chip = computed(() => ({ backgroundColor: color.value }))
 
 <template>
     <UPopover>
-        <UButton :label="label" color="neutral" variant="outline">
+        <UButton  aria-label="Vinawebapp Button"  :label="label" color="neutral" variant="outline">
             <template #leading>
                 <span :style="chip" class="size-3 rounded-full" />
             </template>

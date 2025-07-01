@@ -54,7 +54,7 @@
 
         <!-- Nút đóng -->
         <div class="mt-6 text-right">
-          <UButton color="primary" variant="solid" @click="$emit('close')">Close</UButton>
+          <UButton  aria-label="Vinawebapp Button"  color="primary" variant="solid" @click="$emit('close')">Close</UButton>
         </div>
       </div>
     </template>

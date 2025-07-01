@@ -68,7 +68,7 @@ const handleSubmit = async () => {
           </UFormField>
 
           <div class="pt-2">
-            <UButton type="submit" label="Rename" :loading="status === 'pending'" />
+            <UButton  aria-label="Vinawebapp Button"  type="submit" label="Rename" :loading="status === 'pending'" />
           </div>
         </UForm>
       </UCard>

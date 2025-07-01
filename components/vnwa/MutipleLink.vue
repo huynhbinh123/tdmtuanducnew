@@ -132,7 +132,7 @@ const toTargetItems = [
   <div class="space-y-4 border border-gray-300 dark:border-gray-300/50 p-4 rounded-md">
 
     <div class="flex items-center justify-end">
-      <UButton @click="addItem()" :label="$t('vnwa.add')" color="info" icon="heroicons:plus" />
+      <UButton  aria-label="Vinawebapp Button"  @click="addItem()" :label="$t('vnwa.add')" color="info" icon="heroicons:plus" />
     </div>
     <draggableComponent v-model="value" handle=".handle" item-key="index" class="space-y-3">
       <template #item="{ element, index }">
@@ -144,7 +144,7 @@ const toTargetItems = [
             <!-- Icon kéo thả -->
             <div class="flex items-center justify-start gap-2">
 
-              <UButton icon="material-symbols:drag-handle" type="button" color="neutral" size="sm"
+              <UButton  aria-label="Vinawebapp Button"  icon="material-symbols:drag-handle" type="button" color="neutral" size="sm"
                 class="handle cursor-grab" />
               <!-- Hiển thị tên hoặc "Item {index + 1}" nếu chưa có -->
               <h3 @click="toggleExpand(index)" class="cursor-pointer flex-1 font-medium text-gray-900 dark:text-white">
@@ -153,11 +153,11 @@ const toTargetItems = [
             </div>
             <div class="flex items-center justify-end gap-6">
               <UTooltip text="Coppy Item">
-                <UButton type="button" color="neutral" icon="material-symbols:content-copy-outline" size="sm"
+                <UButton  aria-label="Vinawebapp Button"  type="button" color="neutral" icon="material-symbols:content-copy-outline" size="sm"
                   variant="solid" class="rounded-none" @click="copyItem(index)" />
               </UTooltip>
               <UTooltip text="Delete">
-                <UButton type="button" color="error" icon="i-heroicons-x-mark-20-solid" size="sm" variant="outline"
+                <UButton  aria-label="Vinawebapp Button"  type="button" color="error" icon="i-heroicons-x-mark-20-solid" size="sm" variant="outline"
                   class="rounded-full" @click="removeItem(index)" />
               </UTooltip>
             </div>
@@ -178,7 +178,7 @@ const toTargetItems = [
             </div>
             <div v-if="isIcon" class="flex relative items-center justify-start gap-2">
               <UTooltip text="Choose Icon">
-                <UButton :to="iconsLink || 'https://icones.js.org/'" target="_blank" label="Choose Icon" color="neutral"
+                <UButton  aria-label="Vinawebapp Button"  :to="iconsLink || 'https://icones.js.org/'" target="_blank" label="Choose Icon" color="neutral"
                   variant="subtle" />
               </UTooltip>
               <UInput v-model="element.icon" placeholder="Icon" class="" />

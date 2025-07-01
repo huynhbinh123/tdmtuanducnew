@@ -65,7 +65,7 @@
 
       <div class="flex items-center justify-end">
 
-        <UButton type="submit" icon="mdi:content-save" :loading="appearanceUpdateStatus == 'pending'">
+        <UButton  aria-label="Vinawebapp Button"  type="submit" icon="mdi:content-save" :loading="appearanceUpdateStatus == 'pending'">
           Save
         </UButton>
       </div>

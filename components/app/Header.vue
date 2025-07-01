@@ -31,7 +31,7 @@
               <AppLocale />
             </li>
             <li class="ps-3">
-              <button @click="openContactModal()"
+              <button  aria-label="Vinawebapp Button"  @click="openContactModal()"
                 class=" text-xl rounded-xl  border border-primary-500 text-white  px-3 py-2  flex items-center justify-center gap-1 cursor-pointer  font-bold">
                 <span>
                   {{$t('get_in_touch')}} </span>
@@ -47,7 +47,7 @@
               <AppLocale />
             </li>
             <li>
-              <UButton @click="openMenu()" icon="material-symbols:menu" variant="ghost" color="info" size="xl" />
+              <UButton  aria-label="Vinawebapp Button"  @click="openMenu()" icon="material-symbols:menu" variant="ghost" color="info" size="xl" />
             </li>
           </ul>
         </div>

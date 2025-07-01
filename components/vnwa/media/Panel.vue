@@ -10,22 +10,22 @@
           </div>
           <div class=" flex items-center gap-5 justify-end">
             <UPopover class="notOutSide">
-              <UButton :disabled="keySelected.length <= 0" color="vnwa" :label="$t('vnwa.vmedia.selected_action')"
+              <UButton  aria-label="Vinawebapp Button"  :disabled="keySelected.length <= 0" color="vnwa" :label="$t('vnwa.vmedia.selected_action')"
                 icon="i-fa6-solid:hand-pointer" />
 
               <template #content>
                 <ul class="min-w-40  text-black dark:text-white">
                   <li>
-                    <UButton color="neutral" variant="ghost" icon="heroicons:eye-16-solid" class="w-full" :label="$t('vnwa.vmedia.preview')"/>
+                    <UButton  aria-label="Vinawebapp Button"  color="neutral" variant="ghost" icon="heroicons:eye-16-solid" class="w-full" :label="$t('vnwa.vmedia.preview')"/>
                   </li>
                   <li>
-                    <UButton color="neutral" variant="ghost" icon="material-symbols:crop" class="w-full" :label="$t('vnwa.vmedia.crop')"/>
+                    <UButton  aria-label="Vinawebapp Button"  color="neutral" variant="ghost" icon="material-symbols:crop" class="w-full" :label="$t('vnwa.vmedia.crop')"/>
                   </li>
                   <li>
-                    <UButton color="neutral" variant="ghost" icon="heroicons:pencil-square-16-solid" class="w-full" :label="$t('vnwa.vmedia.rename')"/>
+                    <UButton  aria-label="Vinawebapp Button"  color="neutral" variant="ghost" icon="heroicons:pencil-square-16-solid" class="w-full" :label="$t('vnwa.vmedia.rename')"/>
                   </li>
                   <li>
-                    <UButton @click="handleRemoveMedia" color="neutral" variant="ghost" icon="heroicons:trash" class="w-full" :label="$t('vnwa.vmedia.move_to_trash')"/>
+                    <UButton  aria-label="Vinawebapp Button"  @click="handleRemoveMedia" color="neutral" variant="ghost" icon="heroicons:trash" class="w-full" :label="$t('vnwa.vmedia.move_to_trash')"/>
                   </li>
                  
                 </ul>
@@ -33,17 +33,17 @@
             </UPopover>
 
             <UTooltip @click="openCreateFolderModal" :text="$t('vnwa.vmedia.create_folder')" :popper="{ arrow: true }">
-              <UButton icon="i-fa6-solid:folder-plus" color="warning" variant="outline" />
+              <UButton  aria-label="Vinawebapp Button"  icon="i-fa6-solid:folder-plus" color="warning" variant="outline" />
             </UTooltip>
 
 
             <VnwaMediaInputUploadFile :onSuccess="refresh" :basePath="basePath" />
 
             <UTooltip text="Refresh" :loading="status !== 'success'" :popper="{ arrow: true }">
-              <UButton @click="refresh()" icon="fa6-solid:arrows-rotate" color="primary" variant="outline" />
+              <UButton  aria-label="Vinawebapp Button"  @click="refresh()" icon="fa6-solid:arrows-rotate" color="primary" variant="outline" />
             </UTooltip>
             <UTooltip text="Toggle Detail Media" :popper="{ arrow: true }" class="notOutSide">
-              <UButton @click="() => { isMediaDetail = !isMediaDetail }"
+              <UButton  aria-label="Vinawebapp Button"  @click="() => { isMediaDetail = !isMediaDetail }"
                 icon="material-symbols:align-horizontal-right-rounded" color="neutral" variant="outline" />
             </UTooltip>
           </div>
@@ -93,18 +93,18 @@
                       </div>
                     </div>
                     <template #view>
-                      <UButton @click="view(item)" icon="i-lucide-eye" color="neutral" variant="ghost"  size="sm" class="w-full  ">
+                      <UButton  aria-label="Vinawebapp Button"  @click="view(item)" icon="i-lucide-eye" color="neutral" variant="ghost"  size="sm" class="w-full  ">
                         {{$t('vnwa.vmedia.view')}}
                       </Ubutton>
                     </template>
                     <template #rename>
-                      <UButton @click="handleRenameMedia(item)" icon="i-lucide-pen" color="neutral" size="sm"  variant="ghost"
+                      <UButton  aria-label="Vinawebapp Button"  @click="handleRenameMedia(item)" icon="i-lucide-pen" color="neutral" size="sm"  variant="ghost"
                         class="w-full ">
                         {{$t('vnwa.vmedia.rename')}}
                       </Ubutton>
                     </template>
                     <template #delete>
-                      <UButton @click="handleRemoveOneMedia(item)" icon="i-lucide-trash" color="error" size="sm"  variant="subtle"
+                      <UButton  aria-label="Vinawebapp Button"  @click="handleRemoveOneMedia(item)" icon="i-lucide-trash" color="error" size="sm"  variant="subtle"
                         class="w-full ">
                         {{$t('vnwa.vmedia.delete')}}
                       </Ubutton>

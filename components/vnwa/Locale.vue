@@ -26,7 +26,7 @@ const items = ref<DropdownMenuItem[]>([
     content: 'w-48',
     item: ' cursor-pointer '
   }">
-    <UButton :label="locale" icon="material-symbols:globe" color="vnwa" class="uppercase font-bold text-white"
+    <UButton  aria-label="Vinawebapp Button"  :label="locale" icon="material-symbols:globe" color="vnwa" class="uppercase font-bold text-white"
       variant="link" />
   </UDropdownMenu>
 </template>

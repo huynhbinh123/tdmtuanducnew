@@ -44,7 +44,7 @@
     <template #footer>
       <div class="">
         <div class="flex items-center justify-end">
-          <UButton :loading="appearanceUpdateStatus == 'pending'" @click="onSubmit()" :label="$t('vnwa.save')"
+          <UButton  aria-label="Vinawebapp Button"  :loading="appearanceUpdateStatus == 'pending'" @click="onSubmit()" :label="$t('vnwa.save')"
             icon="mdi:content-save" />
         </div>
       </div>

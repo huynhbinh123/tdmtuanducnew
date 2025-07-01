@@ -7,7 +7,7 @@
           <div class="banner-left-content   ">
             <div>
 
-              <h6 class=" text-blue-900 uppercase mb-5">Vinawebapp.Com</h6>
+              <p class=" text-blue-900 uppercase mb-5">Vinawebapp.Com</p>
             </div>
             <div>
               <h1 class=" font-bold italic md:mb-5 mb-3 text-white ">
@@ -22,15 +22,15 @@
             </div>
             <div class="flex lg:justify-start items-center justify-center gap-4  font-medium">
               <div>
-                <button @click="openContactModal()"
-                  class=" lg:text-lg text-sm text-white flex items-center  w-full lg:p-3 px-2 py-3 md:bg-red-500 bg-red-700  md:hover:bg-red-600 active:bg-red-600 uppercase md:hover:-translate-y-1">
+                <button  aria-label="Vinawebapp Button"  @click="openContactModal()"
+                  class=" lg:text-lg text-sm text-white flex items-center  w-full lg:p-3 px-3 py-3  bg-red-800  md:hover:bg-red-600 active:bg-red-600 uppercase md:hover:-translate-y-1">
                   <span class="font-bold"> {{ $t('start_project') }} </span>
                   <UIcon name="mdi-light:arrow-right" color="white" class="ml-2  size-5 " />
                 </button>
               </div>
               <NuxtLinkLocale :to="'/project'" class="button-array__button--secondary md:hover:-translate-y-1">
                 <button
-                  class=" lg:text-lg text-sm flex  items-center  text-white w-full   lg:p-3 px-2 py-1 bg-gray-700 md:hover:bg-blue-600 active:bg-blue-600 uppercase ">
+                  class=" lg:text-lg text-sm flex  items-center  text-white w-full   lg:p-3 px-3 py-1 bg-gray-700 md:hover:bg-blue-600 active:bg-blue-600 uppercase ">
                   <span class="font-bold"> {{ $t('see_our_work') }} </span>
                   <UIcon name="mdi-light:arrow-right" color="white" class="ml-2 size-8" />
                 </button>
@@ -38,7 +38,7 @@
             </div>
             <div class="flex md:justify-start justify-center">
               <NuxtImg format="webp" loading="lazy" quality="80" width="300" height="73"
-                :src="`${config.public.appUrl}/images/badges.png`" class="md:my-10 my-6" alt="Vinawebapp.com" />
+                :src="`${config.public.appUrl}/images/badges.webp`" class="md:my-10 my-6" alt="Vinawebapp.com" />
 
             </div>
           </div>
@@ -47,7 +47,7 @@
           <div class="solar-system">
             <div id="sun" class="flex items-center justify-center">
               <NuxtImg quality="80" format="webp" loading="lazy" width="80" height="80"
-                :src="`${config.public.appUrl}/images/logo_icon.png`" class=" " alt="Vinawebapp.com" />
+                :src="`vnwa_setup/vnwa_icon.webp`" class=" " alt="Vinawebapp.com" />
             </div>
 
             <div class="orbit mercury-orbit"></div>
@@ -67,7 +67,7 @@
                 <div id="moon"></div>
               </div>
 
-              <NuxtImg format="webp" id="earth" :src="`${config.public.appUrl}/images/earth_small_150.jpg`" width="100"
+              <NuxtImg format="webp" id="earth" :src="`${config.public.appUrl}/images/earth_small_150.webp`" width="100"
                 height="100" alt="Vinawebapp.com" quality="80" />
             </div>
 

@@ -8,7 +8,7 @@
                 </h3>
             </div>
             <div class="flex items-center justify-end gap-2">
-                <UButton label="Create" color="secondary" icon="material-symbols:add-2" @click="showCreate()" />
+                <UButton  aria-label="Vinawebapp Button"  label="Create" color="secondary" icon="material-symbols:add-2" @click="showCreate()" />
             </div>
         </div>
         <Draggable v-model="tree" class="mtl-tree capitalize" treeLine :defaultOpen="true" :animation="200"
@@ -29,7 +29,7 @@
 
                     <!-- Actions -->
                     <div class="flex items-center gap-2">
-                        <UButton icon="material-symbols:delete-outline" color="error" size="sm" variant="outline"
+                        <UButton  aria-label="Vinawebapp Button"  icon="material-symbols:delete-outline" color="error" size="sm" variant="outline"
                             v-if="activeId === node.id" @click="remove(node.id, node.name)" />
                         <OpenIcon v-if="stat.children.length" :open="stat.open"
                             class="text-gray-400 hover:text-gray-600 text-4xl dark:text-gray-500 dark:hover:text-gray-300"

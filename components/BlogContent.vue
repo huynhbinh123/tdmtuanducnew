@@ -5,7 +5,7 @@
         <div class="lg:sticky lg:top-24 ">
           <div class="flex items-center justify-between p-2 border border-b-orange-50 bg-gray-500/80  ">
             <span class="text-md font-bold uppercase text-white/90">Mục Lục</span>
-            <button class="bg-white/80 rounded p-1  lg:hidden" @click="isHeadings = !isHeadings">
+            <button  aria-label="Vinawebapp Button"  class="bg-white/80 rounded p-1  lg:hidden" @click="isHeadings = !isHeadings">
               <div class="headings_button " :class="{ 'active': isHeadings }">
                 <span class="ease-in duration-300"></span>
                 <span class="ease-in duration-300"></span>

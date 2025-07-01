@@ -15,7 +15,7 @@
             </div>
             <div class="flex items-center justify-end gap-6">
 
-              <UButton type="submit" :label="$t('vnwa.save')" :loading="isLoading" icon="mdi:content-save" />
+              <UButton  aria-label="Vinawebapp Button"  type="submit" :label="$t('vnwa.save')" :loading="isLoading" icon="mdi:content-save" />
             </div>
           </div>
 

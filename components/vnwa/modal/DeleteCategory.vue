@@ -56,7 +56,7 @@ const handleSubmit = async () => {
 
         <template #footer>
             <div class="flex items-center justify-end  w-full space-x-2">
-                <UButton :disabled="isLoading" @click="handleSubmit" :label="$t('vnwa.confirm_delete')"
+                <UButton  aria-label="Vinawebapp Button"  :disabled="isLoading" @click="handleSubmit" :label="$t('vnwa.confirm_delete')"
                     icon="heroicons:trash" color="error" variant="solid" />
             </div>
         </template>

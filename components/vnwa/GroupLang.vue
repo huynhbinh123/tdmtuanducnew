@@ -1,7 +1,7 @@
 <template>
     <ul class="flex items-center justify-end gap-4">
         <li v-for="(item,index) in langs" :key="index">
-            <UButton :icon="item.icon"
+            <UButton  aria-label="Vinawebapp Button"  :icon="item.icon"
                 :class="props.locale != item.code ? 'bg-white text-black border border-gray-400' : 'bg-sky-500 text-black border border-gray-400'"
                 @click="updateLocale(item.code)">{{ item.label }}</UButton>
         </li>

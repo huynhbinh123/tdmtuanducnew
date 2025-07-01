@@ -19,7 +19,7 @@
             </UFormField>
 
             <div class="text-center">
-              <UButton type="button" @click="insertImageFromUrl()" label="Add Image"
+              <UButton  aria-label="Vinawebapp Button"  type="button" @click="insertImageFromUrl()" label="Add Image"
                 :ui="{ label: 'text-center w-full' }" size="md" color="vnwa" variant="solid" />
             </div>
           </div>
@@ -43,7 +43,7 @@
             </UFormField>
 
             <div class="text-center">
-              <UButton type="button" @click="insertLink()" label="Add Image" :ui="{ label: 'text-center w-full' }"
+              <UButton  aria-label="Vinawebapp Button"  type="button" @click="insertLink()" label="Add Image" :ui="{ label: 'text-center w-full' }"
                 size="md" color="vnwa" variant="solid" />
             </div>
           </div>
@@ -53,17 +53,17 @@
       <div v-if="editor" class="p-2  flex  items-center justify-start flex-wrap   divide-x ">
         <div class="flex items-center justify-center gap-2 px-2 py-1 ">
           <UTooltip text="Font Bold">
-            <UButton variant="outline" @click="editor.chain().focus().toggleBold().run()"
+            <UButton  aria-label="Vinawebapp Button"  variant="outline" @click="editor.chain().focus().toggleBold().run()"
               :disabled="!editor.can().chain().focus().toggleBold().run()"
               :color="editor.isActive('bold') ? 'vnwa' : 'neutral'" icon="fa6-solid:bold" size="xs" />
           </UTooltip>
           <UTooltip text="Font Italic">
-            <UButton variant="outline" @click="editor.chain().focus().toggleItalic().run()"
+            <UButton  aria-label="Vinawebapp Button"  variant="outline" @click="editor.chain().focus().toggleItalic().run()"
               :disabled="!editor.can().chain().focus().toggleItalic().run()" color="neutral"
               :color="editor.isActive('italic') ? 'vnwa' : 'neutral'" icon="fa6-solid:italic" size="xs" />
           </UTooltip>
           <UTooltip text="Font Strike">
-            <UButton variant="outline" @click="editor.chain().focus().toggleStrike().run()"
+            <UButton  aria-label="Vinawebapp Button"  variant="outline" @click="editor.chain().focus().toggleStrike().run()"
               :disabled="!editor.can().chain().focus().toggleStrike().run()"
               :color="editor.isActive('strike') ? 'vnwa' : 'neutral'" icon="fa6-solid:strikethrough" size="xs" />
           </UTooltip>
@@ -71,7 +71,7 @@
 
         </div>
         <div class="flex items-center justify-center gap-2 px-2 py-1 ">
-          <UButton variant="outline" @click="editor.chain().focus().toggleCode().run()"
+          <UButton  aria-label="Vinawebapp Button"  variant="outline" @click="editor.chain().focus().toggleCode().run()"
             :disabled="!editor.can().chain().focus().toggleCode().run()" color="neutral"
             :class="{ 'text-purple-500': editor.isActive('code') }" icon="fa6-solid:code" size="xs" />
         </div>
@@ -79,32 +79,32 @@
         <div class="flex items-center justify-center gap-2 px-2 py-1">
           <div class="flex items-center gap-2">
             <UTooltip text="H1 - Tiêu đề lớn nhất">
-              <UButton icon="material-symbols:format-h1" size="xs" variant="outline"
+              <UButton  aria-label="Vinawebapp Button"  icon="material-symbols:format-h1" size="xs" variant="outline"
                 :color="editor.isActive('heading', { level: 1 }) ? 'vnwa' : 'neutral'"
                 @click="editor.chain().focus().toggleHeading({ level: 1 }).run()" />
             </UTooltip>
             <UTooltip text="H2 - Mục lớn">
-              <UButton icon="material-symbols:format-h2" size="xs" variant="outline"
+              <UButton  aria-label="Vinawebapp Button"  icon="material-symbols:format-h2" size="xs" variant="outline"
                 :color="editor.isActive('heading', { level: 2 }) ? 'vnwa' : 'neutral'"
                 @click="editor.chain().focus().toggleHeading({ level: 2 }).run()" />
             </UTooltip>
             <UTooltip text="H3 - Mục phụ">
-              <UButton icon="material-symbols:format-h3" size="xs" variant="outline"
+              <UButton  aria-label="Vinawebapp Button"  icon="material-symbols:format-h3" size="xs" variant="outline"
                 :color="editor.isActive('heading', { level: 3 }) ? 'vnwa' : 'neutral'"
                 @click="editor.chain().focus().toggleHeading({ level: 3 }).run()" />
             </UTooltip>
             <UTooltip text="H4 - Mục nhỏ hơn">
-              <UButton icon="material-symbols:format-h4" size="xs" variant="outline"
+              <UButton  aria-label="Vinawebapp Button"  icon="material-symbols:format-h4" size="xs" variant="outline"
                 :color="editor.isActive('heading', { level: 4 }) ? 'vnwa' : 'neutral'"
                 @click="editor.chain().focus().toggleHeading({ level: 4 }).run()" />
             </UTooltip>
             <UTooltip text="H5 - Mục nhỏ hơn nữa">
-              <UButton icon="material-symbols:format-h5" size="xs" variant="outline"
+              <UButton  aria-label="Vinawebapp Button"  icon="material-symbols:format-h5" size="xs" variant="outline"
                 :color="editor.isActive('heading', { level: 5 }) ? 'vnwa' : 'neutral'"
                 @click="editor.chain().focus().toggleHeading({ level: 5 }).run()" />
             </UTooltip>
             <UTooltip text="H6 - Mục nhỏ nhất">
-              <UButton icon="material-symbols:format-h6" size="xs" variant="outline"
+              <UButton  aria-label="Vinawebapp Button"  icon="material-symbols:format-h6" size="xs" variant="outline"
                 :color="editor.isActive('heading', { level: 6 }) ? 'vnwa' : 'neutral'"
                 @click="editor.chain().focus().toggleHeading({ level: 6 }).run()" />
             </UTooltip>
@@ -113,19 +113,19 @@
         </div>
         <div class="flex items-center justify-center gap-2 px-2 py-1">
           <UTooltip text="Căn trái văn bản">
-            <UButton icon="i-lucide-align-left" variant="outline" size="xs"
+            <UButton  aria-label="Vinawebapp Button"  icon="i-lucide-align-left" variant="outline" size="xs"
               :color="editor.isActive({ textAlign: 'left' }) ? 'vnwa' : 'neutral'"
               @click="editor.chain().focus().setTextAlign('left').run()" />
           </UTooltip>
 
           <UTooltip text="Căn giữa văn bản">
-            <UButton icon="i-lucide-align-center" variant="outline" size="xs"
+            <UButton  aria-label="Vinawebapp Button"  icon="i-lucide-align-center" variant="outline" size="xs"
               :color="editor.isActive({ textAlign: 'center' }) ? 'vnwa' : 'neutral'"
               @click="editor.chain().focus().setTextAlign('center').run()" />
           </UTooltip>
 
           <UTooltip text="Căn phải văn bản">
-            <UButton icon="i-lucide-align-right" variant="outline" size="xs"
+            <UButton  aria-label="Vinawebapp Button"  icon="i-lucide-align-right" variant="outline" size="xs"
               :color="editor.isActive({ textAlign: 'right' }) ? 'vnwa' : 'neutral'"
               @click="editor.chain().focus().setTextAlign('right').run()" />
           </UTooltip>
@@ -137,7 +137,7 @@
               :value="editor.getAttributes('textStyle').color">
           </div>
 
-          <UButton v-for="(item, index) in colors" :key="index" variant="solid"  size="xs"
+          <UButton  aria-label="Vinawebapp Button"  v-for="(item, index) in colors" :key="index" variant="solid"  size="xs"
             :color="editor.isActive('textStyle', { color: item.value }) ? 'vnwa' : 'secondary'"
             @click="editor.chain().focus().setColor(item.value).run()">
             <div class="w-3 h-3 rounded " :style="{ backgroundColor: item.value }" />
@@ -145,7 +145,7 @@
 
 
           <UTooltip text="Xóa màu ">
-            <UButton icon="material-symbols:invert-colors-off" @click="editor.chain().focus().unsetColor().run()"
+            <UButton  aria-label="Vinawebapp Button"  icon="material-symbols:invert-colors-off" @click="editor.chain().focus().unsetColor().run()"
               color="error" size="xs" />
 
           </UTooltip>
@@ -155,31 +155,31 @@
 
         <div class="flex items-center justify-center gap-2 px-2 py-1">
           <UTooltip text="Toggle bullet list" placement="top">
-            <UButton icon="i-heroicons-list-bullet" :color="editor.isActive('bulletList') ? 'vnwa' : 'neutral'"
+            <UButton  aria-label="Vinawebapp Button"  icon="i-heroicons-list-bullet" :color="editor.isActive('bulletList') ? 'vnwa' : 'neutral'"
               variant="outline" size="xs" @click="editor.chain().focus().toggleBulletList().run()" />
           </UTooltip>
 
           <UTooltip text="Toggle ordered list" placement="top">
-            <UButton icon="heroicons:numbered-list-16-solid"
+            <UButton  aria-label="Vinawebapp Button"  icon="heroicons:numbered-list-16-solid"
               :color="editor.isActive('orderedList') ? 'vnwa' : 'neutral'" variant="outline" size="xs"
               @click="editor.chain().focus().toggleOrderedList().run()" />
           </UTooltip>
         </div>
         <div class="flex items-center justify-center gap-2 px-2 py-1">
           <UTooltip text="Add New Link">
-            <UButton @click="() => isModalInsertLink = !isModalInsertLink" color="info" icon="heroicons:link"
+            <UButton  aria-label="Vinawebapp Button"  @click="() => isModalInsertLink = !isModalInsertLink" color="info" icon="heroicons:link"
               size="xs" />
           </UTooltip>
         </div>
         <div class="flex items-center justify-center gap-2 px-2 py-1 ">
 
           <UTooltip text="Add Image From URL">
-            <UButton @click="() => isModalInsertImage = !isModalInsertImage" color="vnwa"
+            <UButton  aria-label="Vinawebapp Button"  @click="() => isModalInsertImage = !isModalInsertImage" color="vnwa"
               icon="fluent:image-add-20-regular" size="xs" />
           </UTooltip>
 
           <UTooltip text="Add Image From VMedia Manager">
-            <UButton @click="addImages(editor)" color="vnwa" icon="material-symbols:folder-managed" label="VMedia"
+            <UButton  aria-label="Vinawebapp Button"  @click="addImages(editor)" color="vnwa" icon="material-symbols:folder-managed" label="VMedia"
               size="xs" />
           </UTooltip>
         </div>

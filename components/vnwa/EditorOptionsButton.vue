@@ -2,7 +2,7 @@
     <UTooltip :text="tooltip" :popper="{ placement: 'bottom-start' }" :ui="{
         content: 'text-3 px-1 py-1'
     }">
-        <UButton :icon="icon" :class="classBinding" :disabled="disabledBinding" style="outline: none" size="sm"
+        <UButton  aria-label="Vinawebapp Button"  :icon="icon" :class="classBinding" :disabled="disabledBinding" style="outline: none" size="sm"
             color="neutral" variant="ghost" square padded trailing />
     </UTooltip>
 </template>

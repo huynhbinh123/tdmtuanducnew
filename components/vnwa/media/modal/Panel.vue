@@ -33,7 +33,7 @@ const handleSelected = (arr: any[]) => {
         <div class="flex items-center justify-end space-x-4">
           <div class="text-gray-600 dark:text-gray-300">
           </div>
-          <UButton @click="onSuccess" square variant="solid" :disabled="data.length === 0"
+          <UButton  aria-label="Vinawebapp Button"  @click="onSuccess" square variant="solid" :disabled="data.length === 0"
             class="font-bold dark:text-white notOutSide">
             Insert Images
           </UButton>

@@ -5,8 +5,8 @@
         <div class="py-5 grid grid-cols-12 gap-4">
           <div class="lg:col-span-4 col-span-12 lg:order-1 order-2">
             <div class="flex items-center lg:justify-start justify-center hover:text-purple-500 cursor-pointer">
-              <icon name="fa6-solid:phone" class="w-5 mr-4" />
-              <span class="text-lg font-bold">{{ formattedPhoneNumber(data.profile.phone) }}</span>
+              <UIcon name="fa6-solid:phone" class="w-5 mr-4" />
+              <span class="text-lg font-bold text-white">{{ formattedPhoneNumber(data.profile.phone) }}</span>
             </div>
           </div>
           <div class="lg:col-span-4 col-span-12 lg:order-2 order-1">

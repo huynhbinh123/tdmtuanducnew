@@ -30,7 +30,7 @@ defineProps<{
                   <div class="flex items-center justify-center ">
                     <NuxtLinkLocale :to="item.to" aria-label="Brand" class="filter grayscale hover:grayscale-0 cursor-pointer">
                      <NuxtImg quality="80" format="webp" loading="lazy" width="100" height="100" :src="item.image"
-                        sizes="(min-width:768px) 365px, 100vw" class="block rounded-lg w-full h-auto xs:mx-auto"
+                        sizes="(min-width:768px) 365px, 100vw" class="block rounded-lg w-full max-w-full h-auto xs:mx-auto"
                         :alt="'vinawebapp.com - ' + item.label" />
                     </NuxtLinkLocale>
                   </div>

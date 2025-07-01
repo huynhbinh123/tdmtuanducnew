@@ -1,7 +1,7 @@
 <template>
     <div class="flex items-center ">
         <div class="flex items-center">
-            <button @click="navigateTo('')" :class="{ 'text-gray-900 dark:text-gray-300': breadcrumbs.length <=0  }"
+            <button  aria-label="Vinawebapp Button"  @click="navigateTo('')" :class="{ 'text-gray-900 dark:text-gray-300': breadcrumbs.length <=0  }"
                 class="text-gray-500 flex items-center justify-center text-xs gap-1 px-2 py-1 hover:bg-black/10 dark:hover:bg-white/10 rounded-xs">
                 <UIcon name="fa6-solid:folder" />
                 <span>Home</span>
@@ -14,7 +14,7 @@
 
                 <span class="mx-2 text-gray-400">/</span>
 
-                <button class="px-2 py-1  hover:bg-black/10 dark:hover:bg-white/10  rounded-xs"
+                <button  aria-label="Vinawebapp Button"  class="px-2 py-1  hover:bg-black/10 dark:hover:bg-white/10  rounded-xs"
                     :class="{ 'text-gray-900 dark:text-gray-300': index === breadcrumbs.length - 1, 'cursor-pointer hover:text-white text-gray-500': index !== breadcrumbs.length - 1 }"
                     @click="navigateTo(item.path)">
                      <h5 class="inline whitespace-nowrap">

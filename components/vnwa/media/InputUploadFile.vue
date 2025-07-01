@@ -61,7 +61,7 @@ const onSelect = async (e: any) => {
 
 <template>
     <UTooltip text="Upload File" :popper="{ arrow: true }">
-        <UButton :loading="loading" @click="inputRef.click()" icon="i-heroicons:cloud-arrow-up-16-solid" color="success"
+        <UButton  aria-label="Vinawebapp Button"  :loading="loading" @click="inputRef.click()" icon="i-heroicons:cloud-arrow-up-16-solid" color="success"
             variant="outline" />
         <input ref="inputRef" type="file" class="hidden" multiple @change="onSelect" />
     </UTooltip>

@@ -7,7 +7,7 @@
                 </div>
                 <div class="">
                     <div class="lg:h-15 h-10  flex items-center">
-                        <h3 class="font-semibold">{{ item.label }}</h3>
+                        <h3 class="font-semibold text-white">{{ item.label }}</h3>
                     </div>
                     <div class="pb-8 ps-5 relative">
                         <div v-if="index != data.length - 1"

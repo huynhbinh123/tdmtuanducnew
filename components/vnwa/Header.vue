@@ -79,18 +79,18 @@ const isSideOpen = ref(false);
             </template>
           </UDropdownMenu>
           <NuxtLinkLocale v-else to="/vnwa/login">
-            <UButton label="Log In"  variant="ghost" color="neutral" />
+            <UButton  aria-label="Vinawebapp Button"  label="Log In"  variant="ghost" color="neutral" />
           </NuxtLinkLocale>
 
 
           <UDrawer v-model:open="isSideOpen" direction="right">
-            <UButton class="lg:hidden" variant="ghost" color="neutral" icon="i-heroicons-bars-3" />
+            <UButton  aria-label="Vinawebapp Button"  class="lg:hidden" variant="ghost" color="neutral" icon="i-heroicons-bars-3" />
             <template #content>
               <div class="me-5">
                 <div
                   class="flex w-3xs items-center justify-between gap-3 h-16 py-2 border-b border-dashed border-gray-200/80 dark:border-gray-800/80">
                   <VnwaLogo />
-                  <UButton variant="ghost" color="neutral" icon="i-heroicons-x-mark-20-solid"
+                  <UButton  aria-label="Vinawebapp Button"  variant="ghost" color="neutral" icon="i-heroicons-x-mark-20-solid"
                     @click="isSideOpen = false" />
                 </div>
 

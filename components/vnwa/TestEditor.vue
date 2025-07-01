@@ -196,7 +196,7 @@
                 <UInput v-model="imageFormState.title" variant="outline" color="neutral" size="md" />
               </UFormField>
 
-              <UButton type="submit" :disabled="imageFormState.source === '' || imageFormState.alt === ''" square padded
+              <UButton  aria-label="Vinawebapp Button"  type="submit" :disabled="imageFormState.source === '' || imageFormState.alt === ''" square padded
                 label="Add Image" size="sm" color="neutral" variant="ghost" />
             </UForm>
           </template>
@@ -328,7 +328,7 @@
                   placeholder="320" type="number" />
               </UFormField>
 
-              <UButton type="submit" :disabled="youtubeFormState.source === ''" square padded
+              <UButton  aria-label="Vinawebapp Button"  type="submit" :disabled="youtubeFormState.source === ''" square padded
                 label="Embed Youtube Video" size="sm" color="neutral" variant="ghost" />
             </UForm>
           </template>
@@ -356,7 +356,7 @@
                   placeholder="https://www.example.com" type="text" />
               </UFormField>
 
-              <UButton type="submit" :disabled="linkFormState.url === ''" square padded label="Add Link" size="sm"
+              <UButton  aria-label="Vinawebapp Button"  type="submit" :disabled="linkFormState.url === ''" square padded label="Add Link" size="sm"
                 color="neutral" variant="ghost" />
             </UForm>
           </template>

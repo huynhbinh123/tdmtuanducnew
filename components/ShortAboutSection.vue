@@ -269,7 +269,7 @@
               <div class="md:mt-10 ">
                 <div class="flex lg:justify-start justify-center">
                   <NuxtLinkLocale :to="'/about'" class="button-array__button--secondary">
-                    <button class=" flex md:text-xl text-base   p-3 bg-gray-700 hover:bg-blue-600 uppercase">About Us
+                    <button  aria-label="Vinawebapp Button"  class="text-white flex md:text-xl text-base  px-4 py-3 bg-gray-700 hover:bg-blue-600 uppercase">About Us
                       <Icon name="mdi-light:arrow-right" color="white" class="ml-2" />
                     </button>
                   </NuxtLinkLocale>

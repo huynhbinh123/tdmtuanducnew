@@ -65,7 +65,7 @@ useSeoMeta({
       <template #actions-cell="{ row }">
         <div class="flex justify-end">
           <UDropdownMenu :items="items(row.original)" :content="{ side: 'bottom', align: 'end' }">
-            <UButton :disabled="row.original.is_current as boolean" color="neutral" variant="ghost"
+            <UButton  aria-label="Vinawebapp Button"  :disabled="row.original.is_current as boolean" color="neutral" variant="ghost"
               icon="i-heroicons-ellipsis-horizontal-20-solid" />
           </UDropdownMenu>
         </div>

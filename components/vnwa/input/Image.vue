@@ -75,13 +75,13 @@ const openVMedia = async () => {
       </div>
       <!-- Upload button -->
       <UTooltip text="Open Vmedia Manager" class="absolute top-1 end-1" :delay-duration="0">
-        <UButton type="button" color="primary" icon="i-heroicons-cloud-arrow-up" size="xs" variant="solid"
+        <UButton  aria-label="Vinawebapp Button"  type="button" color="primary" icon="i-heroicons-cloud-arrow-up" size="xs" variant="solid"
           class="rounded-full" :loading="loading" @click="openVMedia" />
       </UTooltip>
 
       <!-- Delete button -->
       <UTooltip text="Delete" class="absolute bottom-1 end-1" :delay-duration="0">
-        <UButton type="button" color="error" icon="i-heroicons-x-mark-20-solid" size="xs" variant="solid"
+        <UButton  aria-label="Vinawebapp Button"  type="button" color="error" icon="i-heroicons-x-mark-20-solid" size="xs" variant="solid"
           class="rounded-full" :disabled="loading" @click="value = ''" />
       </UTooltip>
 

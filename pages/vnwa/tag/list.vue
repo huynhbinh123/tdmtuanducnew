@@ -4,23 +4,23 @@
             <div></div>
             <div class="flex items-center justify-end gap-4">
                 <UPopover>
-                    <UButton :disabled="selectedItems.length <= 0" color="neutral" :label="$t('vnwa.vmedia.selected_action')"
+                    <UButton  aria-label="Vinawebapp Button"  :disabled="selectedItems.length <= 0" color="neutral" :label="$t('vnwa.vmedia.selected_action')"
                         icon="i-fa6-solid:hand-pointer" />
 
                     <template #content>
                         <ul class="min-w-40  text-black dark:text-white">
                             <li>
-                                <UButton @click="deleteSelected()" color="neutral" variant="ghost"
+                                <UButton  aria-label="Vinawebapp Button"  @click="deleteSelected()" color="neutral" variant="ghost"
                                     icon="heroicons:trash" class="w-full" :label="$t('vnwa.vmedia.move_to_trash')" />
                             </li>
                         </ul>
                     </template>
                 </UPopover>
-                <UButton :loading="status === 'pending'" @click="refresh()" color="vnwa" label="Refresh"
+                <UButton  aria-label="Vinawebapp Button"  :loading="status === 'pending'" @click="refresh()" color="vnwa" label="Refresh"
                     icon="i-fa6-solid:rotate" />
                 <NuxtLinkLocale to="/vnwa/tag/create">
 
-                    <UButton :loading="status === 'pending'" color="info" label="Create" icon="i-fa6-solid:plus" />
+                    <UButton  aria-label="Vinawebapp Button"  :loading="status === 'pending'" color="info" label="Create" icon="i-fa6-solid:plus" />
                 </NuxtLinkLocale>
 
             </div>
@@ -38,9 +38,9 @@
                 <div class="flex items-center justify-center gap-4 py-2">
                     <NuxtLinkLocale :to="`/vnwa/tag/edit-${id}`">
 
-                        <UButton size="sm" icon="heroicons:pencil-square" :label="$t('vnwa.edit')" color="warning" />
+                        <UButton  aria-label="Vinawebapp Button"  size="sm" icon="heroicons:pencil-square" :label="$t('vnwa.edit')" color="warning" />
                     </NuxtLinkLocale>
-                    <UButton @click="deleteItem(id, name)" size="sm" icon="heroicons:trash" :label="$t('vnwa.remove')"
+                    <UButton  aria-label="Vinawebapp Button"  @click="deleteItem(id, name)" size="sm" icon="heroicons:trash" :label="$t('vnwa.remove')"
                         color="error" variant="solid" />
                 </div>
             </template>

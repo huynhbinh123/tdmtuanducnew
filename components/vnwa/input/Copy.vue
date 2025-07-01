@@ -5,7 +5,7 @@
       <input id="copy-input" type="text"
         class="col-span-6 pe-10 bg-gray-50 border border-gray-300 text-gray-500 text-xs rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
         :value="text" readonly />
-      <button @click="copyToClipboard"
+      <button  aria-label="Vinawebapp Button"  @click="copyToClipboard"
         class="absolute end-2 top-1/2 -translate-y-1/2 text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg p-2 inline-flex items-center justify-center">
         <span v-if="!copied">
           <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"

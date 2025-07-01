@@ -109,7 +109,7 @@ const { refresh: formSubmit, status } = useHttp<any>("send-contact", {
 
 
 
-    <UButton type="submit" icon="ri:mail-send-fill" :loading="status == 'pending'"
+    <UButton  aria-label="Vinawebapp Button"  type="submit" icon="ri:mail-send-fill" :loading="status == 'pending'"
       class="w-full bg-white text-midnight-blue-500 text-center flex items-center justify-center text-xl mt-10 py-2 hover:bg-white/80 cursor-pointer hover:text-black font-bold">
       Submit
     </UButton>

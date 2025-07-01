@@ -20,23 +20,23 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="w-full h-30 bg-gray-500/10 lg:-translate-y-40">
+                        <div class="w-full h-30 bg-old-neutral-950 lg:-translate-y-40">
                             <div class="h-full w-full flex items-center justify-center text-white gap-4">
                                 <h5 class="text-base lg:text-lg md:text-base sm:text-sm">Jump To: </h5>
                                 <ul
-                                    class="lg:flex space-y-3 items-center justify-center gap-8 font-bold lg:text-2xl md:text-xl text-sm">
+                                    class="lg:flex lg:space-y-0 space-y-3 items-center justify-center gap-8 font-bold lg:text-2xl md:text-xl text-sm">
                                     <li>
 
-                                        <button @click="scrollToSection('introduction')"
+                                        <button  aria-label="Vinawebapp Button"  @click="scrollToSection('introduction')"
                                             class="uppercase text-primary-500 hover:text-primary-500">{{
                                                 t('introduction') }}</button>
                                     </li>
                                     <li>
-                                        <button  @click="scrollToSection('journey')" class="uppercase text-primary-500 hover:text-primary-500">{{
+                                        <button  aria-label="Vinawebapp Button"   @click="scrollToSection('journey')" class="uppercase text-primary-500 hover:text-primary-500">{{
                                             t('journey') }}</button>
                                     </li>
                                     <li>
-                                        <button  @click="scrollToSection('gallery')" class="uppercase text-primary-500 hover:text-primary-500">{{
+                                        <button  aria-label="Vinawebapp Button"   @click="scrollToSection('gallery')" class="uppercase text-primary-500 hover:text-primary-500">{{
                                             t('gallery') }}</button>
                                     </li>
                                 </ul>
@@ -76,7 +76,7 @@
                                     </div>
                                 </div>
                                 <div v-if="data.domain" class="flex items-center justify-center py-10">
-                                    <UButton class="mt-5" :ui="{ label: 'project_text_view_website' }" variant="outline"
+                                    <UButton  aria-label="Vinawebapp Button"  class="mt-5" :ui="{ label: 'project_text_view_website' }" variant="outline"
                                         size="xl" color="primary" target="_blank" :to="data.domain"
                                         :label="$t('view_website')" />
                                 </div>

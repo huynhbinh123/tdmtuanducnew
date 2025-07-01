@@ -3,9 +3,9 @@
         <div class="items-center justify-between gap-4 py-3">
             <div></div>
             <div class="flex items-center justify-end gap-4">
-                <UButton @click="restoreSelected()" color="success" variant="solid"
+                <UButton  aria-label="Vinawebapp Button"  @click="restoreSelected()" color="success" variant="solid"
                     icon="heroicons:arrow-path-rounded-square-20-solid" :label="'Restore Selected'" />
-                <UButton @click="deleteSelected()" color="error" variant="solid" icon="heroicons:trash"
+                <UButton  aria-label="Vinawebapp Button"  @click="deleteSelected()" color="error" variant="solid" icon="heroicons:trash"
                     :label="'Remove Selected'" />
             </div>
         </div>
@@ -26,10 +26,10 @@
 
             <template #item-operation="{ id, name }">
                 <div class="flex items-center justify-center gap-4 py-2">
-                    <UButton @click="restoreItem(id, name)" size="sm"
+                    <UButton  aria-label="Vinawebapp Button"  @click="restoreItem(id, name)" size="sm"
                         icon="heroicons:arrow-path-rounded-square-20-solid" :label="$t('vnwa.restore')" color="success"
                         variant="solid" />
-                    <UButton @click="deleteItem(id, name)" size="sm" icon="heroicons:trash" :label="$t('vnwa.remove')"
+                    <UButton  aria-label="Vinawebapp Button"  @click="deleteItem(id, name)" size="sm" icon="heroicons:trash" :label="$t('vnwa.remove')"
                         color="error" variant="solid" />
                 </div>
             </template>

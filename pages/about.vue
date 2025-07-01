@@ -44,7 +44,7 @@ const isActive = (index) => (index + 1) % 3 === 2;
     <div class="relative    py-10 text-center">
       <PageHeroSection :title="data.hero_section.title" :slogan="data.hero_section.slogan" />
       <div class="flex items-center justify-center">
-        <img loading="lazy" width="570" height="auto" src="/images/badges.png" class="md:my-10 my-6"
+        <img loading="lazy" width="570" height="auto" src="/images/badges.webp" class="md:my-10 my-6"
           alt="vinawebapp.com">
 
       </div>
@@ -87,7 +87,7 @@ const isActive = (index) => (index + 1) % 3 === 2;
           <div class="lg:col-span-6 col-span-12 lg:order-1 text-white">
             <div class="w-full flex items-center justify-start">
               <div class="lg:p-20 p-5">
-                <h3 class="section-sub-text color-blue md:mb-5 mb-3 font-bold">{{$t('a_few_words_about_us')}}</h3>
+                <h3 class=" color-blue md:mb-5 mb-3 font-bold">{{$t('a_few_words_about_us')}}</h3>
 
              <div v-html="data.short_about"> </div>
 

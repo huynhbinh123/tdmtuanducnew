@@ -43,7 +43,7 @@ const { refresh: onSubmit, status: forgotStatus } = useHttp<any>("forgot-passwor
       </UFormField>
 
       <div class="flex items-center justify-end space-x-4">
-        <UButton type="submit" label="Send reset link" :loading="forgotStatus === 'pending'" />
+        <UButton  aria-label="Vinawebapp Button"  type="submit" label="Send reset link" :loading="forgotStatus === 'pending'" />
       </div>
     </UForm>
 

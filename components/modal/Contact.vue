@@ -155,7 +155,7 @@ const onSubmit = async (event: FormSubmitEvent<typeof state>) => {
                     <UForm v-if="!isSucess"  ref="formRef" :validate="validate" :state="state" class="space-y-4  relative"
                     @submit="onSubmit">
                         <div class="bg-black/50 text-white p-6 max-w-5xl mx-auto rounded-lg relative">
-                            <button type="button" @click="onSuccess()"
+                            <button  aria-label="Vinawebapp Button"  type="button" @click="onSuccess()"
                                 class="absolute top-4 right-4 text-white hover:text-red-500 cursor-pointer">
                                 <UIcon name="material-symbols:close" class="size-8" />
                             </button>
@@ -252,7 +252,7 @@ const onSubmit = async (event: FormSubmitEvent<typeof state>) => {
                                 </div>
 
                                
-                                <UButton icon="mdi:content-save" :loading="isLoading" type="submit" :disabled="isLoading"
+                                <UButton  aria-label="Vinawebapp Button"  icon="mdi:content-save" :loading="isLoading" type="submit" :disabled="isLoading"
                                 :ui="{ base: 'button text-center  justify-center' }"
 
                                     class="w-full  text-white py-3 font-semibold">
@@ -263,7 +263,7 @@ const onSubmit = async (event: FormSubmitEvent<typeof state>) => {
                     </UForm>
                     <div v-else>
                         <div class="bg-black/50 text-white p-6 max-w-5xl mx-auto rounded-lg text-center">
-                            <button type="button" @click="onSuccess()"
+                            <button  aria-label="Vinawebapp Button"  type="button" @click="onSuccess()"
                                 class="absolute top-4 right-4 text-white hover:text-red-500 cursor-pointer">
                                 <UIcon name="material-symbols:close" class="size-8" />
                             </button>
@@ -274,7 +274,7 @@ const onSubmit = async (event: FormSubmitEvent<typeof state>) => {
                             <p class="text-lg text-gray-300 mb-6">
                                 {{ $t('form_contact.success_message') }}
                             </p>
-                            <UButton @click="onSuccess" class="w-full text-white py-3 font-semibold">
+                            <UButton  aria-label="Vinawebapp Button"  @click="onSuccess" class="w-full text-white py-3 font-semibold">
                                 {{ $t('form_contact.success_button') }}
                             </UButton>
                         </div>

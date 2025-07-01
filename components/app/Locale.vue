@@ -26,7 +26,7 @@ const items = ref<DropdownMenuItem[]>([
     content: 'lg:w-48 w-36',
     item: ' cursor-pointer '
   }">
-    <UButton color="vnwa" class="uppercase gap-1 font-bold text-white" variant="link">
+    <UButton  aria-label="Vinawebapp Button"  color="vnwa" class="uppercase gap-1 font-bold text-white" variant="link">
       <UIcon name="material-symbols:globe" class="lg:size-6 size-4" />
       <span class="lg:text-base text-xs">{{ locale }}</span>
     </UButton>

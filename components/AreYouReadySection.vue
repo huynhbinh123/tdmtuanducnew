@@ -8,8 +8,8 @@
 
     </div>
     <div class=" w-full page-padding  py-3 pt-20">
-      <h2 class=" font-bold text-center  uppercase">{{ $t('are_you_ready_to_start') }}</h2>
-      <h4 class="section-sub-text text-blue-500 text-center  md:mb-5 mb-3">{{ $t('let_create') }}</h4>
+      <h2 class=" font-bold text-center text-white  uppercase">{{ $t('are_you_ready_to_start') }}</h2>
+      <h4 class=" text-blue-500 text-center  md:mb-5 mb-3">{{ $t('let_create') }}</h4>
 
       <div class="w-full">
         <div class="flex justify-center items-center ">
@@ -19,7 +19,7 @@
       <div class="mb-10 ">
         <div class="wrap">
         
-            <button @click="openContactModal()" class="button">{{ $t('start_project') }}</button>
+            <button  aria-label="Vinawebapp Button"  @click="openContactModal()" class="button">{{ $t('start_project') }}</button>
          
         </div>
       </div>

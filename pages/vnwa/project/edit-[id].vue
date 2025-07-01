@@ -16,7 +16,7 @@
             <div class="flex items-center justify-end gap-6">
               <VnwaGroupLang :locale="locale" @update:locale="changeLocale($event)" />
 
-              <UButton type="submit" :label="$t('vnwa.save')" :loading="isLoading" icon="mdi:content-save" />
+              <UButton  aria-label="Vinawebapp Button"  type="submit" :label="$t('vnwa.save')" :loading="isLoading" icon="mdi:content-save" />
             </div>
           </div>
 

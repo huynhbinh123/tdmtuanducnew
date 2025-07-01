@@ -65,7 +65,7 @@ const { refresh: onSubmit, status: loginStatus } = useHttp<any>("admin-login", {
       </UTooltip>
 
       <div class="flex items-center justify-end space-x-4">
-        <UButton color="success" variant="outline" type="submit" label="Login" :loading="loginStatus === 'pending'" />
+        <UButton  aria-label="Vinawebapp Button"  color="success" variant="outline" type="submit" label="Login" :loading="loginStatus === 'pending'" />
       </div>
     </UForm>
 

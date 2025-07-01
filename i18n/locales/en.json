@@ -158,15 +158,8 @@
     "what_customers_say_slogan": "We are proud to have worked with many clients who have shared their experiences with us. Here are some of their testimonials.",
     "why_me_section": {
         "title": "Why Vinawebapp.com?",
-        "slogan": "We are different because",
-        "points": {
-            "point1": "We have a team with more than 10+ years of experience and we pride ourselves on our sophisticated, innovative processes and continuous innovation.",
-            "point2": "Vinawebapp.com always updates and innovates technologies according to new era trends. We are proud to always create major breakthroughs in customer projects in terms of benefits and profits.",
-            "point3": "We make highly strategic content and design decisions based on the data you provide to ensure that your website will deliver high returns for your project.",
-            "point4": "We value straightforward, no-nonsense communication and will always accept and adapt to our customers' helpful comments.",
-            "point5": "We build high quality websites. Our websites are always SEO optimized, load fast and deliver great user experiences - All the things Google loves.",
-            "point6": "Our team of programmers always has experience in designing highly secure websites, preventing DDOS, and hacking websites. In addition, we also handle website harassment cases for you 24/7."
-        }
+        "slogan": "We are different because"
+        
     },
     "about_short": {
         "title": "Our Team",

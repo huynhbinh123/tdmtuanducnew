@@ -11,7 +11,7 @@
                 {{ t('vnwa.create_tag') }}
               </h3>
             </div>
-            <UButton type="submit" :label="$t('vnwa.save')" :loading="isLoading" icon="mdi:content-save" />
+            <UButton  aria-label="Vinawebapp Button"  type="submit" :label="$t('vnwa.save')" :loading="isLoading" icon="mdi:content-save" />
           </div>
 
 

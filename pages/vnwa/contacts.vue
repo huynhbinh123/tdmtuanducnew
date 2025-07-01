@@ -205,9 +205,9 @@ const deleteContact = async (id: number) => {
         </template>
         <template #action-cell="{ row }">
           <div class="flex items-center justify-end gap-4">
-            <UButton @click="viewContact(row.original.id)" icon="material-symbols:visibility-rounded"
+            <UButton  aria-label="Vinawebapp Button"  @click="viewContact(row.original.id)" icon="material-symbols:visibility-rounded"
               color="secondary" />
-            <UButton @click="deleteContact(row.original.id)" icon="material-symbols:delete" color="error" />
+            <UButton  aria-label="Vinawebapp Button"  @click="deleteContact(row.original.id)" icon="material-symbols:delete" color="error" />
           </div>
         </template>
       </UTable>

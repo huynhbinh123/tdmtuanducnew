@@ -2,15 +2,17 @@
   <div>
     <HeroSection :data="data.hero_section" />
     <BrandSlideSection :data="data.brand_section" />
-    <ProjectSection />
+    <ProjectSection :data="data.projects" />
     <FeedbackSection :data="data.feedback_section" />
-    <WhyMeSection />
+    <WhyMeSection :data="data.why_me_section" />
     <ShortAboutSection />
     <AreYouReadySection />
   </div>
 </template>
 
 <script lang="ts" setup>
+import type { Project } from '~/type';
+
 interface HeroSection {
   title: string;
   slogan: string;
@@ -31,7 +33,7 @@ interface FeedbackSectionItem {
 interface WhyMeSectionItem {
   icon: string;
   label: string;
-  content: string;
+  desc: string;
 }
 
 interface ShortAboutSection {
@@ -51,6 +53,7 @@ interface AppearanceData {
   feedback_section: FeedbackSectionItem[];
   why_me_section: WhyMeSectionItem[];
   short_about_section: ShortAboutSection;
+  projects: Project[];
   meta: Meta;
 }
 const { locale } = useI18n();

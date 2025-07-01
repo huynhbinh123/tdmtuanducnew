@@ -48,7 +48,7 @@
 
         <VnwaMetaSeoForm :meta="appearanceData.meta" @update:errors="handleErrors" />
 
-        <UButton type="submit" icon="mdi:content-save" :loading="appearanceUpdateStatus == 'pending'">
+        <UButton  aria-label="Vinawebapp Button"  type="submit" icon="mdi:content-save" :loading="appearanceUpdateStatus == 'pending'">
           {{ $t('vnwa.save') }}
         </UButton>
       </UForm>

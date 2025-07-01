@@ -16,7 +16,7 @@
                 <USelect v-model="formData.status" :items="['draft', 'published']" class="w-48 capitalize" />
 
               </UFormField>
-              <UButton type="submit" :label="$t('vnwa.save')" :loading="isLoading" icon="mdi:content-save" />
+              <UButton  aria-label="Vinawebapp Button"  type="submit" :label="$t('vnwa.save')" :loading="isLoading" icon="mdi:content-save" />
             </div>
           </div>
 

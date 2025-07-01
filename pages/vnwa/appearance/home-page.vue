@@ -58,9 +58,10 @@
           </template>
           <div class="space-y-4">
             <div class="grid grid-cols-1 gap-4">
+
               <UFormField label="" name="why_me_section">
                 <VnwaMutipleLink v-model="appearanceData.why_me_section" :is-icon="true"
-                  iconsLink="https://icones.js.org/collection/emojione" />
+                  iconsLink="https://icones.js.org/collection/emojione" :is-desc="true" />
               </UFormField>
             </div>
           </div>
@@ -84,7 +85,8 @@
 
         <VnwaMetaSeoForm :meta="appearanceData.meta" @update:errors="handleErrors" />
 
-        <UButton type="submit" icon="mdi:content-save" :loading="appearanceUpdateStatus == 'pending'">
+        <UButton aria-label="Vinawebapp Button" type="submit" icon="mdi:content-save"
+          :loading="appearanceUpdateStatus == 'pending'">
           {{ $t('vnwa.save') }}
         </UButton>
       </UForm>
@@ -118,7 +120,7 @@ interface AppearanceData {
   why_me_section: {
     icon: string;
     label: string;
-    content: string;
+    desc: string;
   }[];
   short_about_section: {
     label: string;

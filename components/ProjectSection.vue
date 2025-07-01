@@ -1,40 +1,9 @@
 <script lang="ts" setup>
 import type { Project } from '~/type';
-const { data, status } = await useHttp<Project[]>('load-data-feature-projects', {
-    method: 'GET',
-    params: {
-        locale: useI18n().locale
-    }
-});
 
-
-
-const dataTopProject = [
-    {
-        cate_name: "Web Development",
-        name: "VinaWebApp CMS",
-        slug: "/",
-        desc: "A powerful CMS built with Laravel and Vue.js, providing seamless user experience and high customization.",
-        url_avatar: "https://via.placeholder.com/768x432",
-        url_avatar_mobile: "https://via.placeholder.com/480x270"
-    },
-    {
-        cate_name: "E-commerce",
-        name: "Happy Paws Store",
-        slug: "/",
-        desc: "An online pet store built with Nuxt.js and Laravel, optimized for speed and SEO.",
-        url_avatar: "https://via.placeholder.com/768x432",
-        url_avatar_mobile: "https://via.placeholder.com/480x270"
-    },
-    {
-        cate_name: "Movie Streaming",
-        name: "Parap Movies",
-        slug: "/",
-        desc: "A movie streaming platform with smooth user experience and a vast collection of films.",
-        url_avatar: "https://via.placeholder.com/768x432",
-        url_avatar_mobile: "https://via.placeholder.com/480x270"
-    }
-];
+defineProps<{
+    data: Project[];
+}>();
 </script>
 
 <template>
@@ -48,11 +17,10 @@ const dataTopProject = [
                         <h2 class="text-white font-semibold uppercase"> {{ $t('featured_projects') }}
                         </h2>
                         <NuxtLinkLocale to="/">
-                            <h6
-                                class="text-white/50 section-sub-text inline-block md:mt-6 mt-3 add-transition hover:text-white">
+                            <p class="text-white/50 text-xl inline-block md:mt-6 mt-3 add-transition hover:text-white">
                                 {{ $t('see_all_projects') }}
                                 <Icon name="mdi-light:arrow-right" class="ml-2" />
-                            </h6>
+                            </p>
                         </NuxtLinkLocale>
                     </div>
                 </div>

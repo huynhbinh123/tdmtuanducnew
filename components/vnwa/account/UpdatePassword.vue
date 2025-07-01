@@ -82,7 +82,7 @@ const { refresh: sendResetPasswordEmail, status: resetPasswordEmailStatus } = us
       </UFormField>
 
       <div class="pt-2">
-        <UButton type="submit" :label="$t('vnwa.save')" :loading="accountPasswordStatus === 'pending'" />
+        <UButton  aria-label="Vinawebapp Button"  type="submit" :label="$t('vnwa.save')" :loading="accountPasswordStatus === 'pending'" />
       </div>
     </UForm>
 
