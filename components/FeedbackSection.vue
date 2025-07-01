@@ -1,13 +1,13 @@
 <script setup lang="ts">
 const config = useRuntimeConfig();
 
-interface FeedbackSectionItem {
+interface T {
   label: string;
   image: string;
   content: string;
 }
 defineProps<{
-  data: FeedbackSectionItem[];
+  data: T[];
 }>();
 
 
@@ -34,10 +34,10 @@ defineProps<{
               <NuxtImg :src="`${config.public.appUrl}/images/stars.svg`" width="128" height="22" alt="5-star rating"
                 class="inline-block" />
             </div>
-            <div class="text-blue-500 uppercase ">
-              <h6>
+            <div class="text-blue-500 uppercase text-xl font-medium">
+              <p>
                 {{ item.label }}
-              </h6>
+              </p>
             </div>
           </div>
         </UCarousel>

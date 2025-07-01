@@ -4,18 +4,16 @@
       <div class="flex items-center justify-between h-full gap-4">
         <div class="logo flex items-center justify-start max-h-full relative overflow-hidden   ">
           <div></div>
-          <NuxtLinkLocale to="/" aria-label="home link" class="truncate p max-h-full">
+          <NuxtLinkLocale to="/" aria-label="home link" class="truncate max-h-full">
             <div class="max-h-full">
+              <!-- Logo dạng ngang (desktop) -->
+              <NuxtImg v-if="logo_full" :src="logo_full" format="webp" alt="Vinawebapp.com" width="200" height="60"
+                sizes="(max-width: 1024px) 150px, 200px" class="  h-[60px] w-auto" />
 
-
-              <NuxtImg v-if="logo_full" format="webp" :src="logo_full" width="200" height="60"
-                class=" lg:block hidden lg:h-[60px] w-auto"
-                :srcset="$storage(logo_full) + ' 768w,' + $storage(logo_full) + ' 1200w'" alt="Vinawebapp.com" />
-              <NuxtImg v-if="logo_icon" format="webp" :src="logo_icon" width="200" height="200"
-                class="lg:hidden block h-[45px] w-auto"
-                :srcset="$storage(logo_icon) + ' 768w,' + $storage(logo_icon) + ' 1200w'" alt="Vinawebapp.com" />
+            
             </div>
           </NuxtLinkLocale>
+
         </div>
         <div class="lg:block hidden">
           <ul class="header-menu  flex items-center gap-1 h-full justify-end text-white">
@@ -31,10 +29,10 @@
               <AppLocale />
             </li>
             <li class="ps-3">
-              <button  aria-label="Vinawebapp Button"  @click="openContactModal()"
+              <button aria-label="Vinawebapp Button" @click="openContactModal()"
                 class=" text-xl rounded-xl  border border-primary-500 text-white  px-3 py-2  flex items-center justify-center gap-1 cursor-pointer  font-bold">
                 <span>
-                  {{$t('get_in_touch')}} </span>
+                  {{ $t('get_in_touch') }} </span>
                 <UIcon name="material-symbols:keyboard-double-arrow-right-rounded" class="size-8" />
               </button>
             </li>
@@ -47,7 +45,8 @@
               <AppLocale />
             </li>
             <li>
-              <UButton  aria-label="Vinawebapp Button"  @click="openMenu()" icon="material-symbols:menu" variant="ghost" color="info" size="xl" />
+              <UButton aria-label="Vinawebapp Button" @click="openMenu()" icon="material-symbols:menu" variant="ghost"
+                color="info" size="xl" />
             </li>
           </ul>
         </div>
@@ -60,7 +59,7 @@
 </template>
 
 <script lang="ts" setup>
-import {  ModalMenu } from '#components';
+import { ModalMenu } from '#components';
 
 defineProps({
   logo_full: {
@@ -109,7 +108,7 @@ const openMenu = () => {
 }
 const emit = defineEmits(['openContactModal']);
 const openContactModal = () => {
-    emit('openContactModal');
+  emit('openContactModal');
 };
 
 

@@ -9,7 +9,7 @@
     </div>
     <div class=" w-full page-padding  py-3 pt-20">
       <h2 class=" font-bold text-center text-white  uppercase">{{ $t('are_you_ready_to_start') }}</h2>
-      <h4 class=" text-blue-500 text-center  md:mb-5 mb-3">{{ $t('let_create') }}</h4>
+      <p class="text-xl text-blue-500 text-center  md:mb-5 mb-3">{{ $t('let_create') }}</p>
 
       <div class="w-full">
         <div class="flex justify-center items-center ">

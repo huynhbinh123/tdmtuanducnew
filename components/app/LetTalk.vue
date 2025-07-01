@@ -5,7 +5,8 @@
             <!-- LIVE CHAT -->
             <div class="absolute top-0 -left-25 z-50 rounded-full flex items-center justify-center text-center size-20 text-sm font-bold let_talk_button_bg transition-all duration-300 ease-out transform"
                 :class="{ 'opacity-100 scale-100 translate-y-0': isShow, 'opacity-0 scale-90 translate-y-2': !isShow }">
-                <NuxtLink aria-label="Vinawebapp.com Live Chat" target="_blank" class="w-full h-full" :to="live_chat_url">
+                <NuxtLink aria-label="Vinawebapp.com Live Chat" target="_blank" class="w-full h-full"
+                    :to="live_chat_url">
                     <div class="w-full h-full flex items-center justify-center text-white ">
 
                         Live Chat
@@ -16,15 +17,17 @@
             <!-- START PROJECT -->
             <div class="absolute -top-25 -left-14 z-50 rounded-full flex items-center justify-center text-center size-20 text-sm font-bold let_talk_button_bg transition-all duration-300 ease-out transform"
                 :class="{ 'opacity-100 scale-100 translate-y-0': isShow, 'opacity-0 scale-90 translate-y-2': !isShow }">
-                <button  aria-label="Vinawebapp Button"  @click="openContactModal()" class="w-full h-full text-white  px-2 flex items-center justify-center">
-                   {{ $t('get_in_touch') }}
+                <button aria-label="Vinawebapp Button" @click="openContactModal()"
+                    class="w-full h-full text-white  px-2 flex items-center justify-center">
+                    {{ $t('get_in_touch') }}
                 </button>
             </div>
 
             <!-- TOGGLE BUTTON -->
-            <button  aria-label="Vinawebapp Button"  @click="() => isShow = !isShow"
+            <button aria-label="Vinawebapp Button" @click="() => isShow = !isShow"
                 class="bg-black shadow-2xl shadow-primary-500 z-50 w-[64px] h-[64px] rounded-full">
-                <NuxtImg :src="logo_icon" class="w-full h-full" aria-label="vinawebapp.com" width="100" height="100" />
+                <NuxtImg :src="logo_icon" class="w-full h-full object-contain" aria-label="vinawebapp.com"
+                    format="webp" />
             </button>
 
         </div>

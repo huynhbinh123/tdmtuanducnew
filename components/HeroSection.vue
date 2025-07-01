@@ -11,35 +11,35 @@
             </div>
             <div>
               <h1 class=" font-bold italic md:mb-5 mb-3 text-white ">
-                {{data.title}}
+                {{ data.title }}
               </h1>
             </div>
             <div class="  ">
-              <h5 class=" whitespace-pre-line text-base text-gray-100/40   md:mb-5 mb-3  lg:pr-20  ">
-                {{data.slogan}}
+              <p class=" whitespace-pre-line lg:text-xl text-lg text-gray-400   md:mb-5 mb-3  lg:pr-20  ">
+                {{ data.slogan }}
 
-              </h5>
+              </p>
             </div>
-            <div class="flex lg:justify-start items-center justify-center gap-4  font-medium">
+            <div class="flex lg:justify-start items-center justify-center gap-6  mt-10 mb-5 font-medium">
               <div>
-                <button  aria-label="Vinawebapp Button"  @click="openContactModal()"
-                  class=" lg:text-lg text-sm text-white flex items-center  w-full lg:p-3 px-3 py-3  bg-red-800  md:hover:bg-red-600 active:bg-red-600 uppercase md:hover:-translate-y-1">
+                <button aria-label="Vinawebapp Button" @click="openContactModal()"
+                  class=" lg:text-lg text-sm text-white flex items-center  w-full lg:px-4 lg:py-4 py-3 px-4  bg-red-800  md:hover:bg-red-600 active:bg-red-600 uppercase md:hover:-translate-y-1">
                   <span class="font-bold"> {{ $t('start_project') }} </span>
                   <UIcon name="mdi-light:arrow-right" color="white" class="ml-2  size-5 " />
                 </button>
               </div>
-              <NuxtLinkLocale :to="'/project'" class="button-array__button--secondary md:hover:-translate-y-1">
+              <div @click="$router.push('/project')" class="button-array__button--secondary md:hover:-translate-y-1">
                 <button
-                  class=" lg:text-lg text-sm flex  items-center  text-white w-full   lg:p-3 px-3 py-1 bg-gray-700 md:hover:bg-blue-600 active:bg-blue-600 uppercase ">
+                  class=" lg:text-lg text-sm flex  items-center  text-white w-full   lg:p-3 px-4 py-1 bg-gray-700 md:hover:bg-blue-600 active:bg-blue-600 uppercase ">
                   <span class="font-bold"> {{ $t('see_our_work') }} </span>
                   <UIcon name="mdi-light:arrow-right" color="white" class="ml-2 size-8" />
                 </button>
-              </NuxtLinkLocale>
+              </div>
             </div>
             <div class="flex md:justify-start justify-center">
-              <NuxtImg format="webp" loading="lazy" quality="80" width="300" height="73"
-                :src="`${config.public.appUrl}/images/badges.webp`" class="md:my-10 my-6" alt="Vinawebapp.com" />
 
+              <NuxtImg :src="`${config.public.appUrl}/images/badges.webp`" alt="Vinawebapp.com" width="300" height="73"
+                loading="lazy" sizes="(max-width: 768px) 150px, 300px" class="md:my-10 my-6" />
             </div>
           </div>
         </div>

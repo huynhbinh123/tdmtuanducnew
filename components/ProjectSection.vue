@@ -70,12 +70,13 @@ defineProps<{
                                         </div>
                                         <div :class="{ 'lg:col-span-6 lg:order-first': index === 0, 'lg:col-span-12': index !== 0 }"
                                             class="col-span-12 flex justify-start items-start">
-                                            <NuxtImg quality="80" format="webp" loading="lazy" width="100" height="100"
-                                                :src="item.image"
-                                                :srcset="item.image + ' 768w,' + item.image + ' 1200w'"
-                                                sizes="(min-width:768px) 365px, 100vw"
-                                                class="block rounded-lg w-full h-auto xs:mx-auto"
-                                                :alt="'vinawebapp.com - ' + item.name" />
+
+                                            <NuxtImg
+                                                 :src="item.image"
+                                                alt="vinawebapp.com - 199s Studio" width="768" height="512"
+                                                loading="lazy" sizes="(max-width: 768px) 100vw, 500px"
+                                                class="block rounded-lg w-full h-auto xs:mx-auto" />
+                                          
                                         </div>
                                     </div>
                                 </Card>
