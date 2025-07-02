@@ -183,18 +183,20 @@ function toggleExpand(index) {
 import { computed } from "vue";
 import MenuCategories from "~/components/blog/MenuCategories.vue";
 
-const flattenedCategories = computed(() =>
-  Categories.flatMap((item) => {
-    const name = item.name.toLowerCase();
-    if (name === "bài viết mới") {
-      return [];
+function flattenCategories(categories) {
+  const result = [];
+  for (const item of categories) {
+    if (item.slug) {
+      result.push(item);
     }
-    if (name === "chuyên mục") {
-      return item.child || [];
+    if (item.child && Array.isArray(item.child)) {
+      result.push(...flattenCategories(item.child));
     }
-    return [item];
-  })
-);
+  }
+  return result;
+}
+
+const flattenedCategories = computed(() => flattenCategories(Categories));
 
 /// code lay du lieu cua danh muc dang truy cap
 interface T {

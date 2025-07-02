@@ -176,7 +176,6 @@ export const useMockData = () => {
       ],
     },
   ];
-
   const Categories = [
     {
       name: t("category.new_posts"),
