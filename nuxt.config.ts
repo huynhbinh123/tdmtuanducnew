@@ -90,8 +90,8 @@ export default defineNuxtConfig({
         en: "/forgot",
         vi: "/quen-mat-khau",
       },
-      pay: {
-        en: "/pay",
+      checkOut: {
+        en: "/check-out",
         vi: "/thanh-toan",
       },
       blog: {

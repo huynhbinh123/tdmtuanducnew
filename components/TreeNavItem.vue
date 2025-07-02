@@ -14,7 +14,11 @@
           {{ item.name }}
         </NuxtLinkLocale>
 
-        <div v-if="item.child" @click.stop="toggle" class="cursor-pointer">
+        <div
+          v-if="item.children && item.children.length > 0"
+          @click.stop="toggle"
+          class="cursor-pointer"
+        >
           <span class="!text-gray-500 text-sm select-none">
             {{ isOpen ? "▲" : "▼" }}
           </span>
@@ -24,7 +28,7 @@
 
     <transition name="slide">
       <ul v-show="isOpen" class="ms-4 mt-1 space-y-1">
-        <li v-for="(nav, index) in item.child" :key="index">
+        <li v-for="(nav, index) in item.children" :key="index">
           <TreeNavItem
             :item="nav"
             :expandedSlug="expandedSlug"
@@ -42,7 +46,7 @@ import { useRoute } from "vue-router";
 interface Item {
   name: string;
   slug: string;
-  child?: Item[];
+  children: Item[];
 }
 
 const props = defineProps<{
@@ -61,8 +65,8 @@ onMounted(() => {
 
   const hasMatch = (item: Item): boolean => {
     if (item.slug === currentSlug) return true;
-    if (item.child) {
-      return item.child.some((sub) => hasMatch(sub));
+    if (item.children) {
+      return item.children.some((sub) => hasMatch(sub));
     }
     return false;
   };

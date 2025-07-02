@@ -159,6 +159,7 @@
 
           <!-- nút mua ngay -->
           <UButton
+            @click="addSampleProduct"
             class="flex items-center justify-center bg-orange-500 text-white font-bold px-6 py-2 rounded-lg hover:bg-orange-600 transition-colors lg:min-w-[250px] min-w-full cursor-pointer"
           >
             <UIcon name="material-symbols:check" class="w-6 h-6 mr-2" />
@@ -167,7 +168,7 @@
 
           <!-- thêm vào giỏ -->
           <button
-            @click="addSampleProduct"
+            @click="addToCart"
             class="flex items-center justify-center gap-2 bg-gray-200 px-4 py-2 rounded-lg hover:bg-gray-300 text-black transition-colors cursor-pointer lg:w-auto w-full"
           >
             <UIcon
@@ -515,9 +516,10 @@ const cart = useCart() as Ref<CartItem[]>;
 const auth = useAuthStore();
 const router = useRouter();
 
-const addSampleProduct = () => {
+const addSampleProduct = (event?: MouseEvent) => {
   if (!auth.loggedIn) {
-    return router.push("/login");
+    router.push("/login");
+    return;
   }
 
   cart.value.push({
@@ -528,6 +530,17 @@ const addSampleProduct = () => {
       "https://www.tdm.vn/image/cachewebp/catalog/product-3935/sen-tam-nong-lanh-inax-BFV-1403S-4C-47x47.webp",
   });
   console.log(cart.value);
+};
+
+const addToCart = () => {
+  cart.value.push({
+    name: product.name,
+    quantity: 1,
+    price: Number(product.priceSale.replace(/[^0-9]/g, "")), // Lấy số từ chuỗi "9.620.000 đ"
+    image: items[0], // ảnh đầu tiên làm thumbnail
+  });
+
+  console.log("Đã thêm vào giỏ:", cart.value);
 };
 
 const product = {

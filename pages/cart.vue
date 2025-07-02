@@ -1,7 +1,7 @@
 <template>
   <UContainer>
     <div>
-      <Breadcrumb :items="[{ name: 'Giỏ Hàng' }]" />
+      <Breadcrumb :items="[{ name: $t('cart.title') }]" />
     </div>
 
     <div class="py-10">
@@ -22,7 +22,9 @@
                   <th class="p-2 border text-right">
                     {{ $t("table.unitPrice") }}
                   </th>
-                  <th class="p-2 border text-right">{{ $t("table.total") }}</th>
+                  <th class="p-2 border text-right whitespace-nowrap">
+                    {{ $t("table.total") }}
+                  </th>
                   <th class="p-2 border text-center">
                     {{ $t("table.actions") }}
                   </th>
@@ -46,7 +48,7 @@
                   <td class="p-2 border text-right whitespace-nowrap">
                     {{ item.price.toLocaleString() }} đ
                   </td>
-                  <td class="p-2 border text-right">
+                  <td class="p-2 border text-right whitespace-nowrap">
                     {{ (item.price * item.quantity).toLocaleString() }} đ
                   </td>
                   <td class="p-2 border text-center">
@@ -143,7 +145,4 @@ const totalCartPrice = computed(() =>
 function removeFromCart(index: number) {
   cartItems.value.splice(index, 1);
 }
-definePageMeta({
-  middleware: "",
-});
 </script>

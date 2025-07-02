@@ -319,7 +319,7 @@ const rightForm = ref([
     products: reactive([
       {
         title: 'Chậu Rửa Lavabo Inax AL-2298V (AL2298V) Âm Bàn AquaCeramic',
-        desc: ' - Mã sản phẩm: AL-2298V',
+         desc: ` - ${t('cart.productCode')}: AL-2298V`,
         quantity: 2,
         price: 2040000,
         get totalPrice() {
@@ -328,7 +328,7 @@ const rightForm = ref([
       },
       {
         title: 'Chậu Rửa Lavabo Inax AL-2298V (AL2298V) Âm Bàn AquaCeramic',
-        desc: ' - Mã sản phẩm: AL-2298V',
+         desc: ` - ${t('cart.productCode')}: AL-2298V`,
         quantity: 1,
         price: 2040000,
         get totalPrice() {

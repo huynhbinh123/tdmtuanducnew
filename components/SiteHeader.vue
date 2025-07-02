@@ -88,9 +88,15 @@
             <UIcon name="material-symbols:account-circle" class="p-4" />
           </NuxtLinkLocale>
 
-          <NuxtLinkLocale to="/cart" class="flex items-center"
-            ><UIcon name="material-symbols:shopping-cart-rounded" class="p-4"
-          /></NuxtLinkLocale>
+          <NuxtLinkLocale to="/cart" class="relative flex items-center">
+            <UIcon name="material-symbols:shopping-cart-rounded" class="p-4" />
+            <span
+              v-if="totalQuantity > 0"
+              class="absolute top-0 right-0 -mt-2 -mr-1 text-xs bg-red-500 text-white rounded-full px-1.5"
+            >
+              {{ totalQuantity }}
+            </span>
+          </NuxtLinkLocale>
         </div>
       </div>
 
@@ -345,7 +351,7 @@
             </button>
 
             <div
-              :class="{ hidden: route.path !== '/' }"
+              :class="{ hidden: route.path !== '/vi' && route.path !== '/' }"
               class="absolute left-0 top-full bg-white text-black/90 space-y-3 group-hover:block z-10 shadow-md"
             >
               <div>
@@ -487,7 +493,7 @@ const categoryMenu = computed(() => {
   return [
     {
       name: t("menu.brand"),
-      slug: localePath("thuong-hieu"),
+      slug: "thuong-hieu",
       desc: "Các thương hiệu nổi bật",
       child: [
         {

@@ -1,52 +1,30 @@
 <template>
   <UContainer>
     <!-- lg -->
-    <div class="lg:block hidden">
+    <div>
       <div class="grid grid-cols-6 gap-16 mt-6">
-        <div class="col-span-2">
-          <div class="space-y-5">
-            <div
-              v-for="(name, index) in Categories"
-              :key="index"
-              class="mb-4 cursor-pointer"
-            >
-              <h3
-                class="text-black text-lg font-medium uppercase py-4 border-t-4 border-orange-600"
-              >
-                {{ name.name }}
-              </h3>
-
-              <ul
-                v-if="name.name === t('category.new_posts')"
-                class="list-disc pl-5 space-y-1 text-orange-500"
-              >
-                <li
-                  v-for="(child, index) in name.child"
-                  :key="index"
-                  class="text-orange-500 hover:text-gray-700 leading-snug"
+        <div class="lg:col-span-2 col-span-6 lg:order-1 order-2">
+          <div>
+            <h3 class="text-black text-lg font-medium uppercase py-4">
+              {{ $t("category.new_posts") }}
+            </h3>
+            <ul>
+              <li v-for="(item, index) in newPosts" class="">
+                <NuxtLinkLocale
+                  :to="`/blog/${item.slug}`"
+                  class="block text-orange-500 hover:text-orange-600 py-2"
                 >
-                  <NuxtLinkLocale
-                    :to="`/blog/${child.slug}`"
-                    class="text-inherit no-underline hover:text-gray-700 line-clamp-3"
-                  >
-                    {{ child.name }}
-                  </NuxtLinkLocale>
-                </li>
-              </ul>
-
-              <ul v-else class="space-y-1">
-                <li v-for="(item, index) in flattenedCategories" :key="index">
-                  <TreeNavItem
-                    :item="item"
-                    :expandedSlug="expandedSlug"
-                    @toggle="$emit('toggle', $event)"
-                  />
-                </li>
-              </ul>
-            </div>
+                  <p class="line-clamp-2">
+                    {{ item.name }}
+                  </p>
+                </NuxtLinkLocale>
+              </li>
+            </ul>
           </div>
+
+          <BlogMenuCategories />
         </div>
-        <div class="col-span-4">
+        <div class="lg:col-span-4 col-span-6 lg:order-2 order-1">
           <div class="p-4 border-t-4 border-orange-600">
             <h2
               class="text-2xl font-semibold text-orange-500 border-b border-gray-200 py-4"
@@ -57,95 +35,11 @@
           </div>
         </div>
       </div>
-      <div class="flex justify-center py-6">
-        <UPagination
-          v-model:page="page"
-          :total="100"
-          :ui="{
-            item: 'hover:bg-[#f89e1b] hover:text-white cursor-pointer',
-            first: 'hover:bg-[#f89e1b] hover:text-white cursor-pointer',
-            prev: 'hover:bg-[#f89e1b] hover:text-white cursor-pointer',
-            next: 'hover:bg-[#f89e1b] hover:text-white cursor-pointer',
-            last: 'hover:bg-[#f89e1b] hover:text-white cursor-pointer',
-          }"
-        />
-      </div>
-    </div>
-    <!-- Moblie -->
-    <div class="lg:hidden block">
-      <div class="gap-16 mt-6">
-        <!-- noi dung -->
-        <div>
-          <div class="p-4 border-t-4 border-orange-600">
-            <h2
-              class="text-2xl font-semibold text-orange-500 border-b border-gray-200 py-4"
-            >
-              {{ $t("category.title") }}: {{ selectedCategory }}
-            </h2>
-            <BlogContent :category="selectedCategory" :allItems="allItems" />
-          </div>
-        </div>
-        <div class="flex justify-center py-6">
-          <UPagination
-            v-model:page="page"
-            :total="100"
-            :ui="{
-              item: 'hover:bg-[#f89e1b] hover:text-white cursor-pointer',
-              first: 'hover:bg-[#f89e1b] hover:text-white cursor-pointer',
-              prev: 'hover:bg-[#f89e1b] hover:text-white cursor-pointer',
-              next: 'hover:bg-[#f89e1b] hover:text-white cursor-pointer',
-              last: 'hover:bg-[#f89e1b] hover:text-white cursor-pointer',
-            }"
-          />
-        </div>
-        <!-- danh muc -->
-        <div>
-          <div
-            v-for="(name, index) in Categories"
-            :key="index"
-            class="mb-4 cursor-pointer"
-          >
-            <h3
-              class="text-black text-lg font-medium uppercase py-4 border-t-4 border-orange-600"
-            >
-              {{ name.name }}
-            </h3>
-
-            <ul
-              v-if="name.name === 'bài viết mới'"
-              class="list-disc pl-5 space-y-1 text-orange-500"
-            >
-              <li
-                v-for="(child, index) in name.child"
-                :key="index"
-                class="text-orange-500 hover:text-gray-700 leading-snug"
-              >
-                <NuxtLinkLocale
-                  :to="`/blog/${child.slug}`"
-                  class="text-inherit no-underline hover:text-gray-700 line-clamp-2"
-                >
-                  {{ child.name }}
-                </NuxtLinkLocale>
-              </li>
-            </ul>
-
-            <ul v-else class="space-y-1">
-              <li v-for="(item, index) in flattenedCategories" :key="index">
-                <TreeNavItem
-                  :item="item"
-                  :expandedSlug="null"
-                  @toggle="$emit('toggle', $event)"
-                />
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
     </div>
   </UContainer>
 </template>
 
-<script setup>
+<script lang="ts" setup>
 const { t } = useI18n();
 definePageMeta({
   layout: "blog",
@@ -206,6 +100,29 @@ onMounted(() => {
   }
 });
 
+const newPosts = [
+  {
+    name: "11Chậu Rửa Chén Hafele: Chất Liệu Đa Dạng (Đá, Inox), Thiết Kế Thông Minh và Kinh Nghiệm Chọn Mua 11 Thiết Kế Thông Minh và Kinh Nghiệm Chọn Mua 11Thiết Kế Thông Minh và Kinh Nghiệm Chọn Mua 11",
+    slug: "chau-rua-chen-hafele-chat-lieu-da-dang-thiet-ke-thong-minh-kinh-nghiem-chon-mua",
+  },
+  {
+    name: "22Chậu Rửa Chén Hafele: Chất Liệu Đa Dạng (Đá, Inox), Thiết Kế Thông Minh và Kinh Nghiệm Chọn Mua 2 Thiết Kế Thông Minh và Kinh Nghiệm Chọn Mua 112",
+    slug: "chau-rua-chen-hafele-chat-lieu-da-dang-thiet-ke-thong-minh-kinh-nghiem-chon-mua-2",
+  },
+  {
+    name: "33Chậu Rửa Chén Hafele: Chất Liệu Đa Dạng (Đá, Inox), Thiết Kế Thông Minh và Kinh Nghiệm Chọn Mua 3 Thiết Kế Thông Minh và Kinh Nghiệm Chọn Mua 113",
+    slug: "chau-rua-chen-hafele-chat-lieu-da-dang-thiet-ke-thong-minh-kinh-nghiem-chon-mua-3",
+  },
+  {
+    name: "44Chậu Rửa Chén Hafele: Chất Liệu Đa Dạng (Đá, Inox), Thiết Kế Thông Minh và Kinh Nghiệm Chọn Mua4 Thiết Kế Thông Minh và Kinh Nghiệm Chọn Mua 11 ",
+    slug: "chau-rua-chen-hafele-chat-lieu-da-dang-thiet-ke-thong-minh-kinh-nghiem-chon-mua-4",
+  },
+  {
+    name: "5Chậu Rửa Chén Hafele: Chất Liệu Đa Dạng (Đá, Inox), Thiết Kế Thông Minh và Kinh Nghiệm Chọn Mua55 Thiết Kế Thông Minh và Kinh Nghiệm Chọn Mua 11",
+    slug: "chau-rua-chen-hafele-chat-lieu-da-dang-thiet-ke-thong-minh-kinh-nghiem-chon-mua-5",
+  },
+];
+
 const allItems = [
   {
     name: "So sánh bồn cầu TOTO MS857 và MS885: Giá và chất lượng khác nhau thế nào?",
@@ -264,6 +181,7 @@ function toggleExpand(index) {
   expandedIndex.value = expandedIndex.value === index ? null : index;
 }
 import { computed } from "vue";
+import MenuCategories from "~/components/blog/MenuCategories.vue";
 
 const flattenedCategories = computed(() =>
   Categories.flatMap((item) => {
@@ -278,20 +196,38 @@ const flattenedCategories = computed(() =>
   })
 );
 
-// useSeoMeta({
-//   title: () => selectedCategory.value?.title || "Danh mục",
-// });
-
-const { data } = await useAsyncData("category", () =>
-  $fetch(`/api/category/${route.params.slug}`)
+/// code lay du lieu cua danh muc dang truy cap
+interface T {
+  title: string;
+  slogan: string;
+  meta: {
+    title: string;
+    desc: string;
+    image: string;
+  };
+}
+const { locale } = useI18n();
+const { data, status } = await useHttp<T>(
+  `load-data-blog-category/${route.params.slug}`,
+  {
+    method: "GET",
+    params: {
+      locale: locale,
+    },
+  }
 );
-
-useSeoMeta({
-  title: () => data.value?.title || "Blog",
-  description: () => data.value?.description || "Danh mục blog",
-  ogTitle: () => data.value?.title,
-  ogDescription: () => data.value?.description,
-});
+if (data.value?.meta) {
+  useSeoMeta({
+    title: data.value.meta.title,
+    description: data.value.meta.desc,
+    ogTitle: data.value.meta.title,
+    ogDescription: data.value.meta.desc,
+    ogImage: useNuxtApp().$storage(data.value.meta.image),
+    twitterTitle: data.value.meta.title,
+    twitterDescription: data.value.meta.desc,
+    twitterImage: useNuxtApp().$storage(data.value.meta.image),
+  });
+}
 </script>
 <style scoped>
 .relative > .udropdownmenu {
