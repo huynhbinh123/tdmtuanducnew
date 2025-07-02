@@ -1,12 +1,12 @@
 export default defineNuxtConfig({
-  compatibilityDate: '2025-03-13',
+  compatibilityDate: "2025-03-13",
   future: {
     compatibilityVersion: 4,
   },
   nitro: {
     externals: {
-      inline: ['unhead'], // ép unhead vào bundle thay vì để external
-    }
+      inline: ["unhead"], // ép unhead vào bundle thay vì để external
+    },
   },
   telemetry: true,
   server: {
@@ -18,152 +18,155 @@ export default defineNuxtConfig({
     enabled: false,
   },
   app: {
-    pageTransition: { name: 'page', mode: 'out-in' },
+    pageTransition: { name: "page", mode: "out-in" },
     head: {
       title: process.env.NUXT_APP_DESCRIPTION,
-      titleTemplate: '%s | ' + process.env.NUXT_APP_NAME,
+      titleTemplate: "%s | " + process.env.NUXT_APP_NAME,
       htmlAttrs: {
-        lang: process.env.NUXT_APP_LANG || 'en',
+        lang: process.env.NUXT_APP_LANG || "en",
       },
     },
   },
 
   routeRules: {
-    '/vnwa/**': { ssr: false, swr: true },
-    '/vnwa/**/**': { ssr: false, swr: true },
-    '/vnwa/**/**/***': { ssr: false, swr: true },
-    'auth/verify': { ssr: false, swr: true }
+    "/vnwa/**": { ssr: false, swr: true },
+    "/vnwa/**/**": { ssr: false, swr: true },
+    "/vnwa/**/**/***": { ssr: false, swr: true },
+    "auth/verify": { ssr: false, swr: true },
   },
 
-  css: ['~/assets/css/main.css'],
-
+  css: ["~/assets/css/main.css"],
 
   modules: [
-    '@nuxt/ui',
-    '@nuxtjs/i18n',
-    '@nuxt/image',
-    '@pinia/nuxt',
-    'dayjs-nuxt',
-    'nuxt-security',
-    'nuxt-tiptap-editor',
-    '@nuxtjs/seo',
-    'nuxt-og-image',
-    '@nuxtjs/sitemap',
+    "@nuxt/ui",
+    "@nuxtjs/i18n",
+    "@nuxt/image",
+    "@pinia/nuxt",
+    "dayjs-nuxt",
+    "nuxt-security",
+    "nuxt-tiptap-editor",
+    "@nuxtjs/seo",
+    "nuxt-og-image",
+    "@nuxtjs/sitemap",
   ],
   site: {
     url: process.env.NUXT_FRONTEND_URL,
-    name: process.env.NUXT_APP_NAME
+    name: process.env.NUXT_APP_NAME,
   },
   sitemap: {
     cacheMaxAgeSeconds: 3600,
-    exclude: [
-      '/auth/**',       
-      '/vnwa/**',       
-    ],
-    sources: ['/api/__sitemap__/urls'],
+    exclude: ["/auth/**", "/vnwa/**"],
+    sources: ["/api/__sitemap__/urls"],
   },
   i18n: {
-    defaultLocale: process.env.NUXT_APP_LANG || 'en',
+    defaultLocale: process.env.NUXT_APP_LANG || "en",
     locales: [
-      { code: 'en', name: 'English', file: 'en.json' },
-      { code: 'vi', name: 'Tiếng Việt', file: 'vi.json' }
+      { code: "en", name: "English", file: "en.json" },
+      { code: "vi", name: "Tiếng Việt", file: "vi.json" },
     ],
-    strategy: 'prefix_and_default',
+    strategy: "prefix_and_default",
 
     detectBrowserLanguage: {
       useCookie: true,
-      cookieKey: 'i18n_redirected',
-      redirectOn: 'root',
-      alwaysRedirect: true
+      cookieKey: "i18n_redirected",
+      redirectOn: "root",
+      alwaysRedirect: true,
     },
-    customRoutes: 'config',
+    customRoutes: "config",
     pages: {
-      about: {
-        en: '/about',
-        vi: '/gioi-thieu'
+      cart: {
+        en: "/cart",
+        vi: "/gio-hang",
       },
-      process: {
-        en: '/process',
-        vi: '/quy-trinh'
+      register: {
+        en: "/register",
+        vi: "/dang-ky",
       },
-      contact: {
-        en: '/contact',
-        vi: '/lien-he'
+      login: {
+        en: "/login",
+        vi: "/dang-nhap",
       },
-      project: {
-        en: '/project',
-        vi: '/du-an'
+      forgot: {
+        en: "/forgot",
+        vi: "/quen-mat-khau",
       },
-      'project-slug': {
-        en: '/project/[slug]',
-        vi: '/du-an/[slug]'
+      pay: {
+        en: "/pay",
+        vi: "/thanh-toan",
       },
       blog: {
-        en: '/blog',
-        vi: '/bai-viet'
+        en: "/blog",
+        vi: "/bai-viet",
       },
-      'blog-slug': {
-        en: '/blog/[slug]',
-        vi: '/bai-viet/[slug]'
+      "blog-slug": {
+        en: "/blog/[slug]",
+        vi: "/bai-viet/[slug]",
       },
-      'blog-category-slug': {
-        en: '/blog/category/[slug]',
-        vi: '/bai-viet/danh-muc/[slug]'
+      "blog-category-slug": {
+        en: "/blog/category/[slug]",
+        vi: "/bai-viet/the-loai/[slug]",
       },
-      'blog-tag-slug': {
-        en: '/blog/tag/[slug]',
-        vi: '/bai-viet/the/[slug]'
-      }
-
-    }
+    },
   },
 
-
   tiptap: {
-    prefix: 'Tiptap', //prefix for Tiptap imports, composables not included
+    prefix: "Tiptap", //prefix for Tiptap imports, composables not included
   },
   ui: {
     // colorMode: false
     theme: {
-      colors: ['primary', 'vnwa', 'secondary', 'tertiary', 'info', 'success', 'warning', 'error']
-    }
+      colors: [
+        "primary",
+        "vnwa",
+        "secondary",
+        "tertiary",
+        "info",
+        "success",
+        "warning",
+        "error",
+      ],
+    },
   },
   image: {
-    domains: ['vnwa.vinawebapp.com'], // Thêm domain của bạn vào đây
-    format: ['webp', 'jpeg', 'png'],
+    domains: ["vnwa.vinawebapp.com"], // Thêm domain của bạn vào đây
+    format: ["webp", "jpeg", "png"],
     providers: {
       storage: {
-        name: 'storage', // optional value to overrider provider name
-        provider: '~/providers/storage-provider.ts', // Path to custom provider
+        name: "storage", // optional value to overrider provider name
+        provider: "~/providers/storage-provider.ts", // Path to custom provider
         options: {
-          baseURL: process.env.NUXT_BACKEND_URL + '/storage/'
-        }
-      }
+          baseURL: process.env.NUXT_BACKEND_URL + "/storage/",
+        },
+      },
     },
-    provider: 'storage',
+    provider: "storage",
     screens: {
       sm: 320,
       md: 640,
       lg: 1024,
-      xl: 1280
-    }
-
+      xl: 1280,
+    },
   },
 
   security: {
     headers: {
-      crossOriginEmbedderPolicy: 'unsafe-none',
-      crossOriginOpenerPolicy: 'same-origin-allow-popups',
+      crossOriginEmbedderPolicy: "unsafe-none",
+      crossOriginOpenerPolicy: "same-origin-allow-popups",
       contentSecurityPolicy: {
-        "img-src": ["'self'", "data:", "https://*", process.env.NUXT_BACKEND_URL],
+        "img-src": [
+          "'self'",
+          "data:",
+          "https://*",
+          process.env.NUXT_BACKEND_URL,
+        ],
       },
     },
   },
 
   dayjs: {
-    locales: ['en'],
-    plugins: ['relativeTime', 'utc', 'timezone'],
-    defaultLocale: 'en',
+    locales: ["en"],
+    plugins: ["relativeTime", "utc", "timezone"],
+    defaultLocale: "en",
     defaultTimezone: "UTC",
   },
 
@@ -173,12 +176,12 @@ export default defineNuxtConfig({
   runtimeConfig: {
     apiLocal: process.env.NUXT_BACKEND_URL,
     public: {
-      appLang: process.env.NUXT_FRONTEND_LANG || 'en',
+      appLang: process.env.NUXT_FRONTEND_LANG || "en",
       appUrl: process.env.NUXT_FRONTEND_URL,
-      apiUrl: process.env.NUXT_BACKEND_URL + '/api/v1',
+      apiUrl: process.env.NUXT_BACKEND_URL + "/api/v1",
       apiBase: process.env.NUXT_BACKEND_URL,
-      apiPrefix: '/api/v1',
-      storageBase: process.env.NUXT_BACKEND_URL + '/storage/',
+      apiPrefix: "/api/v1",
+      storageBase: process.env.NUXT_BACKEND_URL + "/storage/",
       providers: {
         google: {
           name: "Google",
@@ -189,4 +192,4 @@ export default defineNuxtConfig({
       },
     },
   },
-})
+});

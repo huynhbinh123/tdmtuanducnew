@@ -1,178 +1,323 @@
 {
-    "vnwa": {
-        "vietnamese": "Vietnamese",
-        "english": "English",
-        "vmedia": {
-            "create_folder": "Create Folder",
-            "selected_action": "Selected Action",
-            "preview": "preview",
-            "crop": "crop",
-            "rename": "rename",
-            "move_to_trash": "move to trash",
-            "view": "view",
-            "delete": "delete"
-        },
-        "error_message": {
-            "name": {
-                "required": "The name field is required.",
-                "min": "The name is too short.",
-                "max": "The name is too long."
-            },
-            "slug": {
-                "required": "The slug field is required.",
-                "invalid": "The slug must only contain lowercase letters, numbers, and dashes.",
-                "taken": "This slug is already taken."
-            },
-            "meta": {
-                "title": "The meta title cannot be empty and must be up to 100 characters",
-                "desc": "Meta description cannot be empty and must be maximum 300 characters",
-                "image": "Meta image cannot be empty"
-            }
-        },
-        "meta": {
-            "title": {
-                "label": "Meta Title",
-                "description": "Recommended length: 50-60 characters. Include relevant keywords and be descriptive. Should accurately represent the content of the page."
-            },
-            "desc": {
-                "label": "Meta Description",
-                "description": "Provide a brief description for SEO. Ideally, between 120-160 characters."
-            },
-            "image": {
-                "label": "Meta Image",
-                "description": "Recommended image size: 1200x630 pixels. Ensure the image is optimized for SEO with the following tips:\n1. File format: JPEG, PNG, or WebP\n2. File size: Under 100 KB for faster loading\n3. Use high-quality images with clear details\n4."
-            }
-        },
-        "name": "Name",
-        "remove_selected": "Remove Selected",
-        "created_at": "Created At",
-        "updated_at": "Updated At",
-        "sidebarVMedia": "Vmedia",
-        "tag": "Tag",
-        "create_tag": "Create Tag",
-        "edit_tag": "Edit Tag",
-        "tag_manager": "Tag Manager",
-        "project_manager": "Project Manager",
-        "blog_manager": "Blog Manager",
-        "post": "Post",
-        "project": "Project",
-        "confirm_delete_category": "Are you sure you want to delete the category {name} ?",
-        "confirm_delete": "Confirm Remove",
-        "delete_category": "Delete Category",
-        "blog category": "Blog Category",
-        "category": "Category",
-        "dashboard": "dashboard",
-        "contact": "contact",
-        "appearance": "appearance",
-        "web_manager": "web manager",
-        "home_page_manager": "home page manager",
-        "about_page_manager": "about page manager",
-        "contact_page_manager": "contact page manager",
-        "blog_page_manager": "blog page manager",
-        "project_page_manager": "project page manager",
-        "process_page_manager": "process page manager",
-        "save": "Save",
-        "add_link": "Add Link",
-        "add": "Add",
-        "edit": "Edit",
-        "remove": "Remove",
-        "remove_items": "Remove Items",
-        "confirm_remove_items": "Are you sure you want to remove {count} item(s)?",
-        "remove_child_items": "Remove Child Items",
-        "confirm_remove": "Confirm Remove",
-        "move_to_trash": "Move to Trash",
-        "move_to_trash_desc": "Items will be moved to trash and can be restored later.",
-        "permanent_delete_desc": "Warning: Items will be permanently deleted and cannot be restored.",
-        "create_post": "Create Post",
-        "edit_post": "Edit Post",
-        "deleted_at": "Remove At",
-        "restore_items": "Restore Items",
-        "confirm_restore_items": "Are you sure you want to restore {count} item(s)?",
-        "confirm_restore": "Confirm Restore",
-        "label": "Label",
-        "link": "Link",
-        "description": "Description",
-        "image": "Image",
-        "primary_label": "Primary Label",
-        "name_link": "Name Link",
-        "content": "Content",
-        "background_color": "Background Color",
-        "text_color": "Text Color",
-        "create_project": "Create Project",
-        "edit_project": "Edit Project"
+  "vnwa": {
+    "vietnamese": "Vietnamese",
+    "english": "English",
+    "vmedia": {
+      "create_folder": "Create Folder",
+      "selected_action": "Selected Action",
+      "preview": "preview",
+      "crop": "crop",
+      "rename": "rename",
+      "move_to_trash": "move to trash",
+      "view": "view",
+      "delete": "delete"
     },
-    "category": "Category",
+    "error_message": {
+      "name": {
+        "required": "The name field is required.",
+        "min": "The name is too short.",
+        "max": "The name is too long."
+      },
+      "slug": {
+        "required": "The slug field is required.",
+        "invalid": "The slug must only contain lowercase letters, numbers, and dashes.",
+        "taken": "This slug is already taken."
+      },
+      "meta": {
+        "title": "The meta title cannot be empty and must be up to 100 characters",
+        "desc": "Meta description cannot be empty and must be maximum 300 characters",
+        "image": "Meta image cannot be empty"
+      }
+    },
+    "meta": {
+      "title": {
+        "label": "Meta Title",
+        "description": "Recommended length: 50-60 characters. Include relevant keywords and be descriptive. Should accurately represent the content of the page."
+      },
+      "desc": {
+        "label": "Meta Description",
+        "description": "Provide a brief description for SEO. Ideally, between 120-160 characters."
+      },
+      "image": {
+        "label": "Meta Image",
+        "description": "Recommended image size: 1200x630 pixels. Ensure the image is optimized for SEO with the following tips:\n1. File format: JPEG, PNG, or WebP\n2. File size: Under 100 KB for faster loading\n3. Use high-quality images with clear details\n4."
+      }
+    },
+    "name": "Name",
+    "remove_selected": "Remove Selected",
+    "created_at": "Created At",
+    "updated_at": "Updated At",
+    "sidebarVMedia": "Vmedia",
     "tag": "Tag",
-    "blog": "Blog",
-    "blogs": "Blogs",
+    "create_tag": "Create Tag",
+    "edit_tag": "Edit Tag",
+    "tag_manager": "Tag Manager",
+    "project_manager": "Project Manager",
+    "blog_manager": "Blog Manager",
+    "post": "Post",
     "project": "Project",
-    "about": "About",
+    "confirm_delete_category": "Are you sure you want to delete the category {name} ?",
+    "confirm_delete": "Confirm Remove",
+    "delete_category": "Delete Category",
+    "blog category": "Blog Category",
+    "category": "Category",
+    "dashboard": "dashboard",
+    "contact": "contact",
+    "appearance": "appearance",
+    "web_manager": "web manager",
+    "home_page_manager": "home page manager",
+    "about_page_manager": "about page manager",
+    "contact_page_manager": "contact page manager",
+    "blog_page_manager": "blog page manager",
+    "project_page_manager": "project page manager",
+    "process_page_manager": "process page manager",
+    "save": "Save",
+    "add_link": "Add Link",
+    "add": "Add",
+    "edit": "Edit",
+    "remove": "Remove",
+    "remove_items": "Remove Items",
+    "confirm_remove_items": "Are you sure you want to remove {count} item(s)?",
+    "remove_child_items": "Remove Child Items",
+    "confirm_remove": "Confirm Remove",
+    "move_to_trash": "Move to Trash",
+    "move_to_trash_desc": "Items will be moved to trash and can be restored later.",
+    "permanent_delete_desc": "Warning: Items will be permanently deleted and cannot be restored.",
+    "create_post": "Create Post",
+    "edit_post": "Edit Post",
+    "deleted_at": "Remove At",
+    "restore_items": "Restore Items",
+    "confirm_restore_items": "Are you sure you want to restore {count} item(s)?",
+    "confirm_restore": "Confirm Restore",
+    "label": "Label",
+    "link": "Link",
+    "description": "Description",
+    "image": "Image",
+    "primary_label": "Primary Label",
+    "name_link": "Name Link",
+    "content": "Content",
+    "background_color": "Background Color",
+    "text_color": "Text Color",
+    "create_project": "Create Project",
+    "edit_project": "Edit Project"
+  },
+  "menu": {
+    "home": "Home Page",
+    "productCategory": "Product Category",
+    "introduce": "Introduce",
+    "instruct": "Instruct",
+    "brand": "Brand",
+    "distributionCompany": "Distribution Company",
+    "showroomSystem": "TMD Tuan Duc Showroom System",
+
+    "info": "Information",
+    "about": "About Us",
+    "recruitment": "Careers",
+    "distributionBrand": "Distribution Brand",
     "contact": "Contact",
-    "process": "Process",
-    "no_data": "No Data",
-    "view_website": "View Website",
-    "introduction": "Introduction",
-    "journey": "Journey",
-    "gallery": "Gallery",
-    "objective": "Objective",
-    "approach": "Approach",
-    "impact": "Impact",
-    "results": "Results",
-    "first_name": "First Name *",
-    "last_name": "Last Name *",
-    "email": "Email *",
+    "policy": "Policies",
+    "privacyPolicy": "Privacy Policy",
+    "returnPolicy": "Return Policy",
+    "shippingPolicy": "Shipping Policy",
+    "customerSupport": "Customer Support",
+    "buyingGuide": "Buying Guide",
+    "paymentGuide": "Payment Guide",
+    "faq": "FAQs",
+    "supportContact": "Support Contact",
+    "news": "News",
+    "promotion": "Promotions",
+    "catalog": "Catalog",
+    "bathroomAdvice": "Bathroom Equipment Advice",
+    "kitchenAdvice": "Kitchen Equipment Advice"
+  },
+  "auth": {
+    "account": "Account",
+    "login": "Login",
+    "register": "Register",
+    "breadcrumb": "Login",
+    "newCustomer": "New Customer",
+    "registerTitle": "Create an Account",
+    "registerDesc": "By creating an account, you’ll be able to shop faster, track order status, and view your order history.",
+    "continue": "Continue",
+    "existingCustomer": "Returning Customer",
+    "alreadyHaveAccount": "I already have an account",
+    "emailLabel": "E-Mail Address:",
+    "emailPlaceholder": "Your email",
+    "passwordLabel": "Password:",
+    "passwordPlaceholder": "Password",
+    "forgotPassword": "Forgot password",
+    "hidePassword": "Hide password",
+    "showPassword": "Show password"
+  },
+  "cart": {
+    "title": "Cart",
+    "product": "Product",
+    "desc": "No products in the cart!",
+    "remove": "Remove",
+    "total": "Total",
+    "totalPrice": "Total Price",
+    "seeCart": "See Cart",
+    "continueShopping": "Continue browsing other items",
+    "checkout": "Checkout",
+    "empty": "There are no products in your cart!",
+    "continue": "Continue",
+    "note": "Add additional notes for the order",
+    "confirmOrder": "Confirm Order",
+    "productCode": "Product Code",
+    "bankTransferGuide": "Bank Transfer Instructions",
+    "agreeWithFAQ": "I have read and agree to the Frequently Asked Questions",
+    "placeOrder": "Place Order"
+  },
+  "checkout": "Checkout",
+  "search": "Search",
+  "banner": "Inner city delivery 3 hours. Standard installation. Good price",
+  "contact": {
+    "map": "Map",
+    "address": "Address",
     "phone": "Phone",
-    "company": "Company",
-    "other": "Other",
-    "social_media": "Social Media",
-    "form_contact": {
-        "title": "READY TO GROW REVENUE?",
-        "subtitle": "Digital Experiences That's Driven Growth Vinawebapp.com",
-        "from_hear": "How did you hear about us?",
-        "help_my_business": "Help My Business",
-        "help_business": {
-            "generate_leads": "Generate Leads",
-            "optimize_website": "Optimize Website",
-            "improve_loyalty": "Improve Brand Loyalty",
-            "increase_revenue": "Increase Revenue",
-            "rank_google": "Rank in Google",
-            "market_share": "Increase Market Share"
-        },
-        "note": "Project Details *",
-        "newsletter": {
-            "line1": "Sign me up for Vinawebapp.com",
-            "line2": "Get monthly marketing, web, mobile tips and insight."
-        },
-        "submit": "SUBMIT",
-        "from_hear_placeholder": "How did you hear about us?",
-        "success_title": "Thank you for contacting us!",
-        "success_message": "We have received your message and will get back to you shortly.",
-        "success_button": "Go to Home Page"
+    "openingHours": "Opening Hours"
+  },
+  "connectWithUs": "Connect With Us",
+  "table": {
+    "image": "Image",
+    "productName": "Product Name",
+    "quantity": "Quantity",
+    "unitPrice": "Unit Price",
+    "total": "Total",
+    "actions": "Actions"
+  },
+  "form": {
+    "login": "Login",
+    "guest": "Guest",
+    "email": "Email",
+    "enterEmail": "Enter your email",
+    "password": "Password",
+    "enterPassword": "Enter your password",
+    "forgotPassword": "Forgot password",
+    "billingInfo": "Billing Information",
+    "firstName": "First Name",
+    "enterFirstName": "Enter your first name",
+    "phone": "Phone",
+    "enterPhone": "Enter your phone number",
+    "address": "Address",
+    "enterAddress": "Enter your address",
+    "confirmOrder": "Confirm Order",
+    "bankTransferGuide": "Bank Transfer Instructions"
+  },
+  "register": {
+    "breadcrumb": "Register",
+    "title": "Register Account",
+    "loginPrompt": "If you already have an account, please login",
+    "here": "Here.",
+    "note": "Note: Fields marked with red asterisk must not be left blank and must be filled out accurately.",
+    "save": "Save",
+    "password": {
+      "show": "Show",
+      "hide": "Hide"
     },
-    "start_project": "Start Project",
-    "see_our_work": "See Our Work",
-    "trusted_by": "Trusted By",
-    "featured_projects": "Featured Projects",
-    "see_all_projects": "See All Projects",
-    "what_customers_say": "What Customers Say",
-    "what_customers_say_slogan": "We are proud to have worked with many clients who have shared their experiences with us. Here are some of their testimonials.",
-    "why_me_section": {
-        "title": "Why Vinawebapp.com?",
-        "slogan": "We are different because"
-        
+    "group": {
+      "personalInfo": "Personal Information",
+      "password": "Password"
     },
-    "about_short": {
-        "title": "Our Team",
-        "slogan": "We are the leading professional website design company in Vietnam. We are always ready to solve the difficulties in your project.",
-        "years_experience":"years experience",
-        "clients":"clients",
-        "staff":"staff"
+    "fields": {
+      "firstName": {
+        "label": "First Name",
+        "placeholder": "Enter first name"
+      },
+      "lastName": {
+        "label": "Last Name",
+        "placeholder": "Enter last name"
+      },
+      "email": {
+        "label": "E-Mail Address",
+        "placeholder": "Enter email"
+      },
+      "phone": {
+        "label": "Phone",
+        "placeholder": "Enter phone number"
+      },
+      "password": {
+        "label": "Password",
+        "placeholder": "Enter password"
+      },
+      "confirmPassword": {
+        "label": "Confirm Password",
+        "placeholder": "Re-enter password"
+      }
+    }
+  },
+  "forgot": {
+    "breadcrumb": "Forgot password",
+    "title": "Forgot Your Password?",
+    "description": "Enter the email address registered with your account. Click Continue and the password will be sent to your email.",
+    "label": "Your E-Mail Address",
+    "placeholder": "Your email",
+    "back": "Back",
+    "continue": "Continue",
+    "invalidEmail": "Please enter a valid email address.",
+    "errorTitle": "Error"
+  },
+  "sort": {
+    "title": "Sort by:",
+    "bestSeller": "Best Seller",
+    "default": "Default",
+    "priceHighToLow": "Price: High to Low",
+    "priceLowToHigh": "Price: Low to High"
+  },
+  "product": {
+    "title": "Product",
+    "buy_now": "Buy Now",
+    "add_to_cart": "Add to Cart",
+    "quantity": "Quantity",
+    "price_sale": "Sale Price",
+    "price_market": "Market Price",
+    "review_title": "Product Review",
+    "write_review": "Write a review / Comment",
+    "send": "Submit",
+    "name": "Your name",
+    "email": "E-mail",
+    "content": "Review / Comment",
+    "rating": "Overall Rating",
+    "image_upload": "Attach Images",
+    "submitted_success": "Review submitted successfully!",
+    "submitted_fail": "Submission failed. Please try again.",
+    "detail": "Detail",
+    "Characteristics": "Characteristics",
+    "Evaluate": "Evaluate",
+    "Evanluate2": "You want to evaluate or wonder about the product?!",
+    "click": "Click the button below!",
+    "give": "Form allows users to send product reviews",
+    "comment": "Enter your review or comment",
+    "admin": "Admin",
+    "choose_file": "Choose File",
+    "no_file_selected": "No file selected",
+    "vat": "there are VAT",
+    "code": "Product Code",
+    "origin": "Origin",
+    "origin_value": "Official",
+    "status": "Availability",
+    "in_stock": "In Stock"
+  },
+  "category": {
+    "title": "Category",
+    "noTitle": "Unknown category",
+    "comment": "Comment",
+    "comment_section": {
+      "leave_comment": "Leave a comment",
+      "note": "Your email address will not be published. Required fields are marked *",
+      "name": "Name",
+      "email": "E-mail",
+      "website": "Website",
+      "comment": "Review / Comment",
+      "submit": "Submit",
+      "errors": {
+        "name": "Please enter your name",
+        "email_required": "Please enter your email",
+        "email_invalid": "Invalid email format",
+        "comment": "Please enter a comment"
+      }
     },
-    "are_you_ready_to_start":"ARE YOU READY TO START YOUR JOURNEY ?",
-    "let_create":"LET'S CREATE AN EXPLOSION TOGETHER",
-    "live_chat":"Live Chat",
-    "get_in_touch":"Get In Touch",
-    "what_sets_us_apart": "What sets us apart",
-    "a_few_words_about_us": "A few words about us"
-    
+    "new_posts": "new posts",
+    "see_more": "See more posts about: {category}"
+  }
 }

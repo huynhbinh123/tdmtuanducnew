@@ -1,9 +1,7 @@
 <script setup lang="ts">
 definePageMeta({
-  redirect: '/blog',
-})
+  redirect: "/blog",
+});
 </script>
 
-<template>
-  <div></div>
-</template>
+<template><div></div></template>

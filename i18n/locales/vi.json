@@ -101,77 +101,220 @@
     "create_project": "Khởi tạo dự án",
     "edit_project": "Chỉnh sửa dự án"
   },
-  "category": "Danh Mục",
-  "tag": "Thẻ",
-  "blogs": "Danh sách bài viết",
-  "blog": "Bài Viết",
-  "about": "Giới thiệu",
-  "contact": "Liên hệ",
-  "process": "Quy trình",
-  "project": "Dự án",
-  "no_data": "Không có dữ liệu",
-  "view_website": "Xem trang web",
-  "introduction": "Giới thiệu",
-  "journey": "Hành trình",
-  "gallery": "Phòng trưng bày",
-  "objective": "Mục tiêu",
-  "approach": "Phương pháp",
-  "impact": "Tác động",
-  "results": "Kết quả",
-  "first_name": "Họ *",
-  "last_name": "Tên *",
-  "email": "Email *",
-  "phone": "Số điện thoại",
-  "company": "Công ty",
-  "other": "Khác",
-  "social_media": "Mạng xã hội",
-  "form_contact": {
-    "title": "SẴN SÀNG TĂNG TRƯỞNG DOANH THU?",
-    "subtitle": "Trải nghiệm số thúc đẩy tăng trưởng từ Vinawebapp.com",
-    "from_hear": "Bạn biết đến chúng tôi từ đâu?",
-    "help_my_business": "Giúp Doanh Nghiệp Của Tôi",
-    "help_business": {
-      "generate_leads": "Tìm kiếm khách hàng tiềm năng",
-      "optimize_website": "Tối ưu Website",
-      "improve_loyalty": "Tăng độ trung thành thương hiệu",
-      "increase_revenue": "Tăng doanh thu",
-      "rank_google": "Xếp hạng trên Google",
-      "market_share": "Tăng thị phần"
+  "menu": {
+    "home": "Trang chủ",
+    "productCategory": "Danh mục sản phẩm",
+    "brand": "Thương hiệu",
+    "showroomSystem": "Hệ thống showroom TMD Tuấn Đức",
+
+    "info": "Thông tin",
+    "instruct": "Hướng dẫn",
+    "about": "Giới thiệu",
+    "recruitment": "Tuyển dụng",
+    "distributionCompany": "Hãng phân phối",
+    "contact": "Liên hệ",
+    "policy": "Chính sách",
+    "privacyPolicy": "Chính sách bảo mật",
+    "returnPolicy": "Chính sách đổi trả",
+    "shippingPolicy": "Chính sách vận chuyển",
+    "customerSupport": "Hỗ trợ khách hàng",
+    "buyingGuide": "Hướng dẫn mua hàng",
+    "paymentGuide": "Hướng dẫn thanh toán",
+    "faq": "Câu hỏi thường gặp",
+    "supportContact": "Liên hệ hỗ trợ",
+    "news": "Tin tức",
+    "promotion": "Khuyến mãi",
+    "catalog": "Catalog",
+    "bathroomAdvice": "Tư vấn thiết bị vệ sinh",
+    "kitchenAdvice": "Tư vấn thiết bị bếp"
+  },
+  "auth": {
+    "account": "Tài khoản",
+    "login": "Đăng nhập",
+    "register": "Đăng ký",
+    "breadcrumb": "Đăng nhập",
+    "newCustomer": "Khách hàng mới",
+    "registerTitle": "Đăng kí tài khoản",
+    "registerDesc": "Bằng cách tạo tài khoản bạn sẽ có thể mua sắm nhanh hơn, cập nhật tình trạng đơn hàng, theo dõi những đơn hàng đã đặt.",
+    "continue": "Tiếp tục",
+    "existingCustomer": "Khách hàng cũ",
+    "alreadyHaveAccount": "Tôi đã có tài khoản",
+    "emailLabel": "Địa chỉ E-Mail:",
+    "emailPlaceholder": "E-mail của bạn",
+    "passwordLabel": "Mật khẩu:",
+    "passwordPlaceholder": "Mật khẩu",
+    "forgotPassword": "Quên mật khẩu",
+    "hidePassword": "Ẩn mật khẩu",
+    "showPassword": "Hiện mật khẩu"
+  },
+  "cart": {
+    "title": "Giỏ hàng",
+    "product": "Sản phẩm",
+    "desc": "Không có sản phẩm trong giỏ hàng!",
+    "remove": "Xoá",
+    "total": "Tổng",
+    "totalPrice": "Tổng tiền",
+    "seeCart": "Xem giỏ hàng",
+    "continueShopping": "Tiếp tục tìm mặt hàng khác",
+    "empty": "Không có sản phẩm trong giỏ hàng!",
+    "continue": "Tiếp tục",
+    "note": "Ghi chú thêm cho đơn hàng",
+    "confirmOrder": "Xác nhận đơn hàng",
+    "productCode": "Mã sản phẩm",
+    "bankTransferGuide": "Hướng dẫn chuyển khoản",
+    "agreeWithFAQ": "Tôi đã đọc và đồng ý với Các câu hỏi thường gặp",
+    "placeOrder": "Đặt hàng"
+  },
+  "checkout": "Thanh toán",
+  "search": "Tìm kiếm",
+  "banner": "Giao hàng nội thành trong 3 giờ. Lắp đặt tiêu chuẩn. Giá tốt",
+  "contact": {
+    "map": "Bản đồ",
+    "address": "Địa chỉ",
+    "phone": "Điện thoại: 028.2244.8333 – 09333.22232",
+    "openingHours": "Giờ mở cửa"
+  },
+  "connectWithUs": "Kết nối với chúng tôi",
+  "table": {
+    "image": "Hình ảnh",
+    "productName": "Tên sản phẩm",
+    "quantity": "Số lượng",
+    "unitPrice": "Đơn giá",
+    "total": "Tổng cộng",
+    "actions": "Thao tác"
+  },
+  "form": {
+    "login": "Đăng nhập",
+    "guest": "Khách",
+    "email": "E-mail",
+    "enterEmail": "Nhập e-mail",
+    "password": "Mật khẩu",
+    "enterPassword": "Nhập mật khẩu",
+    "forgotPassword": "Quên mật khẩu",
+    "billingInfo": "Thông tin thanh toán",
+    "firstName": "Tên",
+    "enterFirstName": "Nhập tên",
+    "phone": "Điện Thoại",
+    "enterPhone": "Nhập số điện thoại",
+    "address": "Địa chỉ",
+    "enterAddress": "Nhập địa chỉ",
+    "confirmOrder": "Xác nhận đơn hàng",
+    "bankTransferGuide": "Hướng dẫn chuyển khoản"
+  },
+  "register": {
+    "breadcrumb": "Đăng ký",
+    "title": "Đăng Ký Tài Khoản",
+    "loginPrompt": "Nếu bạn đã đăng ký tài khoản, vui lòng đăng nhập",
+    "here": "Tại Đây.",
+    "note": "Lưu ý: Các mục dấu sao màu đỏ không được bỏ trống & phải điền đầy đủ, chính xác",
+    "save": "Lưu",
+    "password": {
+      "show": "Hiện",
+      "hide": "Ẩn"
     },
-    "note": "Chi tiết dự án *",
-    "newsletter": {
-      "line1": "Đăng ký nhận thông tin từ Vinawebapp.com",
-      "line2": "Nhận mẹo về marketing, website, di động hàng tháng."
+    "group": {
+      "personalInfo": "Thông tin cá nhân",
+      "password": "Mật khẩu"
     },
-    "submit": "GỬI ĐI",
-    "from_hear_placeholder": "Bạn biết đến chúng tôi từ đâu?",
-    "success_title": "Cảm ơn bạn đã liên hệ với chúng tôi!",
-    "success_message": "Chúng tôi sẽ liên hệ với bạn trong thời gian sớm nhất.",
-    "success_button": "Trở về trang chủ"
+    "fields": {
+      "firstName": {
+        "label": "Tên",
+        "placeholder": "Nhập tên"
+      },
+      "lastName": {
+        "label": "Họ và tên lót",
+        "placeholder": "Nhập họ và tên lót"
+      },
+      "email": {
+        "label": "Địa chỉ E-Mail",
+        "placeholder": "Nhập email"
+      },
+      "phone": {
+        "label": "Điện Thoại",
+        "placeholder": "Nhập số điện thoại"
+      },
+      "password": {
+        "label": "Mật Khẩu",
+        "placeholder": "Nhập mật khẩu"
+      },
+      "confirmPassword": {
+        "label": "Nhập lại Mật Khẩu",
+        "placeholder": "Nhập lại mật khẩu"
+      }
+    }
   },
-  "start_project": "Bắt đầu dự án",
-  "see_our_work": "Xem thêm",
-  "trusted_by": "Đối tác",
-  "featured_projects": "Dự án tiêu biểu",
-  "see_all_projects": "Xem tất cả dự án",
-  "what_customers_say": "Khách hàng nói gì",
-  "what_customers_say_slogan": "Chúng tôi tự hào đã hợp tác với nhiều khách hàng và nhận được những phản hồi quý giá từ họ. Dưới đây là một số đánh giá.",
-  "why_me_section": {
-    "title": "Tại sao chọn Vinawebapp.com?",
-    "slogan": "Chúng tôi khác biệt bởi vì"
-    
+  "forgot": {
+    "breadcrumb": "Quên mật khẩu",
+    "title": "Bạn Quên Mật Khẩu?",
+    "description": "Nhập địa chỉ email đã đăng kí với tài khoản này. Bấm Tiếp tục, mật khẩu sẽ được gửi đến email của bạn.",
+    "label": "Địa chỉ E-Mail của bạn",
+    "placeholder": "E-mail của bạn",
+    "back": "Quay lại",
+    "continue": "Tiếp tục",
+    "invalidEmail": "Vui lòng nhập email hợp lệ.",
+    "errorTitle": "Lỗi"
   },
-  "about_short": {
-    "title": "Đội ngũ của chúng tôi",
-    "slogan": "Chúng tôi là công ty thiết kế website chuyên nghiệp hàng đầu tại Việt Nam. Luôn sẵn sàng đồng hành và giải quyết mọi khó khăn trong dự án của bạn.",
-    "years_experience": "năm kinh nghiệm",
-    "clients": "khách hàng",
-    "staff": "nhân sự"
+  "sort": {
+    "title": "Sắp xếp:",
+    "bestSeller": "Bán chạy",
+    "default": "Mặc định",
+    "priceHighToLow": "Giá cao đến thấp",
+    "priceLowToHigh": "Giá thấp đến cao"
   },
-  "are_you_ready_to_start": "BẠN ĐÃ SẴN SÀNG BẮT ĐẦU HÀNH TRÌNH?",
-  "let_create": "HÃY CÙNG NHAU TẠO RA MỘT SỰ BÙNG NỔ",
-  "live_chat": "Trò chuyện trực tiếp",
-  "get_in_touch": "Liên Hệ",
-  "what_sets_us_apart": "Điều gì làm chúng tôi khác biệt",
-  "a_few_words_about_us": "Một vài lời về chúng tôi"
+  "product": {
+    "title": "Sản phẩm",
+    "buy_now": "Mua Ngay",
+    "add_to_cart": "Thêm vào giỏ",
+    "quantity": "Số lượng",
+    "price_sale": "Giá khuyến mãi",
+    "price_market": "Giá thị trường",
+    "review_title": "Đánh giá sản phẩm",
+    "write_review": "Viết đánh giá / Bình luận sản phẩm",
+    "send": "Gửi",
+    "name": "Tên bạn",
+    "email": "E-mail",
+    "content": "Đánh giá / Bình luận",
+    "rating": "Đánh giá chung",
+    "image_upload": "Hình ảnh đính kèm",
+    "submitted_success": "Đánh giá đã được gửi thành công!",
+    "submitted_fail": "Gửi thất bại. Vui lòng thử lại.",
+    "detail": "Chi tiết",
+    "Characteristics": "Đặc tính",
+    "Evaluate": "Đánh giá",
+    "Evanluate2": "Bạn muốn đánh giá hoặc thắc mắc về sản phẩm?!",
+    "click": "Hãy click vào nút dưới đây!",
+    "give": "Form cho phép người dùng gửi đánh giá sản phẩm",
+    "comment": "Nhập đánh giá hoặc bình luận của bạn",
+    "admin": "Quản trị viên",
+    "choose_file": "Chọn tệp",
+    "no_file_selected": "Chưa chọn tệp nào",
+    "vat": "đã có VAT",
+    "code": "Mã sản phẩm",
+    "origin": "Xuất xứ",
+    "origin_value": "Chính hãng",
+    "status": "Tình trạng",
+    "in_stock": "Còn hàng"
+  },
+  "category": {
+    "title": "Danh mục",
+    "noTitle": "Không rõ danh mục",
+    "comment": "Bình luận",
+    "comment_section": {
+      "leave_comment": "Để lại một bình luận",
+      "note": "Email của bạn sẽ không được hiển thị công khai. Các trường bắt buộc được đánh dấu *",
+      "name": "Tên",
+      "email": "E-mail",
+      "website": "Trang web",
+      "comment": "Đánh giá / Bình luận",
+      "submit": "Gửi",
+      "errors": {
+        "name": "Vui lòng nhập tên",
+        "email_required": "Vui lòng nhập email",
+        "email_invalid": "Email không hợp lệ",
+        "comment": "Vui lòng nhập bình luận"
+      }
+    },
+    "new_posts": "bài viết mới",
+    "see_more": "Xem thêm bài viết về: {category}"
+  }
 }
